@@ -7,7 +7,7 @@ import { ProcessSteps, Notice } from "@/components/ui/Content";
 import { FAMILIES_HOME_ORDER } from "@/data/families";
 import { INDUSTRIES, industriesBySector, INDUSTRY_DETAILS } from "@/data/industries";
 import { BUCKCORE_MODULES } from "@/data/buckcore";
-import { homeHero, conceptCaption, conceptDisclaimer } from "@/data/site";
+import { homeHero, conceptDisclaimer } from "@/data/site";
 
 export default function HomePage() {
   const sectors = industriesBySector();
@@ -53,11 +53,7 @@ export default function HomePage() {
                 className="aspect-[16/10] rounded-2xl border border-line"
                 sizes="(max-width: 1024px) 100vw, 58vw"
                 priority
-                caption={conceptCaption}
               />
-              <figcaption className="mt-3 text-xs text-muted">
-                {conceptCaption} Nine families · 27 models · 30 target industries.
-              </figcaption>
             </figure>
           </div>
         </div>
