@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { FOOTER_LINKS } from "@/data/navigation";
-import { conceptDisclaimer, site } from "@/data/site";
+import { site } from "@/data/site";
 
 /**
  * Footer — Master Spec, Chapter 05:
@@ -10,9 +10,9 @@ import { conceptDisclaimer, site } from "@/data/site";
  * No social badges until official accounts are verified.
  *
  * Design: premium dark-navy surface with cyan accents, icon-tagged
- * contact column, cyan-ruled navigation headings, gradient concept
- * disclaimer panel and a modern copyright bar. All content, links and
- * semantics are unchanged from the spec — presentation only.
+ * contact column, cyan-ruled navigation headings and a modern copyright
+ * bar. All content, links and semantics are unchanged from the spec —
+ * presentation only.
  */
 
 /* Decorative contact icons (aria-hidden; text stays the accessible name). */
@@ -49,15 +49,6 @@ function IconPin() {
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={`${iconCls} mt-0.5`}>
       <path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11Z" />
       <circle cx="12" cy="10" r="2.6" />
-    </svg>
-  );
-}
-
-function IconInfo() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-3.5 w-3.5 shrink-0">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 11v5.5M12 7.6v.2" />
     </svg>
   );
 }
@@ -175,17 +166,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Mandatory concept disclaimer — Chapter 19 */}
-        <div className="mt-14 rounded-xl border border-l-2 border-white/10 border-l-cyan bg-gradient-to-r from-white/[0.05] to-white/[0.015] p-5 sm:p-6">
-          <p className="spec-label flex items-center gap-2 text-cyan!">
-            <IconInfo />
-            Concept disclaimer
-          </p>
-          <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[#a9bccf]">{conceptDisclaimer}</p>
-        </div>
+        {/* Concept disclaimer panel removed per owner direction (was Chapter 19) */}
 
         {/* Copyright bar */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-[#8fa4bb]">
             © {year} {site.name}. All robot designs are proposed concepts.
           </p>

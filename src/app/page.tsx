@@ -3,7 +3,7 @@ import { Wordmark } from "@/components/ui/Wordmark";
 import { ImageSlider } from "@/components/ui/ImageSlider";
 import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
 import { FamilyCard } from "@/components/ui/Cards";
-import { ProcessSteps, Notice } from "@/components/ui/Content";
+import { ProcessSteps } from "@/components/ui/Content";
 import { StatsStrip } from "@/components/ui/StatsStrip";
 import SplitText from "@/components/bits/SplitText";
 import DecryptedText from "@/components/bits/DecryptedText";
@@ -11,9 +11,9 @@ import Particles from "@/components/bits/Particles";
 import AnimatedContent from "@/components/bits/AnimatedContent";
 import SpotlightCard from "@/components/bits/SpotlightCard";
 import { FAMILIES_HOME_ORDER } from "@/data/families";
-import { INDUSTRIES, industriesBySector, INDUSTRY_DETAILS } from "@/data/industries";
+import { industriesBySector } from "@/data/industries";
 import { BUCKCORE_MODULES } from "@/data/buckcore";
-import { homeHero, homeHeroSlides, conceptDisclaimer } from "@/data/site";
+import { homeHero, homeHeroSlides } from "@/data/site";
 
 export default function HomePage() {
   const sectors = industriesBySector();
@@ -164,21 +164,6 @@ export default function HomePage() {
             ))}
           </AnimatedContent>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <span className="spec-label">Launch pages</span>
-            {INDUSTRY_DETAILS.map((d) => (
-              <Link
-                key={d.slug}
-                href={`/industries/${d.slug}`}
-                className="rounded-full border border-line bg-white px-4 py-1.5 text-sm text-graphite transition-colors hover:border-blue hover:text-blue"
-              >
-                {d.title}
-              </Link>
-            ))}
-            <span className="text-sm text-muted">
-              + {INDUSTRIES.length - INDUSTRY_DETAILS.length} further markets as enquiry tiles.
-            </span>
-          </div>
         </div>
       </section>
 
@@ -369,14 +354,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Concept notice above footer (Chapter 19 mandatory disclaimer) */}
-      <section className="border-t border-line bg-arctic py-8">
-        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <Notice title="Mandatory concept disclaimer" tone="concept">
-            {conceptDisclaimer}
-          </Notice>
-        </div>
-      </section>
+      {/* Concept notice removed per owner direction (was Chapter 19 disclaimer) */}
     </>
   );
 }
