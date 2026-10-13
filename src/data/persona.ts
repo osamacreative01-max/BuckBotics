@@ -32,6 +32,8 @@ export interface PersonaCollection {
   /** Publication tier — Chapter 07 portfolio table. */
   tier: "now" | "private";
   image: string;
+  /** Slider images for the collection card (delivered android renders). */
+  images?: Array<{ src: string; alt: string }>;
 }
 
 export const PERSONA = {
@@ -71,6 +73,13 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     status: "concept",
     tier: "now",
     image: "/images/persona/executive.webp",
+    images: [
+      { src: "/images/persona/executive/slide-1.webp", alt: "PERSONA EXECUTIVE E200 — male persona in navy suit, three-quarter front view, fictional adult android concept render" },
+      { src: "/images/persona/executive/slide-2.webp", alt: "PERSONA EXECUTIVE E200 — male persona front view standing, fictional adult android concept render" },
+      { src: "/images/persona/executive/slide-3.webp", alt: "PERSONA EXECUTIVE E200 — side profile with ear module visible, fictional adult android concept render" },
+      { src: "/images/persona/executive/slide-4.webp", alt: "PERSONA EXECUTIVE E200 — close-up of chrome robotic hand in suit sleeve, concept render" },
+      { src: "/images/persona/executive/slide-5.webp", alt: "PERSONA EXECUTIVE E200 — close-up of jaw line and illuminated neck mechanics, concept render" },
+    ],
   },
   {
     slug: "home",
@@ -165,6 +174,13 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     status: "concept",
     tier: "private",
     image: "/images/persona/signature.webp",
+    images: [
+      { src: "/images/persona/signature/slide-1.webp", alt: "PERSONA SIGNATURE S300 — female persona in navy suit, three-quarter front view, fictional adult android concept render" },
+      { src: "/images/persona/signature/slide-2.webp", alt: "PERSONA SIGNATURE S300 — side profile, fictional adult android concept render" },
+      { src: "/images/persona/signature/slide-3.webp", alt: "PERSONA SIGNATURE S300 — close-up of wrist module and chrome bracelet, concept render" },
+      { src: "/images/persona/signature/slide-4.webp", alt: "PERSONA SIGNATURE S300 — close-up of back-of-head ear module and neck spine, concept render" },
+      { src: "/images/persona/signature/slide-5.webp", alt: "PERSONA SIGNATURE S300 — close-up of head with ear module and chrome neck, concept render" },
+    ],
   },
 ];
 

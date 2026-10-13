@@ -1,154 +1,82 @@
 # IMAGES_REQUIRED.md — BUCKBOTICS media delivery list
 
-Yeh file batati hai kaunsi images website ko chahiye aur unka exact path.
-Jaise hi aap file `public/images/...` mein rakhenge, website automatic
-placeholder ki jagah asli image dikhane lagegi — **koi code change nahi
-chahiye**.
+**Status update:** Logo + 9 family artwork sets + EXECUTIVE/SIGNATURE
+persona renders **deliver ho chuke hain aur website par live hain**
+(`scripts/import-artwork.mjs` se WebP mein convert kar diye gaye).
+Neeche "ABHI BAKI" wali files ka intezaar hai.
 
-> Art direction (Master Spec, Chapter 04): sab images white/pale studio
-> background, soft shadow, sirf robot (koi building/factory scene nahi),
-> koi asli insaan nahi. Har concept image ke neeche website khud
-> "Concept visualization" caption lagati hai.
-
----
-
-## 1. LOGO (sab se pehle — sab se zaroori)
-
-Approved wordmark (LOGO.pdf) se **vector outlines export** karein — typed
-font se recreate NA karein.
-
-| # | Path | Details |
-|---|------|---------|
-| 1 | `public/images/logo/logo-light.svg` | White "BUCK" + blue "BOTICS" — dark/midnight backgrounds ke liye (header, footer) |
-| 2 | `public/images/logo/logo-dark.svg` | Navy "BUCK" + blue "BOTICS" — light backgrounds ke liye |
-| 3 | `public/images/logo/logo-bucki-light.svg` *(optional)* | BUCKi mark (lowercase cyan "i") body copy ke liye |
-| 4 | `src/app/favicon.ico` | Replace karein — default Next.js icon hataana hai |
-| 5 | `src/app/icon.svg` | 32×32+ favicon (B letterform, single colour me bhi readable) |
-
-**Jab tak SVG nahi aate**, header/footer ek consistent text fallback
-dikhata hai — launch se pehle zaroor replace karein (acceptance item 01).
+> Art direction (Master Spec, Chapter 04): white/pale studio background,
+> soft shadow, sirf robot (koi building/factory scene nahi), koi asli
+> insaan nahi. Har concept image ke neeche website khud concept
+> caption/disclaimer lagati hai.
 
 ---
 
-## 2. HERO
+## ✅ DELIVERED (website par live)
 
-| # | Path | Export | Notes |
-|---|------|--------|-------|
-| 6 | `public/images/hero/hero-2400x1350.webp` | 2400×1350 WebP/AVIF | Desktop hero composite, 30% text-safe negative space |
-| 7 | `public/images/hero/hero-mobile-1080x1350.webp` | 1080×1350 WebP | Independent mobile crop — head/arms/wheels/brand KABHI cut na ho |
+| Item | Files used | Website par kahan |
+|---|---|---|
+| Logo (vector) | `public/Logo.svg` | Header + footer (auto: `images/logo/logo-dark.svg` light bg, `logo-light.svg` dark bg), favicon `src/app/icon.svg` (B-mark) |
+| FORGE W200 | 5 views | hero, family card slider (5), model gallery `for-w200` |
+| TITAN M100 | 6 views | family slider (6), gallery `tit-m100` |
+| TIDE U300 | 5 views | family slider (5), gallery `tid-u300` |
+| TERRA A200 | 5 views | family slider (5), gallery `ter-a200` |
+| LAB D200 | 5 views | family slider (5), gallery `lab-d200` |
+| CARE C100 | 5 views | family slider (5), gallery `car-c100` |
+| BUCKi H200 | 5 views | family slider (5), gallery `bki-h200` |
+| BUCKi HOME H100 | 4 views | family slider (4), gallery `hom-h100` |
+| PERSONA male (suit) | 3 + 2 closeups | EXECUTIVE E200 collection + gallery `per-e200` |
+| PERSONA female (navy suit) | 2 + 3 closeups | SIGNATURE S300 collection + gallery `per-s300` |
+| OG cover | composited | social share image |
 
----
-
-## 3. OG / SOCIAL SHARE
-
-| # | Path | Export | Notes |
-|---|------|--------|-------|
-| 8 | `public/images/og/cover-1200x630.jpg` | 1200×630 JPEG | Logo clear, koi insaan nahi |
-
----
-
-## 4. FAMILY IMAGES (9 files) — 1600×1200 (4:3), WebP
-
-| # | Path | Family |
-|---|------|--------|
-| 9 | `public/images/families/forge.webp` | FORGE (homepage par sab se pehle) |
-| 10 | `public/images/families/bucki.webp` | BUCKi |
-| 11 | `public/images/families/bucki-home.webp` | BUCKi HOME |
-| 12 | `public/images/families/bucki-persona.webp` | BUCKi PERSONA |
-| 13 | `public/images/families/care.webp` | CARE |
-| 14 | `public/images/families/titan.webp` | TITAN |
-| 15 | `public/images/families/terra.webp` | TERRA |
-| 16 | `public/images/families/tide.webp` | TIDE |
-| 17 | `public/images/families/lab.webp` | LAB |
+**Naye artwork ke saath re-import:** `node scripts/import-artwork.mjs`
+(source folders `public/images/<FAMILY>/` mein rehne dein; script
+idempotent hai).
 
 ---
 
-## 5. PERSONA COLLECTIONS (6 files) — 1600×1200 (4:3), WebP
+## ⏳ ABHI BAKI (jab deliver hon, waise hi `public/images/...` mein rakh dein)
 
-**Rules:** sirf fictional **adult** synthetic android, real insaan ka photo
-nahi, white backdrop, discreet mechanical indicators (ear panel, joint
-seam, status light), elegant wardrobe.
-
-| # | Path | Collection |
-|---|------|-----------|
-| 18 | `public/images/persona/executive.webp` | PERSONA EXECUTIVE E200 |
-| 19 | `public/images/persona/home.webp` | PERSONA HOME H200 |
-| 20 | `public/images/persona/care.webp` | PERSONA CARE C200 |
-| 21 | `public/images/persona/memoria.webp` | PERSONA MEMORIA M200 |
-| 22 | `public/images/persona/signature.webp` | PERSONA SIGNATURE S300 |
-| 23 | `public/images/persona/atelier.webp` | ATELIER (service page) |
-
----
-
-## 6. MODEL GALLERIES (27 models × 9 views = 243 files)
-
-Har model ka folder: `public/images/robots/{internal-id-lowercase}/`
-Views (naam bilkul aise hi hone chahiye):
-
-| View file | Angle |
-|-----------|-------|
-| `front.webp` | Samne se |
-| `rear.webp` | Peeche se |
-| `left-profile.webp` | Baayen profile |
-| `right-profile.webp` | Daayen profile |
-| `three-quarter-front.webp` | 3/4 samne se |
-| `three-quarter-rear.webp` | 3/4 peeche se |
-| `closeup-sensors.webp` | Sensor close-up |
-| `closeup-hands.webp` | Hands/manipulators close-up |
-| `closeup-chassis.webp` | Chassis + branding close-up |
-
-Export: minimum 1800px longest edge, WebP. **Morphology, wheel placement,
-limb geometry aur colour har view me identical** (ek hi model = ek hi
-design).
-
-### 27 folders (internal IDs)
+### 1. Baaki 19 models ke front views (Phase A)
+Sirf diye gaye renders ke models (`w200, m100, u300, a200, d200, c100,
+h200, hom-h100, e200, s300`) live hain. Har model ka front view chahiye:
 
 ```
-bki-h100  bki-h200  bki-h300
-hom-h200  hom-h300
-per-e200  per-h200  per-c200  per-m200  per-s300
-for-w100  for-w200  for-w300
-car-c100  car-c200  car-c300
-tit-t100  tit-m100  tit-x200
-ter-a100  ter-a200  ter-a300
-tid-s100  tid-m200  tid-u300
-lab-d100  lab-d200
+for-w100  for-w300          bki-h100  bki-h300
+hom-h300                    per-h200  per-c200  per-m200
+car-c200  car-c300          tit-t100  tit-x200
+ter-a100  ter-a300          tid-s100  tid-m200
+lab-d100
 ```
+Path: `public/images/robots/{id}/front.webp` (ya PNG daal dein —
+import script se convert kar denge).
 
-> NOTE: `per-*` folders BUCKi PERSONA family page ke gallery tabs ke liye
-> hain; collection pages (`/robots/bucki-persona/executive` waghera)
-> `persona/*.webp` use karti hain. Dono jagah same artwork dena behtar hai.
+### 2. PERSONA collections HOME / CARE / MEMORIA / ATELIER
+Abhi in cards par designed placeholder hai. Renders milte hi
+`persona/{home,care,memoria,atelier}.webp` + slider images.
 
-### Delivery phasing (recommendation)
+### 3. Baaki gallery views (Phase B/C) — optional, slider chalte rahenge
+Jin models ke paas abhi 4-5 views hain unhe badhaya ja sakta hai
+(left/right profile, three-quarter-rear, remaining close-ups).
 
-- **Phase A (launch minimum):** sirf `front.webp` — 27 files. Site poori
-  tarah chalegi, gallery tabs placeholder dikhayenge.
-- **Phase B:** 6 viewpoints × 27 = 162 files.
-- **Phase C:** 3 close-ups × 27 = 81 files.
-
----
-
-## 7. OPTIONAL (baad ke phases)
-
-| Path | Kab |
-|------|-----|
-| `public/images/industries/*.webp` | Jab industry pages par imagery chahiye (abhi text + concept cards) |
-| `public/images/technology/buckcore-architecture.webp` | Agar SVG diagram ki jagah rendered image chahiye (abhi live diagram hai) |
-| `public/images/og/*-collection.jpg` | Per-page OG images for PERSONA collections |
+### 4. High-resolution exports (recommended)
+Delivered renders low-resolution hain (zyadatar <600px). Large
+screens/hero ke liye 1600px+ exports mil jayen to sharp dikhenge —
+same naam se replace karna hai, baaki sab automatic.
 
 ---
 
-## Checklist (owner ke liye)
+## Naming conventions (jab naye exports aayein)
 
-- [ ] Logo SVGs (approved vector outlines — typed font nahi)
-- [ ] Favicon replace
-- [ ] Hero desktop + mobile crops
-- [ ] OG cover 1200×630
-- [ ] 9 family images
-- [ ] 6 PERSONA images (adult synthetic only — koi asli insaan nahi)
-- [ ] 27 model front views
-- [ ] 27 × 6 viewpoints
-- [ ] 27 × 3 close-ups
+- Model folders: `public/images/robots/{id-lowercase}/` — jaise
+  `for-w200`, `tit-m100`, `per-e200` (IDs model registry se match karti hain).
+- View names: `front`, `rear`, `left-profile`, `right-profile`,
+  `three-quarter-front`, `three-quarter-rear`, `closeup-sensors`,
+  `closeup-hands`, `closeup-chassis`.
+- Family sliders: `public/images/families/{slug}/slide-1.webp…`
+  (data `src/data/families.ts` → `images[]` array).
+- PERSONA rules: sirf fictional **adult** synthetic android, real insaan
+  ka photo nahi, white backdrop, discreet mechanical indicators.
 
 Har image ke saath CMS/media record me rakhein: file, type
 (render/prototype/photograph), owner, approval status, adult-only/person-free

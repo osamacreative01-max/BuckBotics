@@ -80,7 +80,7 @@ export function Header() {
 
       <div className="border-b border-line bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-[68px] max-w-[min(93vw,1800px)] items-center justify-between gap-6 px-5 sm:px-8">
-          <Wordmark variant="dark" className="h-6 sm:h-7" />
+          <Wordmark variant="dark" className="h-[18px] sm:h-7" />
 
           {/* Desktop navigation */}
           <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">

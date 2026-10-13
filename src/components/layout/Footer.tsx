@@ -19,7 +19,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Identity + contacts */}
           <div className="lg:col-span-4">
-            <Wordmark variant="light" className="h-7" />
+            <Wordmark variant="light" className="h-6 sm:h-7" />
             <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-cyan">
               {site.fullName}
             </p>

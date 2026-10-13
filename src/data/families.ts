@@ -52,6 +52,8 @@ export interface RobotFamily {
   models: RobotModel[];
   /** `/images/families/{slug}.webp` — white studio imagery. */
   image: string;
+  /** Slider images for the family card (delivered artwork, 3–6 angles). */
+  images?: Array<{ src: string; alt: string }>;
 }
 
 const CONCEPT = "concept" as StatusKey;
@@ -94,6 +96,13 @@ export const FAMILIES: RobotFamily[] = [
     tier: "now",
     status: CONCEPT,
     image: "/images/families/forge.webp",
+    images: [
+      { src: "/images/families/forge/slide-1.webp", alt: "FORGE W200 mobile manipulator — three-quarter front view, concept render" },
+      { src: "/images/families/forge/slide-2.webp", alt: "FORGE W200 — front view with arm folded overhead, concept render" },
+      { src: "/images/families/forge/slide-3.webp", alt: "FORGE W200 — right side profile with arm extended, concept render" },
+      { src: "/images/families/forge/slide-4.webp", alt: "FORGE W200 — rear view, dark chassis with light bar, concept render" },
+      { src: "/images/families/forge/slide-5.webp", alt: "FORGE W200 — close-up of gripper and wrist camera module, concept render" },
+    ],
     models: [
       { id: "FOR-W100", name: "FORGE W100", short: "W100", purpose: "Mobile work platform", status: CONCEPT },
       { id: "FOR-W200", name: "FORGE W200", short: "W200", purpose: "Coordinated manipulation", status: CONCEPT },
@@ -138,6 +147,13 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/bucki.webp",
+    images: [
+      { src: "/images/families/bucki/slide-1.webp", alt: "BUCKi H200 humanoid — three-quarter front view, concept render" },
+      { src: "/images/families/bucki/slide-2.webp", alt: "BUCKi H200 — front view standing, concept render" },
+      { src: "/images/families/bucki/slide-3.webp", alt: "BUCKi H200 — left side profile, concept render" },
+      { src: "/images/families/bucki/slide-4.webp", alt: "BUCKi H200 — rear view, concept render" },
+      { src: "/images/families/bucki/slide-5.webp", alt: "BUCKi H200 — close-up of face screen and upper torso, concept render" },
+    ],
     models: [
       { id: "BKI-H100", name: "BUCKi H100", short: "H100", purpose: "Stationary social interaction terminal", status: CONCEPT },
       { id: "BKI-H200", name: "BUCKi H200", short: "H200", purpose: "Mobile friendly interaction platform", status: CONCEPT },
@@ -181,6 +197,12 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/bucki-home.webp",
+    images: [
+      { src: "/images/families/bucki-home/slide-1.webp", alt: "BUCKi HOME H100 — three-quarter front view standing, concept render" },
+      { src: "/images/families/bucki-home/slide-2.webp", alt: "BUCKi HOME H100 — front view standing, concept render" },
+      { src: "/images/families/bucki-home/slide-3.webp", alt: "BUCKi HOME H100 — left side profile, concept render" },
+      { src: "/images/families/bucki-home/slide-4.webp", alt: "BUCKi HOME H100 — rear view, concept render" },
+    ],
     models: [
       { id: "HOM-H200", name: "BUCKi HOME H200", short: "H200", purpose: "Basic indoor assistance concept", status: CONCEPT },
       { id: "HOM-H300", name: "BUCKi HOME H300", short: "H300", purpose: "Extended household manipulation research", status: CONCEPT },
@@ -225,6 +247,16 @@ export const FAMILIES: RobotFamily[] = [
     tier: "now",
     status: CONCEPT,
     image: "/images/families/bucki-persona.webp",
+    images: [
+      { src: "/images/families/bucki-persona/slide-1.webp", alt: "BUCKi PERSONA male persona in navy suit — three-quarter front view, concept render" },
+      { src: "/images/families/bucki-persona/slide-2.webp", alt: "BUCKi PERSONA male persona — front view standing, concept render" },
+      { src: "/images/families/bucki-persona/slide-3.webp", alt: "BUCKi PERSONA male persona — side profile with ear module visible, concept render" },
+      { src: "/images/families/bucki-persona/slide-4.webp", alt: "BUCKi PERSONA female persona in navy suit — three-quarter front view, concept render" },
+      { src: "/images/families/bucki-persona/slide-5.webp", alt: "BUCKi PERSONA female persona in white jacket — front view standing, concept render" },
+      { src: "/images/families/bucki-persona/slide-6.webp", alt: "BUCKi PERSONA — close-up of chrome robotic hand in suit sleeve, concept render" },
+      { src: "/images/families/bucki-persona/slide-7.webp", alt: "BUCKi PERSONA — close-up of jaw line and illuminated neck mechanics, concept render" },
+      { src: "/images/families/bucki-persona/slide-8.webp", alt: "BUCKi PERSONA — close-up of head with ear module and chrome neck, concept render" },
+    ],
     models: [
       { id: "PER-E200", name: "BUCKi PERSONA E200", short: "E200", purpose: "EXECUTIVE — luxury reception", status: CONCEPT, collectionSlug: "executive" },
       { id: "PER-H200", name: "BUCKi PERSONA H200", short: "H200", purpose: "HOME — private living", status: CONCEPT, collectionSlug: "home" },
@@ -271,6 +303,13 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/care.webp",
+    images: [
+      { src: "/images/families/care/slide-1.webp", alt: "CARE C100 delivery robot — three-quarter front view, concept render" },
+      { src: "/images/families/care/slide-2.webp", alt: "CARE C100 — front view with face screen, concept render" },
+      { src: "/images/families/care/slide-3.webp", alt: "CARE C100 — left side profile with drawer side visible, concept render" },
+      { src: "/images/families/care/slide-4.webp", alt: "CARE C100 — rear view, concept render" },
+      { src: "/images/families/care/slide-5.webp", alt: "CARE C100 — close-up of open delivery drawer with food container, concept render" },
+    ],
     models: [
       { id: "CAR-C100", name: "CARE C100", short: "C100", purpose: "Secure internal logistics", status: CONCEPT },
       { id: "CAR-C200", name: "CARE C200", short: "C200", purpose: "Nonclinical assistance", status: CONCEPT },
@@ -314,6 +353,14 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/titan.webp",
+    images: [
+      { src: "/images/families/titan/slide-1.webp", alt: "TITAN M100 quadruped — three-quarter front view, concept render" },
+      { src: "/images/families/titan/slide-2.webp", alt: "TITAN M100 — front view with sensor array, concept render" },
+      { src: "/images/families/titan/slide-3.webp", alt: "TITAN M100 — left side profile, concept render" },
+      { src: "/images/families/titan/slide-4.webp", alt: "TITAN M100 — rear view with tail light bar, concept render" },
+      { src: "/images/families/titan/slide-5.webp", alt: "TITAN M100 — three-quarter view from the opposite side, concept render" },
+      { src: "/images/families/titan/slide-6.webp", alt: "TITAN M100 — close-up of front camera and LiDAR cluster, concept render" },
+    ],
     models: [
       { id: "TIT-T100", name: "TITAN T100", short: "T100", purpose: "Facility inspection", status: CONCEPT },
       { id: "TIT-M100", name: "TITAN M100", short: "M100", purpose: "Rugged mine inspection", status: CONCEPT },
@@ -356,6 +403,13 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/terra.webp",
+    images: [
+      { src: "/images/families/terra/slide-1.webp", alt: "TERRA A200 outdoor rover — three-quarter front view with sensor mast, concept render" },
+      { src: "/images/families/terra/slide-2.webp", alt: "TERRA A200 — front view with mast raised, concept render" },
+      { src: "/images/families/terra/slide-3.webp", alt: "TERRA A200 — left side profile, concept render" },
+      { src: "/images/families/terra/slide-4.webp", alt: "TERRA A200 — rear view, concept render" },
+      { src: "/images/families/terra/slide-5.webp", alt: "TERRA A200 — close-up of mast head with stereo camera and LiDAR, concept render" },
+    ],
     models: [
       { id: "TER-A100", name: "TERRA A100", short: "A100", purpose: "Crop inspection", status: CONCEPT },
       { id: "TER-A200", name: "TERRA A200", short: "A200", purpose: "Produce handling and grading", status: CONCEPT },
@@ -398,6 +452,13 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/tide.webp",
+    images: [
+      { src: "/images/families/tide/slide-1.webp", alt: "TIDE U300 amphibious ROV — three-quarter front view, concept render" },
+      { src: "/images/families/tide/slide-2.webp", alt: "TIDE U300 — front view with thrusters and claw, concept render" },
+      { src: "/images/families/tide/slide-3.webp", alt: "TIDE U300 — left side profile, concept render" },
+      { src: "/images/families/tide/slide-4.webp", alt: "TIDE U300 — rear view with thruster ports, concept render" },
+      { src: "/images/families/tide/slide-5.webp", alt: "TIDE U300 — close-up of gripper claw and main lens, concept render" },
+    ],
     models: [
       { id: "TID-S100", name: "TIDE S100", short: "S100", purpose: "Seafood processing", status: CONCEPT },
       { id: "TID-M200", name: "TIDE M200", short: "M200", purpose: "Marine deck support", status: CONCEPT },
@@ -439,6 +500,13 @@ export const FAMILIES: RobotFamily[] = [
     tier: "vision",
     status: CONCEPT,
     image: "/images/families/lab.webp",
+    images: [
+      { src: "/images/families/lab/slide-1.webp", alt: "LAB D200 development rover — three-quarter front view, concept render" },
+      { src: "/images/families/lab/slide-2.webp", alt: "LAB D200 — front view with sensor bar and LiDAR, concept render" },
+      { src: "/images/families/lab/slide-3.webp", alt: "LAB D200 — left side profile, concept render" },
+      { src: "/images/families/lab/slide-4.webp", alt: "LAB D200 — rear view with I/O port panel, concept render" },
+      { src: "/images/families/lab/slide-5.webp", alt: "LAB D200 — close-up of front camera bar, concept render" },
+    ],
     models: [
       { id: "LAB-D100", name: "LAB D100", short: "D100", purpose: "Teaching/developer platform", status: CONCEPT },
       { id: "LAB-D200", name: "LAB D200", short: "D200", purpose: "Advanced developer platform", status: CONCEPT },

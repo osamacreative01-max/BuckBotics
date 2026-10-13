@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SmartImage } from "./SmartImage";
+import { ImageSlider, type SliderImage } from "./ImageSlider";
 import { StatusPill, ButtonLink } from "./Primitives";
 import type { RobotFamily, RobotModel } from "@/data/families";
 import { conceptCaption } from "@/data/site";
@@ -13,26 +14,30 @@ import type { PersonaCollection } from "@/data/persona";
    one Explore link. Keyboard accessible; 2 cols tablet / 1 col mobile.
 --------------------------------------------------------------- */
 export function FamilyCard({ family, priority = false }: { family: RobotFamily; priority?: boolean }) {
+  const gallery: SliderImage[] =
+    family.images && family.images.length > 0
+      ? family.images
+      : [
+          {
+            src: family.image,
+            alt: `${family.name} robot concept on a white studio background`,
+          },
+        ];
+
   return (
     <article className="card group flex flex-col overflow-hidden">
-      <Link
-        href={`/robots/${family.slug}`}
-        className="relative block rounded-none focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-blue"
-        tabIndex={-1}
-        aria-hidden="true"
-      >
-        <SmartImage
-          src={family.image}
-          alt={`${family.name} robot concept on a white studio background`}
-          className="aspect-[4/3] border-b border-line"
+      <div className="relative border-b border-line">
+        <ImageSlider
+          images={gallery}
+          label={family.name}
+          className="aspect-[4/3]"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={priority}
-          caption={conceptCaption}
         />
-        <span className="absolute left-3 top-3">
+        <span className="absolute left-3 top-3 z-10">
           <StatusPill status={family.status} size="sm" />
         </span>
-      </Link>
+      </div>
 
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div>
@@ -200,14 +205,19 @@ export function IndustryTile({ industry }: { industry: Industry }) {
    PERSONA collection card.
 --------------------------------------------------------------- */
 export function PersonaCard({ collection }: { collection: PersonaCollection }) {
+  const altBase = `BUCKi PERSONA ${collection.name} ${collection.model} — adult synthetic android concept visualization`;
+  const gallery: SliderImage[] =
+    collection.images && collection.images.length > 0
+      ? collection.images
+      : [{ src: collection.image, alt: altBase }];
+
   return (
     <article className="card flex h-full flex-col overflow-hidden">
-      <SmartImage
-        src={collection.image}
-        alt={`BUCKi PERSONA ${collection.name} ${collection.model} — adult synthetic android concept visualization`}
+      <ImageSlider
+        images={gallery}
+        label={`PERSONA ${collection.name}`}
         className="aspect-[4/3] border-b border-line"
         sizes="(max-width: 768px) 100vw, 33vw"
-        caption="Fictional adult android concept — not a real person."
       />
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div className="flex items-start justify-between gap-3">
