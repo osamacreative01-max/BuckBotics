@@ -159,15 +159,10 @@ export default function PilotProgrammePage() {
             first — pilot only when the evidence path is clear.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <ButtonLink href="/contact?type=pilot" size="lg">
+            <ButtonLink href="/contact?type=pilot" size="lg" surface="dark">
               Apply for a pilot discussion
             </ButtonLink>
-            <ButtonLink
-              href="/resources/faq"
-              tone="ghost"
-              className="text-white hover:text-cyan"
-              size="lg"
-            >
+            <ButtonLink href="/resources/faq" tone="ghost" surface="dark" size="lg">
               Read the FAQ first
             </ButtonLink>
           </div>

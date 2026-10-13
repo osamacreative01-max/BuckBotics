@@ -148,6 +148,15 @@
     background-color: var(--color-arctic);
   }
 
+  /* Full brand gradient surface — #46BFEE → #3887C8 with a white sheen in the
+     top-right corner. Ink/midnight text keeps ≥4.9:1 (WCAG AA) on every stop. */
+  .surface-brand-gradient {
+    background-color: #3887c8;
+    background-image:
+      radial-gradient(70% 60% at 90% 6%, rgba(255, 255, 255, 0.5), transparent 58%),
+      linear-gradient(135deg, #46bfee 0%, #3887c8 55%);
+  }
+
   .surface-midnight {
     background-color: var(--color-midnight);
     color: #c9d6e4;

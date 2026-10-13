@@ -44,10 +44,10 @@ export default function ResponsibleRoboticsPage() {
         intro="Identity, consent, clinical boundaries, child protection and independent physical safety controls — the standing rules that shape every concept we publish."
         tone="dark"
       >
-        <ButtonLink href="/contact?type=support" tone="light">
+        <ButtonLink href="/contact?type=support" surface="dark">
           Raise a concern
         </ButtonLink>
-        <ButtonLink href="/legal/privacy" tone="light">
+        <ButtonLink href="/legal/privacy" tone="secondary" surface="dark">
           Privacy Policy
         </ButtonLink>
       </PageHeader>

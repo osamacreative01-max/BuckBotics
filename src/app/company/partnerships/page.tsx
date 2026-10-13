@@ -133,8 +133,10 @@ export default function PartnershipsPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
-                <ButtonLink href="/contact?type=partnership">Partnership enquiry</ButtonLink>
-                <ButtonLink href="/robots" tone="light">
+                <ButtonLink href="/contact?type=partnership" surface="dark">
+                  Partnership enquiry
+                </ButtonLink>
+                <ButtonLink href="/robots" tone="secondary" surface="dark">
                   Browse the families
                 </ButtonLink>
               </div>

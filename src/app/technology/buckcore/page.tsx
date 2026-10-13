@@ -20,8 +20,10 @@ export default function BuckcorePage() {
         intro={BUCKCORE.body}
         tone="dark"
       >
-        <ButtonLink href="/contact?type=project">Discuss an integration</ButtonLink>
-        <ButtonLink href="/responsible-robotics" tone="light">
+        <ButtonLink href="/contact?type=project" surface="dark">
+          Discuss an integration
+        </ButtonLink>
+        <ButtonLink href="/responsible-robotics" tone="secondary" surface="dark">
           Responsible integration
         </ButtonLink>
       </PageHeader>
@@ -219,8 +221,10 @@ export default function BuckcorePage() {
               and which safety layer must remain independent.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <ButtonLink href="/contact?type=project">Discuss a Robotics Project</ButtonLink>
-              <ButtonLink href="/solutions" tone="light">
+              <ButtonLink href="/contact?type=project" surface="dark">
+                Discuss a Robotics Project
+              </ButtonLink>
+              <ButtonLink href="/solutions" tone="secondary" surface="dark">
                 See solutions
               </ButtonLink>
             </div>

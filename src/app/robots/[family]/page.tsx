@@ -334,14 +334,10 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                   whether a feasibility study makes sense — no stock claims, no delivery dates.
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
-                  <ButtonLink href="/contact?type=project">
+                  <ButtonLink href="/contact?type=project" surface="dark">
                     Request a Consultation
                   </ButtonLink>
-                  <ButtonLink
-                    href="/solutions"
-                    tone="ghost"
-                    className="text-white hover:text-cyan"
-                  >
+                  <ButtonLink href="/solutions" tone="ghost" surface="dark">
                     How engagements work
                   </ButtonLink>
                 </div>

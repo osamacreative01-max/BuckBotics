@@ -74,16 +74,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 01b — STATS BAND (animated counters, React Bits CountUp) -------- */}
-      <section
-        aria-label="BUCKBOTICS at a glance"
-        className="border-b border-line bg-white"
-      >
-        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 py-12 sm:px-8 lg:py-16">
-          <StatsStrip />
-        </div>
-      </section>
-
       {/* 02 — COMPANY MISSION -------------------------------------- */}
       <section className="section surface-arctic border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
@@ -91,6 +81,7 @@ export default function HomePage() {
             eyebrow="The company"
             title="Engineering first. Claims second."
             intro="BUCKBOTICS is a Buckingham venture examining how robotics and physical AI can relieve repetitive physical work in Canadian industries — and being explicit about everything that is still unproven."
+            gradientAccent
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
@@ -138,6 +129,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 03b — SCALE BAND (animated counters, React Bits CountUp) -------- */}
+      <section
+        aria-label="BUCKBOTICS at a glance"
+        className="border-b border-line bg-white"
+      >
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 py-8 sm:px-8 lg:py-10">
+          <StatsStrip />
+        </div>
+      </section>
+
       {/* 04 — APPLICATIONS BY INDUSTRY ----------------------------- */}
       <section className="section surface-arctic border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
@@ -174,43 +175,40 @@ export default function HomePage() {
       </section>
 
       {/* 05 — BUCKCORE --------------------------------------------- */}
-      <section className="section surface-midnight relative overflow-hidden">
+      <section className="section surface-brand-gradient relative overflow-hidden">
         {/* Particle constellation backdrop (React Bits Particles). */}
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <Particles
             particleCount={70}
-            particleColors={["#158de6", "#39c2f7", "#8fd4ff"]}
+            particleColors={["#091321", "#0a5590", "#0e6eb8"]}
             particleBaseSize={110}
             speed={0.12}
             glow={0.6}
             twinkle={0.35}
             connections
             connectionDistance={140}
-            className="opacity-70"
+            lightMode
+            className="opacity-60"
           />
         </div>
 
         <div className="relative z-10 mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <p className="eyebrow text-cyan!">Technology</p>
-              <h2 className="display-lg mt-3 text-white">
+              <p className="eyebrow text-midnight!">Technology</p>
+              <h2 className="display-lg mt-3 text-midnight">
                 One intelligence architecture. Multiple robotic systems.
               </h2>
-              <p className="mt-5 leading-relaxed text-[#b7c6d8]">
+              <p className="mt-5 leading-relaxed text-ink">
                 BUCKCORE is the proposed shared framework connecting sensing, planning, skills,
                 supervised operation and fleet visibility across BUCKBOTICS solutions. It is
                 concept-stage software — not a released platform.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <ButtonLink href="/technology/buckcore" tone="light">
+                <ButtonLink href="/technology/buckcore" surface="brand">
                   Explore BUCKCORE
                 </ButtonLink>
-                <ButtonLink
-                  href="/responsible-robotics"
-                  className="border border-white/25 text-white hover:border-white"
-                  tone="ghost"
-                >
+                <ButtonLink href="/responsible-robotics" tone="ghost" surface="brand">
                   Responsible integration
                 </ButtonLink>
               </div>
@@ -222,25 +220,24 @@ export default function HomePage() {
                   <li key={m.name}>
                     <SpotlightCard
                       className="h-full"
-                      spotlightColor="#158de6"
+                      theme="light"
+                      spotlightColor="#3887C8"
                       intensity={0.35}
                       spotlightSize={220}
                       style={{
                         borderRadius: "0.75rem",
                         padding: "1rem",
-                        backgroundColor: "transparent",
-                        boxShadow: "none",
                       }}
                     >
                       <div className="flex items-center justify-between gap-3">
-                        <span className="font-mono text-[0.72rem] tracking-[0.1em] text-cyan">
+                        <span className="font-mono text-[0.72rem] tracking-[0.1em] text-blue-deep">
                           {m.name}
                         </span>
-                        <span className="rounded-full border border-white/20 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-[#9fb2c7]">
+                        <span className="rounded-full border border-line px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-muted">
                           {m.status}
                         </span>
                       </div>
-                      <p className="mt-2 text-sm text-[#b7c6d8]">{m.purpose}</p>
+                      <p className="mt-2 text-sm text-muted">{m.purpose}</p>
                     </SpotlightCard>
                   </li>
                 ))}
@@ -322,13 +319,13 @@ export default function HomePage() {
                 assess, pilot and measure.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <ButtonLink href="/contact?type=project" size="lg">
+                <ButtonLink href="/contact?type=project" size="lg" surface="dark">
                   Discuss a Robotics Project
                 </ButtonLink>
                 <ButtonLink
                   href="/solutions/pilot-programme"
                   tone="ghost"
-                  className="text-white hover:text-cyan"
+                  surface="dark"
                   size="lg"
                 >
                   Pilot programme details

@@ -260,7 +260,7 @@ export default function SolutionsPage() {
           </div>
 
           <div className="mt-8">
-            <ButtonLink href="/contact?type=project" size="lg">
+            <ButtonLink href="/contact?type=project" size="lg" surface="dark">
               Discuss a Robotics Project
             </ButtonLink>
           </div>
