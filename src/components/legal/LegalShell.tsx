@@ -35,7 +35,7 @@ export function LegalShell({
       </PageHeader>
 
       <section className="section border-b border-line">
-        <div className="mx-auto grid max-w-[1360px] gap-10 px-5 sm:px-8 lg:grid-cols-12">
+        <div className="mx-auto grid max-w-[min(93vw,1800px)] gap-10 px-5 sm:px-8 lg:grid-cols-12">
           <aside className="lg:col-span-4">
             <div className="sticky top-32">
               <Notice title="Publication status" tone="warning">

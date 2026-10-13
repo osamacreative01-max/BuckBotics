@@ -59,7 +59,7 @@ export default function SolutionsPage() {
 
       {/* FEASIBILITY */}
       <section className="section border-b border-line" id="feasibility">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow">01 · Robotics feasibility</p>
@@ -108,7 +108,7 @@ export default function SolutionsPage() {
 
       {/* PILOT */}
       <section className="section surface-arctic border-b border-line" id="pilot">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid items-center gap-8 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <p className="eyebrow">02 · Controlled pilot programme</p>
@@ -174,7 +174,7 @@ export default function SolutionsPage() {
 
       {/* MANAGED SERVICES */}
       <section className="section border-b border-line" id="managed-services">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">03 · Proposed managed services</p>
           <h2 className="display-md mt-3">Services under consideration — not yet contracted</h2>
           <p className="lede mt-4 max-w-3xl">
@@ -212,7 +212,7 @@ export default function SolutionsPage() {
 
       {/* ROUTE MAP */}
       <section className="section surface-midnight">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Which route fits?"
             title="Enquiry routes and where they lead"

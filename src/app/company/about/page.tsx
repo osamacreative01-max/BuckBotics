@@ -29,7 +29,7 @@ export default function AboutPage() {
 
       {/* PROFILE */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <SectionHeading
@@ -115,7 +115,7 @@ export default function AboutPage() {
 
       {/* BUCKINGHAM VENTURE RELATIONSHIP */}
       <section className="section surface-arctic border-b border-line" id="buckingham">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Ownership"
             title="Buckingham venture relationship"

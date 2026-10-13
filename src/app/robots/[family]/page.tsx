@@ -44,7 +44,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
     <>
       {/* HERO — exact family name, concept badge, white-background render */}
       <header className="border-b border-line bg-arctic/50">
-        <div className="mx-auto max-w-[1360px] px-5 pt-10 pb-14 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 pt-10 pb-14 sm:px-8">
           <Breadcrumbs
             items={[{ label: "Robots", href: "/robots" }, { label: family.name }]}
           />
@@ -91,7 +91,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
       {/* PERSONA special block: five collections + ATELIER service */}
       {isPersona ? (
         <section className="section border-b border-line" id="collections">
-          <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+          <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
             <p className="eyebrow">Five collections · one service</p>
             <h2 className="display-lg mt-3">The PERSONA collections</h2>
             <p className="lede mt-4 max-w-3xl">{PERSONA.heroSub}</p>
@@ -159,7 +159,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
       {/* MODEL CARDS — all variants with unique product identifiers */}
       <section className="section border-b border-line" id="models">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Model registry</p>
           <h2 className="display-lg mt-3">Models in this family</h2>
           <p className="lede mt-4 max-w-3xl">
@@ -176,7 +176,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
       {/* TARGET WORKFLOWS + INDUSTRY CROSS-LINKS */}
       <section className="section surface-arctic border-b border-line" id="workflows">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <p className="eyebrow">Target workflows</p>
@@ -238,7 +238,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
       {/* TECHNICAL SPECIFICATIONS — "Not specified" until measured */}
       <section className="section border-b border-line" id="specifications">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Technical specifications</p>
           <h2 className="display-md mt-3">Specification register</h2>
           <p className="lede mt-4 max-w-3xl">
@@ -276,7 +276,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
       {/* IMAGE GALLERY TEMPLATE — 6 viewpoints + 3 close-ups per model */}
       <section className="section surface-arctic border-b border-line" id="gallery">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Image gallery</p>
           <h2 className="display-md mt-3">Six viewpoints + three engineering close-ups</h2>
           <p className="lede mt-4 max-w-3xl">
@@ -301,7 +301,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
       {/* SAFETY & INTENDED-USE BOUNDARIES + ASSESSMENT CTA */}
       <section className="section border-b border-line" id="safety">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <p className="eyebrow">Safety &amp; intended use</p>

@@ -31,7 +31,7 @@ export default function IndustriesPage() {
 
       {/* Five launch pages */}
       <section className="border-b border-line bg-arctic/60 py-8">
-        <div className="mx-auto flex max-w-[1360px] flex-wrap items-center gap-3 px-5 sm:px-8">
+        <div className="mx-auto flex max-w-[min(93vw,1800px)] flex-wrap items-center gap-3 px-5 sm:px-8">
           <span className="spec-label">Full launch pages</span>
           {INDUSTRY_DETAILS.map((d) => (
             <a
@@ -47,7 +47,7 @@ export default function IndustriesPage() {
 
       {/* 30 tiles grouped by six sectors */}
       <section className="section">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="space-y-14">
             {groups.map(({ sector, items }) => (
               <div key={sector.slug} id={sector.slug} className="scroll-mt-32">

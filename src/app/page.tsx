@@ -17,7 +17,7 @@ export default function HomePage() {
     <>
       {/* 01 — HERO ------------------------------------------------- */}
       <section className="relative overflow-hidden border-b border-line bg-white">
-        <div className="mx-auto grid max-w-[1360px] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
+        <div className="mx-auto grid max-w-[min(93vw,1800px)] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
           <div className="lg:col-span-5">
             <Wordmark variant="dark" className="h-9" />
             <p className="eyebrow mt-7">{homeHero.eyebrow}</p>
@@ -66,7 +66,7 @@ export default function HomePage() {
 
       {/* 02 — COMPANY MISSION -------------------------------------- */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="The company"
             title="Engineering first. Claims second."
@@ -98,7 +98,7 @@ export default function HomePage() {
 
       {/* 03 — ROBOT FAMILY GRID ------------------------------------ */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="Nine families · 27 concept models"
@@ -120,7 +120,7 @@ export default function HomePage() {
 
       {/* 04 — APPLICATIONS BY INDUSTRY ----------------------------- */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="30 target industries"
@@ -170,7 +170,7 @@ export default function HomePage() {
 
       {/* 05 — BUCKi PERSONA FEATURE -------------------------------- */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid items-start gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow text-copper-ink!">BUCKi PERSONA</p>
@@ -200,7 +200,7 @@ export default function HomePage() {
 
       {/* 06 — BUCKCORE --------------------------------------------- */}
       <section className="section surface-midnight">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow text-cyan!">Technology</p>
@@ -247,7 +247,7 @@ export default function HomePage() {
 
       {/* 07 — HOW ENGAGEMENTS WORK --------------------------------- */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Solutions"
             title="How engagements work"
@@ -274,7 +274,7 @@ export default function HomePage() {
 
       {/* 08 — RESPONSIBLE ROBOTICS --------------------------------- */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Responsible robotics"
             title="Safety, identity and consent are design inputs"
@@ -304,7 +304,7 @@ export default function HomePage() {
 
       {/* 09 — PILOT ENQUIRY ---------------------------------------- */}
       <section className="section bg-midnight">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <p className="eyebrow text-cyan!">Pilot enquiry</p>
@@ -357,7 +357,7 @@ export default function HomePage() {
 
       {/* Concept notice above footer (Chapter 19 mandatory disclaimer) */}
       <section className="border-t border-line bg-arctic py-8">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <Notice title="Mandatory concept disclaimer" tone="concept">
             {conceptDisclaimer}
           </Notice>

@@ -62,7 +62,7 @@ export async function ContactView({
       />
 
       <section className="section border-b border-line">
-        <div className="mx-auto grid max-w-[1360px] gap-10 px-5 sm:px-8 lg:grid-cols-12">
+        <div className="mx-auto grid max-w-[min(93vw,1800px)] gap-10 px-5 sm:px-8 lg:grid-cols-12">
           {/* ROUTE CARDS + FORM */}
           <div className="lg:col-span-7 xl:col-span-8">
             <div className="grid gap-4 sm:grid-cols-3">

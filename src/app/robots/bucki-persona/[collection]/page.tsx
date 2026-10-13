@@ -55,7 +55,7 @@ export default async function PersonaCollectionPage({
     return (
       <>
         <header className="section border-b border-line bg-arctic/50">
-          <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+          <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
             <Breadcrumbs
               items={[
                 { label: "Robots", href: "/robots" },
@@ -81,7 +81,7 @@ export default async function PersonaCollectionPage({
         </header>
 
         <section className="section border-b border-line">
-          <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+          <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="lg:col-span-7">
                 <p className="eyebrow">Process</p>
@@ -130,7 +130,7 @@ export default async function PersonaCollectionPage({
   return (
     <>
       <header className="section border-b border-line bg-arctic/50">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <Breadcrumbs
             items={[
               { label: "Robots", href: "/robots" },
@@ -183,7 +183,7 @@ export default async function PersonaCollectionPage({
 
       {/* Planned applications vs boundary */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <p className="eyebrow">Planned applications</p>
@@ -223,7 +223,7 @@ export default async function PersonaCollectionPage({
 
       {/* Collection navigation */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Explore the collections</p>
           <h2 className="display-md mt-3">Five collections, one service</h2>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -265,7 +265,7 @@ export default async function PersonaCollectionPage({
 function PersonaSharedSections() {
   return (
     <section className="section border-b border-line" id="faqs">
-      <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="eyebrow">PERSONA FAQs</p>

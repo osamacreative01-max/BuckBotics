@@ -15,7 +15,7 @@ export function Footer() {
 
   return (
     <footer className="surface-midnight">
-      <div className="mx-auto max-w-[1360px] px-5 py-14 sm:px-8">
+      <div className="mx-auto max-w-[min(93vw,1800px)] px-5 py-14 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Identity + contacts */}
           <div className="lg:col-span-4">

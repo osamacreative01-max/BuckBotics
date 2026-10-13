@@ -28,7 +28,7 @@ export default function BuckcorePage() {
 
       {/* ARCHITECTURE DIAGRAM */}
       <section className="section border-b border-line" id="architecture">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Architecture</p>
           <h2 className="display-md mt-3">How the stack is proposed to flow</h2>
 
@@ -101,7 +101,7 @@ export default function BuckcorePage() {
 
       {/* MODULES */}
       <section className="section surface-arctic border-b border-line" id="modules">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Software modules</p>
           <h2 className="display-md mt-3">Ten modules, one claim status: Concept</h2>
           <p className="lede mt-4 max-w-3xl">{BUCKCORE.statusNote}</p>
@@ -144,7 +144,7 @@ export default function BuckcorePage() {
 
       {/* PLANNED CAPABILITIES + RESPONSIBLE INTEGRATION */}
       <section className="section border-b border-line" id="capabilities">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <p className="eyebrow">Planned capabilities</p>

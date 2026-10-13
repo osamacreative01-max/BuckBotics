@@ -54,7 +54,7 @@ export default function ResponsibleRoboticsPage() {
 
       {/* FIVE PILLARS */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Standing commitments"
             title="Five pillars"
@@ -73,7 +73,7 @@ export default function ResponsibleRoboticsPage() {
 
       {/* MANDATORY STANDARDS */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Mandatory standards"
             title="Sensitive uses, handled explicitly"
@@ -104,7 +104,7 @@ export default function ResponsibleRoboticsPage() {
 
       {/* CONSENT + MACHINE SAFETY */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <p className="eyebrow">Biometrics &amp; speech</p>

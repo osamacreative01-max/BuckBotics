@@ -71,7 +71,7 @@ export default function ProductStatusPage() {
 
       {/* STATUS SCHEMA */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-4 md:grid-cols-5">
             {STATUS_LIST.map((s) => (
               <article key={s.key} className="card p-5">
@@ -95,7 +95,7 @@ export default function ProductStatusPage() {
 
       {/* WHY SPECIFICATIONS SAY "NOT SPECIFIED" */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow">Evidence framework</p>
@@ -140,7 +140,7 @@ export default function ProductStatusPage() {
 
       {/* WHERE THE LABEL APPEARS */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Registry snapshot</p>
           <h2 className="display-md mt-3">Status across the launch portfolio</h2>
 

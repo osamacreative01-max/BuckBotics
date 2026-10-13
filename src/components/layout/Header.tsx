@@ -57,7 +57,7 @@ export function Header() {
     >
       {/* Concept notice strip */}
       <div className="bg-midnight text-[0.78rem] text-[#9fb2c7]">
-        <div className="mx-auto flex max-w-[1360px] items-center justify-between gap-4 px-5 py-2 sm:px-8">
+        <div className="mx-auto flex max-w-[min(93vw,1800px)] items-center justify-between gap-4 px-5 py-2 sm:px-8">
           <p className="truncate">
             <span className="font-mono uppercase tracking-[0.14em] text-cyan">Concept-stage portfolio</span>
             <span className="hidden sm:inline">
@@ -79,7 +79,7 @@ export function Header() {
       </div>
 
       <div className="border-b border-line bg-white/95 backdrop-blur">
-        <div className="mx-auto flex h-[68px] max-w-[1360px] items-center justify-between gap-6 px-5 sm:px-8">
+        <div className="mx-auto flex h-[68px] max-w-[min(93vw,1800px)] items-center justify-between gap-6 px-5 sm:px-8">
           <Wordmark variant="dark" className="h-6 sm:h-7" />
 
           {/* Desktop navigation */}
@@ -142,7 +142,7 @@ export function Header() {
         hidden={!mobileOpen}
         className="max-h-[calc(100dvh-100px)] overflow-y-auto border-b border-line bg-white lg:hidden"
       >
-        <nav aria-label="Mobile" className="mx-auto max-w-[1360px] px-5 py-4 sm:px-8">
+        <nav aria-label="Mobile" className="mx-auto max-w-[min(93vw,1800px)] px-5 py-4 sm:px-8">
           {NAV_GROUPS.map((group) => (
             <details key={group.label} className="border-b border-line">
               <summary className="flex items-center justify-between py-4">
@@ -247,7 +247,7 @@ function MegaPanel({ group }: { group: NavGroup }) {
   if (group.columns) {
     return (
       <div className="absolute inset-x-0 top-full hidden border-b border-line bg-white shadow-[0_24px_40px_-24px_rgba(9,19,33,0.4)] lg:block">
-        <div className="mx-auto grid max-w-[1360px] gap-8 px-8 py-8">
+        <div className="mx-auto grid max-w-[min(93vw,1800px)] gap-8 px-8 py-8">
           {group.columns.map((col) => (
             <div key={col.heading}>
               <p className="spec-label">{col.heading}</p>
@@ -272,7 +272,7 @@ function MegaPanel({ group }: { group: NavGroup }) {
 
   return (
     <div className="absolute inset-x-0 top-full hidden border-b border-line bg-white shadow-[0_24px_40px_-24px_rgba(9,19,33,0.4)] lg:block">
-      <div className="mx-auto max-w-[1360px] px-8 py-5">
+      <div className="mx-auto max-w-[min(93vw,1800px)] px-8 py-5">
         <ul className="flex flex-wrap gap-2">
           {group.links?.map((l) => (
             <li key={l.href + l.label}>

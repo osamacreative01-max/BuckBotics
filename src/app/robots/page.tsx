@@ -28,7 +28,7 @@ export default function RobotsIndexPage() {
       </PageHeader>
 
       <section className="section">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2">
             <p className="spec-label">
               {FAMILY_COUNT} families · {MODEL_COUNT} models · all concept status

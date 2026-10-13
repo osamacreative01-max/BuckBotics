@@ -105,7 +105,7 @@ export function PageHeader({
         dark ? "surface-midnight border-white/10" : "border-line bg-arctic/60"
       }`}
     >
-      <div className="mx-auto w-full max-w-[1360px] px-5 sm:px-8">
+      <div className="mx-auto w-full max-w-[min(93vw,1800px)] px-5 sm:px-8">
         {breadcrumbs ? <Breadcrumbs items={breadcrumbs} tone={tone} /> : null}
         {eyebrow ? (
           <p className={`eyebrow ${dark ? "text-cyan!" : ""}`}>{eyebrow}</p>

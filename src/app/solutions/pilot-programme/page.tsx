@@ -29,7 +29,7 @@ export default function PilotProgrammePage() {
 
       {/* QUALIFICATION */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow">Qualification</p>
@@ -60,7 +60,7 @@ export default function PilotProgrammePage() {
 
       {/* PROCESS */}
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Programme stages</p>
           <h2 className="display-md mt-3">Six stages, one decision point</h2>
           <div className="mt-8">
@@ -93,7 +93,7 @@ export default function PilotProgrammePage() {
 
       {/* COMMERCIAL TRUTH */}
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <p className="eyebrow">Commercial truth</p>
@@ -149,7 +149,7 @@ export default function PilotProgrammePage() {
 
       {/* CTA */}
       <section className="section bg-midnight">
-        <div className="mx-auto max-w-[1360px] px-5 text-center sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 text-center sm:px-8">
           <p className="eyebrow text-cyan!">Apply</p>
           <h2 className="display-lg mt-3 text-white">
             Tell us the task. We will tell you if a pilot makes sense.

@@ -38,7 +38,7 @@ export default function FaqPage() {
       </PageHeader>
 
       <section className="section border-b border-line">
-        <div className="mx-auto grid max-w-[1360px] gap-10 px-5 sm:px-8 lg:grid-cols-12">
+        <div className="mx-auto grid max-w-[min(93vw,1800px)] gap-10 px-5 sm:px-8 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <div className="space-y-10">
               {groups.map((group) => (

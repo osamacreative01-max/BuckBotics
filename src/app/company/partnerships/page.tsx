@@ -51,7 +51,7 @@ export default function PartnershipsPage() {
       </PageHeader>
 
       <section className="section border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Tracks"
             title="Four conversation tracks"
@@ -73,7 +73,7 @@ export default function PartnershipsPage() {
       </section>
 
       <section className="section surface-arctic border-b border-line">
-        <div className="mx-auto max-w-[1360px] px-5 sm:px-8">
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <SectionHeading eyebrow="What to include" title="A useful first message" />
