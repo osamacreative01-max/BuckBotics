@@ -71,10 +71,16 @@ export default function HomePage() {
               />
             </figure>
           </div>
+        </div>
+      </section>
 
-          <div className="border-t border-line pt-8 lg:col-span-12">
-            <StatsStrip />
-          </div>
+      {/* 01b — STATS BAND (animated counters, React Bits CountUp) -------- */}
+      <section
+        aria-label="BUCKBOTICS at a glance"
+        className="border-b border-line bg-white"
+      >
+        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 py-12 sm:px-8 lg:py-16">
+          <StatsStrip />
         </div>
       </section>
 
