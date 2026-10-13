@@ -4,6 +4,12 @@ import { Wordmark } from "@/components/ui/Wordmark";
 import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
 import { FamilyCard } from "@/components/ui/Cards";
 import { ProcessSteps, Notice } from "@/components/ui/Content";
+import { StatsStrip } from "@/components/ui/StatsStrip";
+import SplitText from "@/components/bits/SplitText";
+import DecryptedText from "@/components/bits/DecryptedText";
+import Particles from "@/components/bits/Particles";
+import AnimatedContent from "@/components/bits/AnimatedContent";
+import SpotlightCard from "@/components/bits/SpotlightCard";
 import { FAMILIES_HOME_ORDER } from "@/data/families";
 import { INDUSTRIES, industriesBySector, INDUSTRY_DETAILS } from "@/data/industries";
 import { BUCKCORE_MODULES } from "@/data/buckcore";
@@ -19,8 +25,18 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[min(93vw,1800px)] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
           <div className="lg:col-span-5">
             <Wordmark variant="dark" className="h-9" />
-            <p className="eyebrow mt-7">{homeHero.eyebrow}</p>
-            <h1 className="display-xl mt-4">{homeHero.headline}</h1>
+            <p className="eyebrow mt-7">
+              <DecryptedText text={homeHero.eyebrow} animateOn="view" sequential speed={32} />
+            </p>
+            <SplitText
+              tag="h1"
+              text={homeHero.headline}
+              className="display-xl mt-4 pb-2"
+              splitType="words"
+              delay={80}
+              duration={0.9}
+              textAlign="left"
+            />
             <p className="lede mt-5 max-w-xl">{homeHero.subheadline}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -55,6 +71,10 @@ export default function HomePage() {
                 priority
               />
             </figure>
+          </div>
+
+          <div className="border-t border-line pt-8 lg:col-span-12">
+            <StatsStrip />
           </div>
         </div>
       </section>
@@ -105,11 +125,11 @@ export default function HomePage() {
             </ButtonLink>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatedContent className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" distance={40} threshold={0.05}>
             {FAMILIES_HOME_ORDER.map((family, i) => (
               <FamilyCard key={family.slug} family={family} priority={i < 3} />
             ))}
-          </div>
+          </AnimatedContent>
         </div>
       </section>
 
@@ -127,7 +147,7 @@ export default function HomePage() {
             </ButtonLink>
           </div>
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatedContent className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" distance={40} threshold={0.05}>
             {sectors.map(({ sector, items }) => (
               <Link
                 key={sector.slug}
@@ -143,7 +163,7 @@ export default function HomePage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{sector.blurb}</p>
               </Link>
             ))}
-          </div>
+          </AnimatedContent>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <span className="spec-label">Launch pages</span>
@@ -164,8 +184,23 @@ export default function HomePage() {
       </section>
 
       {/* 05 — BUCKCORE --------------------------------------------- */}
-      <section className="section surface-midnight">
-        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
+      <section className="section surface-midnight relative overflow-hidden">
+        {/* Particle constellation backdrop (React Bits Particles). */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <Particles
+            particleCount={70}
+            particleColors={["#158de6", "#39c2f7", "#8fd4ff"]}
+            particleBaseSize={110}
+            speed={0.12}
+            glow={0.6}
+            twinkle={0.35}
+            connections
+            connectionDistance={140}
+            className="opacity-70"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <p className="eyebrow text-cyan!">Technology</p>
@@ -191,21 +226,36 @@ export default function HomePage() {
               </div>
             </div>
 
-            <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
-              {BUCKCORE_MODULES.slice(0, 8).map((m) => (
-                <li key={m.name} className="rounded-xl border border-white/10 bg-white/[0.04] p-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="font-mono text-[0.72rem] tracking-[0.1em] text-cyan">
-                      {m.name}
-                    </span>
-                    <span className="rounded-full border border-white/20 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-[#9fb2c7]">
-                      {m.status}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-[#b7c6d8]">{m.purpose}</p>
-                </li>
-              ))}
-            </ul>
+            <AnimatedContent className="lg:col-span-7" distance={40} threshold={0.05}>
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {BUCKCORE_MODULES.slice(0, 8).map((m) => (
+                  <li key={m.name}>
+                    <SpotlightCard
+                      className="h-full"
+                      spotlightColor="#158de6"
+                      intensity={0.35}
+                      spotlightSize={220}
+                      style={{
+                        borderRadius: "0.75rem",
+                        padding: "1rem",
+                        backgroundColor: "transparent",
+                        boxShadow: "none",
+                      }}
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="font-mono text-[0.72rem] tracking-[0.1em] text-cyan">
+                          {m.name}
+                        </span>
+                        <span className="rounded-full border border-white/20 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wider text-[#9fb2c7]">
+                          {m.status}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-sm text-[#b7c6d8]">{m.purpose}</p>
+                    </SpotlightCard>
+                  </li>
+                ))}
+              </ul>
+            </AnimatedContent>
           </div>
         </div>
       </section>

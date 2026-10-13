@@ -169,6 +169,25 @@
     color: var(--color-cyan);
   }
 
+  /* Scroll-reveal initial state (React Bits AnimatedContent adaptation).
+     Hidden only while JS is active; reduced-motion and no-JS browsers see content. */
+  .ac-init {
+    visibility: hidden;
+    opacity: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ac-init {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+  @media (scripting: none) {
+    .ac-init {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   .card {
     background: #ffffff;
     border: 1px solid var(--color-line);

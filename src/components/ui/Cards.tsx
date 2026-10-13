@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SmartImage } from "./SmartImage";
 import { ImageSlider, type SliderImage } from "./ImageSlider";
 import { StatusPill, ButtonLink } from "./Primitives";
+import GlareHover from "@/components/bits/GlareHover";
 import type { RobotFamily, RobotModel } from "@/data/families";
 import { conceptCaption } from "@/data/site";
 import type { Industry } from "@/data/industries";
@@ -26,52 +27,55 @@ export function FamilyCard({ family, priority = false }: { family: RobotFamily; 
 
   return (
     <article className="card group flex flex-col overflow-hidden">
-      <div className="relative border-b border-line">
-        <ImageSlider
-          images={gallery}
-          label={family.name}
-          className="aspect-[4/3]"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={priority}
-        />
-        <span className="absolute left-3 top-3 z-10">
-          <StatusPill status={family.status} size="sm" />
-        </span>
-      </div>
-
-      <div className="flex flex-1 flex-col gap-4 p-6">
-        <div>
-          <h3 className="font-display text-xl font-semibold">
-            <Link href={`/robots/${family.slug}`} className="rounded-sm hover:text-blue">
-              {family.name}
-              <span className="sr-only"> — explore family</span>
-            </Link>
-          </h3>
-          <p className="mt-1.5 text-[0.95rem] leading-relaxed text-muted">{family.positioning}</p>
+      {/* React Bits GlareHover — soft sheen sweeps the card on hover/focus. */}
+      <GlareHover className="flex flex-1 flex-col" height="100%" variant="sheen" glareOpacity={0.4}>
+        <div className="relative border-b border-line">
+          <ImageSlider
+            images={gallery}
+            label={family.name}
+            className="aspect-[4/3]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={priority}
+          />
+          <span className="absolute left-3 top-3 z-10">
+            <StatusPill status={family.status} size="sm" />
+          </span>
         </div>
 
-        <ul className="flex flex-wrap gap-2" aria-label={`${family.name} application areas`}>
-          {family.chips.map((chip) => (
-            <li
-              key={chip}
-              className="rounded-full border border-line bg-arctic px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.08em] text-graphite"
+        <div className="flex flex-1 flex-col gap-4 p-6">
+          <div>
+            <h3 className="font-display text-xl font-semibold">
+              <Link href={`/robots/${family.slug}`} className="rounded-sm hover:text-blue">
+                {family.name}
+                <span className="sr-only"> — explore family</span>
+              </Link>
+            </h3>
+            <p className="mt-1.5 text-[0.95rem] leading-relaxed text-muted">{family.positioning}</p>
+          </div>
+
+          <ul className="flex flex-wrap gap-2" aria-label={`${family.name} application areas`}>
+            {family.chips.map((chip) => (
+              <li
+                key={chip}
+                className="rounded-full border border-line bg-arctic px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.08em] text-graphite"
+              >
+                {chip}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-4">
+            <span className="spec-label">{family.models.length} concept models</span>
+            <Link
+              href={`/robots/${family.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold text-blue hover:text-blue-deep hover:underline underline-offset-4"
             >
-              {chip}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-4">
-          <span className="spec-label">{family.models.length} concept models</span>
-          <Link
-            href={`/robots/${family.slug}`}
-            className="inline-flex items-center gap-1.5 rounded-sm text-sm font-semibold text-blue hover:text-blue-deep hover:underline underline-offset-4"
-          >
-            Explore
-            <span aria-hidden="true">→</span>
-          </Link>
+              Explore
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
-      </div>
+      </GlareHover>
     </article>
   );
 }
@@ -213,13 +217,15 @@ export function PersonaCard({ collection }: { collection: PersonaCollection }) {
 
   return (
     <article className="card flex h-full flex-col overflow-hidden">
-      <ImageSlider
-        images={gallery}
-        label={`PERSONA ${collection.name}`}
-        className="aspect-[4/3] border-b border-line"
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-      <div className="flex flex-1 flex-col gap-4 p-6">
+      {/* React Bits GlareHover — soft sheen sweeps the card on hover/focus. */}
+      <GlareHover className="flex flex-1 flex-col" height="100%" variant="sheen" glareOpacity={0.4}>
+        <ImageSlider
+          images={gallery}
+          label={`PERSONA ${collection.name}`}
+          className="aspect-[4/3] border-b border-line"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        <div className="flex flex-1 flex-col gap-4 p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="spec-label">BUCKi PERSONA</p>
@@ -253,7 +259,8 @@ export function PersonaCard({ collection }: { collection: PersonaCollection }) {
             Explore {collection.name}
           </ButtonLink>
         </div>
-      </div>
+        </div>
+      </GlareHover>
     </article>
   );
 }

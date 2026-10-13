@@ -75,6 +75,20 @@ Without any env vars the site works out of the box — leads simply accumulate i
 
 Logo and product renders are delivered separately by the client. Until they arrive, `SmartImage` shows labelled concept placeholders and `Wordmark` renders a text lockup (spec-compliant fallback). **See `IMAGES_REQUIRED.md`** for the complete file list, sizes, and naming.
 
+## UI motion (React Bits)
+
+Select animated components from [reactbits.dev](https://reactbits.dev) (MIT) live in `src/components/bits/`, adapted for this codebase:
+
+- **SplitText** (GSAP) — hero headline word reveal; `aria-label` keeps the accessible name intact.
+- **DecryptedText** — hero eyebrow "decode" effect (motion dependency removed; sr-only always holds the real text).
+- **CountUp** — hero stats strip (9 / 27 / 30 / 10) rewritten with IntersectionObserver + rAF; SSR renders final values.
+- **Particles** — WebGL constellation backdrop in the BUCKCORE section (`aria-hidden` canvas).
+- **GlareHover** — sheen sweep on family/persona cards.
+- **SpotlightCard** — cursor-following glow on BUCKCORE module cards.
+- **AnimatedContent** (GSAP ScrollTrigger) — grid entrance reveals; hidden state is the `.ac-init` CSS class, which is overridden for `prefers-reduced-motion` and no-JS browsers.
+
+Runtime deps added: `gsap` + `@gsap/react` (homepage bundle only). Every effect honours `prefers-reduced-motion`, and the axe suite must stay at 0 violations.
+
 ## Accessibility
 
 - Target: **WCAG 2.2 AA** (spec mandate).
