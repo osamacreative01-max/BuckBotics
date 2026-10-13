@@ -59,4 +59,9 @@ export const homeHeroSlides: SliderImage[] = [
     src: "/images/hero/hero-slide-2-960x600.webp",
     alt: "Concept group shot of four BUCKBOTICS robots — BUCKi, BUCKi HOME, a FORGE mobile manipulation arm and CARE — in a light-blue studio scene.",
   },
+  {
+    src: "/images/hero/hero-slide-3-1920x1200.webp",
+    mobileSrc: "/images/hero/hero-slide-3-mobile-1080x675.webp",
+    alt: "Concept studio scene with the TITAN M100 inspection quadruped, a TERRA field rover and two adult synthetic android presenters in dark suits.",
+  },
 ];

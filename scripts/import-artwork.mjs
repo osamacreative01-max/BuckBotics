@@ -166,12 +166,12 @@ for (const [from, to] of jobs) {
 }
 
 // ---------- Hero slider (homepage) ----------
-// Delivered group shots (public/images/HERO/) are 6:5; the hero figure is
-// 16:10 with object-contain, so we centre-crop to 16:10 here — that way the
-// artwork fills the frame edge-to-edge with no letterbox bars.
+// Delivered group shots (same folder, public/images/hero/) are 6:5; the hero
+// figure is 16:10 with object-contain, so we centre-crop to 16:10 here —
+// that way the artwork fills the frame edge-to-edge with no letterbox bars.
 await mkdir(out("hero"), { recursive: true });
 
-const heroSlide1 = await sharp(src("HERO/home page hero section image.jpg"))
+const heroSlide1 = await sharp(src("hero/home page hero section image.jpg"))
   .extract({ left: 0, top: 380, width: 2000, height: 1250 }) // trim empty ceiling, keep floor
   .toBuffer();
 await sharp(heroSlide1)
@@ -184,11 +184,24 @@ await sharp(heroSlide1)
   .toFile(out("hero/hero-slide-1-mobile-1080x675.webp"));
 console.log("OK  hero/hero-slide-1-1920x1200.webp + mobile");
 
-await sharp(src("HERO/home page here section image 2.jpg"))
+await sharp(src("hero/home page here section image 2.jpg"))
   .extract({ left: 0, top: 155, width: 960, height: 600 })
   .webp({ quality: 88 })
   .toFile(out("hero/hero-slide-2-960x600.webp"));
 console.log("OK  hero/hero-slide-2-960x600.webp");
+
+const heroSlide3 = await sharp(src("hero/home page here section image 3.jpg"))
+  .extract({ left: 0, top: 775, width: 4041, height: 2526 }) // heads + TITAN paws both inside
+  .toBuffer();
+await sharp(heroSlide3)
+  .resize(1920, 1200)
+  .webp({ quality: 88 })
+  .toFile(out("hero/hero-slide-3-1920x1200.webp"));
+await sharp(heroSlide3)
+  .resize(1080, 675)
+  .webp({ quality: 84 })
+  .toFile(out("hero/hero-slide-3-mobile-1080x675.webp"));
+console.log("OK  hero/hero-slide-3-1920x1200.webp + mobile");
 
 // ---------- OG cover: white 1200×630 canvas, logo top-left, FORGE bottom-centre ----------
 const robot = await sharp(src("FORGE/FORGE/Layer 2.png"))
