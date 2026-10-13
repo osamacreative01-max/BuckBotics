@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   BUCKBOTICS design tokens — Master Spec V2.0 / Chapter 17
+--------------------------------------------------------------- */
+@theme {
+  --color-midnight: #091321;
+  --color-graphite: #182638;
+  /* Brand action blue, darkened from the spec's #158DE6 so white-on-blue
+     text meets WCAG AA (4.9:1). #158DE6 is preserved as `blue-bright`
+     for large/decorative accents and dark backgrounds (5.2:1 on midnight). */
+  --color-blue: #0e6eb8;
+  --color-blue-deep: #0a5590;
+  --color-blue-bright: #158de6;
+  --color-cyan: #35b6f3;
+  --color-arctic: #f0f5f9;
+  --color-arctic-deep: #e2ebf2;
+  --color-copper: #c58c55;
+  /* Darkened copper for text on light surfaces (WCAG AA) */
+  --color-copper-ink: #8f5a26;
+  --color-ink: #0d1826;
+  --color-muted: #51617a;
+  --color-line: #dbe4ec;
+
+  --font-display: var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-midnight);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-cyan) 35%, white);
+    color: var(--color-midnight);
+  }
+
+  details > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Typography scale — spec: H1 ~56–72px desktop / 34–42px mobile
+--------------------------------------------------------------- */
+@layer components {
+  .display-xl {
+    font-family: var(--font-display);
+    font-size: clamp(2.375rem, 1.4rem + 4vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+
+  .display-lg {
+    font-family: var(--font-display);
+    font-size: clamp(1.95rem, 1.2rem + 2.8vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .display-md {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-blue);
+  }
+
+  .lede {
+    font-size: clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+    line-height: 1.65;
+    color: var(--color-muted);
+  }
+
+  .spec-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  /* Major block rhythm — spec: 80–110px desktop, 44–64px mobile */
+  .section {
+    padding-top: clamp(3rem, 2rem + 4vw, 6.25rem);
+    padding-bottom: clamp(3rem, 2rem + 4vw, 6.25rem);
+  }
+
+  .surface-arctic {
+    background-color: var(--color-arctic);
+  }
+
+  .surface-midnight {
+    background-color: var(--color-midnight);
+    color: #c9d6e4;
+  }
+  .surface-midnight h1,
+  .surface-midnight h2,
+  .surface-midnight h3,
+  .surface-midnight h4 {
+    color: #ffffff;
+  }
+  .surface-midnight .lede {
+    color: #b7c6d8;
+  }
+  .surface-midnight .spec-label {
+    color: #8fa4bb;
+  }
+  /* Eyebrows on dark surfaces must not use the light-surface blue */
+  .surface-midnight .eyebrow {
+    color: var(--color-cyan);
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    border-color: color-mix(in srgb, var(--color-blue) 55%, white);
+    box-shadow: 0 14px 34px -18px rgba(9, 19, 33, 0.35);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card:hover {
+      transform: none;
+    }
+  }
+
+  .link-quiet {
+    color: var(--color-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+  .link-quiet:hover {
+    color: var(--color-blue-deep);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--color-midnight);
+    color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 10px 0;
+    font-weight: 600;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+}
