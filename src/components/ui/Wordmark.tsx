@@ -71,13 +71,6 @@ export function Wordmark({
       aria-label="BUCKBOTICS home"
     >
       {lockup}
-      <span
-        className={`hidden text-[0.68rem] leading-tight tracking-wide sm:block ${
-          variant === "light" ? "text-[#8fc7ee]" : "text-muted"
-        }`}
-      >
-        A Buckingham Venture
-      </span>
     </Link>
   );
 }

@@ -2,11 +2,10 @@ import Link from "next/link";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
-import { FamilyCard, PersonaCard } from "@/components/ui/Cards";
+import { FamilyCard } from "@/components/ui/Cards";
 import { ProcessSteps, Notice } from "@/components/ui/Content";
 import { FAMILIES_HOME_ORDER } from "@/data/families";
 import { INDUSTRIES, industriesBySector, INDUSTRY_DETAILS } from "@/data/industries";
-import { PERSONA, PERSONA_COLLECTIONS } from "@/data/persona";
 import { BUCKCORE_MODULES } from "@/data/buckcore";
 import { homeHero, conceptCaption, conceptDisclaimer } from "@/data/site";
 
@@ -168,37 +167,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 05 — BUCKi PERSONA FEATURE -------------------------------- */}
-      <section className="section border-b border-line">
-        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <div className="grid items-start gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <p className="eyebrow text-copper-ink!">BUCKi PERSONA</p>
-              <h2 className="display-lg mt-3">{PERSONA.umbrellaLine}</h2>
-              <p className="lede mt-5">{PERSONA.intro}</p>
-              <div className="mt-6 rounded-xl border border-copper/40 bg-copper/10 p-4 text-sm leading-relaxed text-[#6d4a26]">
-                <strong className="font-semibold">Concept disclosure:</strong> PERSONA artwork shows
-                fictional adult synthetic androids — never photographs of actual humans. Nothing is
-                manufactured, tested or for sale.
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <ButtonLink href="/robots/bucki-persona" tone="secondary">
-                  Explore the collections
-                </ButtonLink>
-                <ButtonLink href="/contact?type=private-consultation">Request a private consultation</ButtonLink>
-              </div>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
-              {PERSONA_COLLECTIONS.slice(0, 4).map((c) => (
-                <PersonaCard key={c.slug} collection={c} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 06 — BUCKCORE --------------------------------------------- */}
+      {/* 05 — BUCKCORE --------------------------------------------- */}
       <section className="section surface-midnight">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">

@@ -67,11 +67,11 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: site.name,
-  alternateName: site.fullName,
+  alternateName: site.name,
   url: site.url,
   email: site.email,
   telephone: site.phoneDisplay,
-  description: `${site.ventureLine} developing intelligent robotic solutions and physical AI concepts.`,
+  description: "BUCKBOTICS develops intelligent robotic solutions and physical AI concepts.",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.line1,

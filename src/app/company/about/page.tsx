@@ -119,13 +119,13 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Ownership"
             title="Buckingham venture relationship"
-            intro="BUCKBOTICS operates as a Buckingham venture. Until the registered legal entity is confirmed in writing, all public materials say “A Buckingham Venture” — no separate incorporated subsidiary is claimed."
+            intro="BUCKBOTICS operates as a Buckingham venture. The relationship is disclosed on this page — the public wordmark is BUCKBOTICS alone, and no separate incorporated subsidiary is claimed."
           />
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {[
               {
                 h: "Identity wording",
-                p: "The approved lockup is “BUCKBOTICS | A Buckingham Venture” — used in the header, footer and all publications.",
+                p: "The public lockup is the BUCKBOTICS wordmark alone in the header and footer; the Buckingham venture relationship is disclosed on this page.",
               },
               {
                 h: "Legal entity",

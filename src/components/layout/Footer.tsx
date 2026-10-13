@@ -20,9 +20,6 @@ export function Footer() {
           {/* Identity + contacts */}
           <div className="lg:col-span-4">
             <Wordmark variant="light" className="h-6 sm:h-7" />
-            <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-cyan">
-              {site.fullName}
-            </p>
             <address className="mt-5 space-y-1.5 text-sm not-italic text-[#a9bccf]">
               <a href={`https://${site.domain}`} className="block hover:text-white">
                 {site.domain}
@@ -106,7 +103,7 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-[#8fa4bb]">
-            © {year} {site.fullName}. All robot designs are proposed concepts.
+            © {year} {site.name}. All robot designs are proposed concepts.
           </p>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm">

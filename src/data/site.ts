@@ -37,7 +37,7 @@ export const homeHero = {
   eyebrow: "BUCKBOTICS | ROBOTICS & PHYSICAL AI",
   headline: "Intelligence That Moves the World.",
   subheadline:
-    "A Buckingham venture developing intelligent robotic solutions and physical AI concepts for industry, essential services and thoughtful human interaction.",
+    "Developing intelligent robotic solutions and physical AI concepts for industry, essential services and thoughtful human interaction.",
   primaryCta: "Discuss a Robotics Project",
   secondaryCta: "Explore the Robot Families",
 } as const;
