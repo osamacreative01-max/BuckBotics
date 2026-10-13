@@ -17,7 +17,7 @@ Neeche "ABHI BAKI" wali files ka intezaar hai.
 | Item | Files used | Website par kahan |
 |---|---|---|
 | Logo (vector) | `public/Logo.svg` | Header + footer (auto: `images/logo/logo-dark.svg` light bg, `logo-light.svg` dark bg), favicon `src/app/icon.svg` (B-mark) |
-| FORGE W200 | 5 views | hero, family card slider (5), model gallery `for-w200` |
+| FORGE W200 | 5 views | family card slider (5), model gallery `for-w200` |
 | TITAN M100 | 6 views | family slider (6), gallery `tit-m100` |
 | TIDE U300 | 5 views | family slider (5), gallery `tid-u300` |
 | TERRA A200 | 5 views | family slider (5), gallery `ter-a200` |
@@ -27,6 +27,7 @@ Neeche "ABHI BAKI" wali files ka intezaar hai.
 | BUCKi HOME H100 | 4 views | family slider (4), gallery `hom-h100` |
 | PERSONA male (suit) | 3 + 2 closeups | EXECUTIVE E200 collection + gallery `per-e200` |
 | PERSONA female (navy suit) | 2 + 3 closeups | SIGNATURE S300 collection + gallery `per-s300` |
+| Homepage hero group shots | 2 delivered (6:5, `public/images/HERO/`) | hero card slider — 16:10 crop `hero/hero-slide-{1,2}-*.webp` |
 | OG cover | composited | social share image |
 
 **Naye artwork ke saath re-import:** `node scripts/import-artwork.mjs`
@@ -75,6 +76,10 @@ same naam se replace karna hai, baaki sab automatic.
   `closeup-hands`, `closeup-chassis`.
 - Family sliders: `public/images/families/{slug}/slide-1.webp…`
   (data `src/data/families.ts` → `images[]` array).
+- Hero slides: nayi group-shot render `public/images/HERO/` mein rakhein,
+  `scripts/import-artwork.mjs` mein hero block ke andar crop job add karein
+  (6:5 source → 16:10 crop) aur slide `src/data/site.ts` → `homeHeroSlides`
+  array mein add karein.
 - PERSONA rules: sirf fictional **adult** synthetic android, real insaan
   ka photo nahi, white backdrop, discreet mechanical indicators.
 

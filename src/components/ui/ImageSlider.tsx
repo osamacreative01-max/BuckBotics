@@ -5,6 +5,8 @@ import { SmartImage } from "./SmartImage";
 
 export interface SliderImage {
   src: string;
+  /** Optional small-viewport variant (served via <picture> media query). */
+  mobileSrc?: string;
   alt: string;
 }
 
@@ -44,6 +46,7 @@ export function ImageSlider({
       <SmartImage
         key={current.src}
         src={current.src}
+        mobileSrc={current.mobileSrc}
         alt={current.alt}
         className="h-full w-full"
         sizes={sizes}

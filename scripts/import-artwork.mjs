@@ -155,9 +155,8 @@ const jobs = [
   ["BUCKi PERSONA 2/BUCKi PERSONA 2/Asset 20@4x-8.png", "families/bucki-persona/slide-8.webp"],
   ["BUCKi PERSONA/BUCKi PERSONA/Layer 4.png", "families/bucki-persona.webp"],
 
-  // ---------- Hero + OG ----------
-  ["FORGE/FORGE/Layer 2.png", "hero/hero-2400x1350.webp"],
-  ["FORGE/FORGE/Layer 2.png", "hero/hero-mobile-1080x1350.webp"],
+  // ---------- OG ----------
+  // (Hero artwork is generated from the delivered group shots below.)
 ];
 
 for (const [from, to] of jobs) {
@@ -165,6 +164,31 @@ for (const [from, to] of jobs) {
   await sharp(src(from)).webp({ quality: 88 }).toFile(out(to));
   console.log("OK ", to, "<-", from);
 }
+
+// ---------- Hero slider (homepage) ----------
+// Delivered group shots (public/images/HERO/) are 6:5; the hero figure is
+// 16:10 with object-contain, so we centre-crop to 16:10 here — that way the
+// artwork fills the frame edge-to-edge with no letterbox bars.
+await mkdir(out("hero"), { recursive: true });
+
+const heroSlide1 = await sharp(src("HERO/home page hero section image.jpg"))
+  .extract({ left: 0, top: 380, width: 2000, height: 1250 }) // trim empty ceiling, keep floor
+  .toBuffer();
+await sharp(heroSlide1)
+  .resize(1920, 1200)
+  .webp({ quality: 88 })
+  .toFile(out("hero/hero-slide-1-1920x1200.webp"));
+await sharp(heroSlide1)
+  .resize(1080, 675)
+  .webp({ quality: 84 })
+  .toFile(out("hero/hero-slide-1-mobile-1080x675.webp"));
+console.log("OK  hero/hero-slide-1-1920x1200.webp + mobile");
+
+await sharp(src("HERO/home page here section image 2.jpg"))
+  .extract({ left: 0, top: 155, width: 960, height: 600 })
+  .webp({ quality: 88 })
+  .toFile(out("hero/hero-slide-2-960x600.webp"));
+console.log("OK  hero/hero-slide-2-960x600.webp");
 
 // ---------- OG cover: white 1200×630 canvas, logo top-left, FORGE bottom-centre ----------
 const robot = await sharp(src("FORGE/FORGE/Layer 2.png"))

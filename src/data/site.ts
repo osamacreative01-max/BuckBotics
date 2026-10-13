@@ -5,6 +5,8 @@
  * without written owner approval.
  */
 
+import type { SliderImage } from "@/components/ui/ImageSlider";
+
 export const site = {
   name: "BUCKBOTICS",
   ventureLine: "A Buckingham Venture",
@@ -41,3 +43,20 @@ export const homeHero = {
   primaryCta: "Discuss a Robotics Project",
   secondaryCta: "Explore the Robot Families",
 } as const;
+
+/**
+ * Homepage hero artwork — delivered studio group shots, cropped to the
+ * hero figure's 16:10 box by scripts/import-artwork.mjs. Add new slides by
+ * dropping exports into public/images/HERO/ and extending this array.
+ */
+export const homeHeroSlides: SliderImage[] = [
+  {
+    src: "/images/hero/hero-slide-1-1920x1200.webp",
+    mobileSrc: "/images/hero/hero-slide-1-mobile-1080x675.webp",
+    alt: "Concept group shot of five BUCKBOTICS robots — BUCKi HOME, the TITAN quadruped, a TERRA field rover, the LAB mobile laboratory and a compact six-wheeled inspection rover — in a light-blue studio scene.",
+  },
+  {
+    src: "/images/hero/hero-slide-2-960x600.webp",
+    alt: "Concept group shot of four BUCKBOTICS robots — BUCKi, BUCKi HOME, a FORGE mobile manipulation arm and CARE — in a light-blue studio scene.",
+  },
+];

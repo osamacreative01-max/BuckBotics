@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SmartImage } from "@/components/ui/SmartImage";
 import { Wordmark } from "@/components/ui/Wordmark";
+import { ImageSlider } from "@/components/ui/ImageSlider";
 import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
 import { FamilyCard } from "@/components/ui/Cards";
 import { ProcessSteps, Notice } from "@/components/ui/Content";
@@ -13,7 +13,7 @@ import SpotlightCard from "@/components/bits/SpotlightCard";
 import { FAMILIES_HOME_ORDER } from "@/data/families";
 import { INDUSTRIES, industriesBySector, INDUSTRY_DETAILS } from "@/data/industries";
 import { BUCKCORE_MODULES } from "@/data/buckcore";
-import { homeHero, conceptDisclaimer } from "@/data/site";
+import { homeHero, homeHeroSlides, conceptDisclaimer } from "@/data/site";
 
 export default function HomePage() {
   const sectors = industriesBySector();
@@ -62,11 +62,10 @@ export default function HomePage() {
 
           <div className="lg:col-span-7">
             <figure className="relative">
-              <SmartImage
-                src="/images/hero/hero-2400x1350.webp"
-                mobileSrc="/images/hero/hero-mobile-1080x1350.webp"
-                alt="BUCKBOTICS robot family concept lineup on a white studio background"
-                className="aspect-[16/10] rounded-2xl border border-line"
+              <ImageSlider
+                images={homeHeroSlides}
+                label="Hero"
+                className="aspect-[16/10] overflow-hidden rounded-2xl border border-line"
                 sizes="(max-width: 1024px) 100vw, 58vw"
                 priority
               />
