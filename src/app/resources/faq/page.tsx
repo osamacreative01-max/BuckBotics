@@ -1,4 +1,5 @@
 import { PageHeader, ButtonLink } from "@/components/ui/Primitives";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { AccordionItem, Notice } from "@/components/ui/Content";
 import { FAQS, STATUS_FAQ } from "@/data/faq";
 import { pageMeta } from "@/lib/metadata";
@@ -25,6 +26,12 @@ export default function FaqPage() {
 
   return (
     <>
+      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      <PageBanner
+        src="/images/banners/faq.jpg"
+        alt="FAQ banner — 'Frequently Asked Questions.' A FORGE W200 mobile manipulator with its arm extended over a gear in a dark industrial production hall. Concept visualization."
+        priority
+      />
       <PageHeader
         eyebrow="Resources"
         title="Frequently asked questions"

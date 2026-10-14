@@ -1,4 +1,5 @@
 import { PageHeader, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { Notice } from "@/components/ui/Content";
 import { RESPONSIBLE_BLOCKS } from "@/data/persona";
 import { conceptDisclaimer } from "@/data/site";
@@ -37,6 +38,12 @@ const PILLARS = [
 export default function ResponsibleRoboticsPage() {
   return (
     <>
+      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      <PageBanner
+        src="/images/banners/responsible-robotics.jpg"
+        alt="Responsible robotics banner — 'Responsible Robotics, Written Down.' A site supervisor in a hard hat and high-visibility vest reviewing a tablet beside a BUCKi humanoid service robot in a factory. Concept visualization."
+        priority
+      />
       <PageHeader
         eyebrow="Policy"
         title="Responsible robotics, written down."

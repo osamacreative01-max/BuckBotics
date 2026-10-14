@@ -1,4 +1,5 @@
 import { PageHeader, ButtonLink, StatusPill } from "@/components/ui/Primitives";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { Notice, AccordionItem } from "@/components/ui/Content";
 import { STATUS_LIST } from "@/data/status";
 import { ALL_MODELS } from "@/data/families";
@@ -57,6 +58,12 @@ const PROHIBITED = [
 export default function ProductStatusPage() {
   return (
     <>
+      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      <PageBanner
+        src="/images/banners/product-status.jpg"
+        alt="Status definitions banner — 'What Each Status Actually Means.' A BUCKBOTICS robotic arm with a two-finger gripper and wrist camera on a deep navy background with faint concentric arcs. Concept visualization."
+        priority
+      />
       <PageHeader
         eyebrow="Resources"
         title="What each status actually means"

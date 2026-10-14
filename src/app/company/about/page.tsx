@@ -1,4 +1,6 @@
 import { PageHeader, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
+import { PageBanner } from "@/components/ui/PageBanner";
+import { SmartImage } from "@/components/ui/SmartImage";
 import { Notice } from "@/components/ui/Content";
 import { FAMILY_COUNT, MODEL_COUNT } from "@/data/families";
 import { INDUSTRIES } from "@/data/industries";
@@ -15,6 +17,12 @@ export const metadata = pageMeta({
 export default function AboutPage() {
   return (
     <>
+      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      <PageBanner
+        src="/images/banners/about.jpg"
+        alt="About banner — 'A venture built around engineering honesty.' A TITAN M100 quadruped inspection robot on a laboratory bench beside a technician in a white coat, against a deep navy panel. Concept visualization."
+        priority
+      />
       <PageHeader
         eyebrow="Company"
         title="A venture built around engineering honesty."
@@ -115,11 +123,24 @@ export default function AboutPage() {
       {/* BUCKINGHAM VENTURE RELATIONSHIP */}
       <section className="section surface-arctic border-b border-line" id="buckingham">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <SectionHeading
-            eyebrow="Ownership"
-            title="Buckingham venture relationship"
-            intro="BUCKBOTICS operates as a Buckingham venture. The relationship is disclosed on this page — the public wordmark is BUCKBOTICS alone, and no separate incorporated subsidiary is claimed."
+          {/* DELIVERED BANNER — 3:1 artwork whose baked-in headline and copy are
+              this section's own title and intro, so it sits inside the section
+              rather than at the top of the page. Rounded, not edge-to-edge,
+              because the page banner already carries the about artwork. */}
+          <SmartImage
+            src="/images/banners/buckingham.jpg"
+            alt="Buckingham venture relationship banner — 'Buckingham Venture Relationship.' A BUCKi HOME humanoid service robot in the foreground of an open-plan facility, with people meeting behind a glass wall. Concept visualization."
+            fit="cover"
+            className="aspect-[3/1] w-full overflow-hidden rounded-2xl border border-line"
+            sizes="(max-width: 1800px) 93vw, 1800px"
           />
+          <div className="mt-8">
+            <SectionHeading
+              eyebrow="Ownership"
+              title="Buckingham venture relationship"
+              intro="BUCKBOTICS operates as a Buckingham venture. The relationship is disclosed on this page — the public wordmark is BUCKBOTICS alone, and no separate incorporated subsidiary is claimed."
+            />
+          </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {[
               {
