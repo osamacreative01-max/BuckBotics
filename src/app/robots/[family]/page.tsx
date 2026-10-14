@@ -298,7 +298,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
       </section>
 
       {/* SAFETY & INTENDED-USE BOUNDARIES + ASSESSMENT CTA */}
-      <section className="section border-b border-line" id="safety">
+      <section className="section surface-midnight border-b border-white/10" id="safety">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
@@ -306,7 +306,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
               <h2 className="display-md mt-3">Operating boundaries for {family.name}</h2>
               <ul className="mt-6 grid gap-3">
                 {family.boundaries.map((b) => (
-                  <li key={b} className="flex gap-3 rounded-xl border border-line bg-white p-4 text-[0.95rem] leading-relaxed text-graphite">
+                  <li key={b} className="flex gap-3 rounded-xl border border-white/15 bg-white/[0.06] p-4 text-[0.95rem] leading-relaxed text-[#d5e0ec]">
                     <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper">
                       !
                     </span>
@@ -314,7 +314,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-sm text-muted">
+              <p className="mt-5 text-sm text-[#93a6bd]">
                 Applications involving motion require an application-specific hazard assessment,
                 speed and force limitations, stop systems, fault recovery and documented
                 supervisory authority.
@@ -322,7 +322,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-line bg-midnight p-7 text-white">
+              <div className="rounded-2xl border border-white/15 bg-white/[0.06] p-7">
                 <p className="spec-label text-cyan!">Next step</p>
                 <h3 className="mt-2 font-display text-xl font-semibold text-white">
                   Assess {family.name} against your task
@@ -341,7 +341,9 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                 </div>
               </div>
               <div className="mt-4">
-                <Notice tone="concept">{conceptDisclaimer}</Notice>
+                <Notice tone="concept" surface="dark">
+                  {conceptDisclaimer}
+                </Notice>
               </div>
             </div>
           </div>
