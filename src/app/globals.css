@@ -243,4 +243,44 @@
   .skip-link:focus {
     left: 0;
   }
+
+  /* ---- Route boot sequence (src/app/loading.tsx) -----------------------
+     The fallback is prerendered and swapped by Next.js, so both animations
+     are CSS-only — no timers and no JS dismiss. Steps stagger in while the
+     trace line sweeps; reduced-motion users get the finished frame. */
+  .boot-step {
+    opacity: 0;
+    animation: boot-step-in 240ms ease-out forwards;
+  }
+  .boot-bar {
+    width: 0;
+    animation: boot-bar-sweep 950ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .boot-step {
+      opacity: 1;
+      animation: none;
+    }
+    .boot-bar {
+      width: 100%;
+      animation: none;
+    }
+  }
+}
+
+@keyframes boot-step-in {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes boot-bar-sweep {
+  to {
+    width: 100%;
+  }
 }
