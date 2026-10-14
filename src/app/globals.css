@@ -352,7 +352,6 @@
 @layer utilities {
   .btn-fx,
   .btn-outline {
-    position: relative;
     overflow: hidden;
     isolation: isolate;
     transition:
@@ -362,6 +361,17 @@
       background-color 0.22s ease,
       border-color 0.22s ease,
       color 0.22s ease;
+  }
+
+  /* Anchors the shine and the gradient wipe to the button — but only where
+     the element has not placed itself. :where() drops this to zero
+     specificity so `.absolute` still wins. It has to: this block sits later
+     in the same utilities layer, so a plain `position: relative` here
+     would outrank .absolute and drop the slider's arrows out of their
+     overlay and into normal flow. They are already positioned over their
+     image, which is all the pseudo-elements need. */
+  :where(.btn-fx, .btn-outline) {
+    position: relative;
   }
 
   /* Shine — clipped to the pill, painted above the label. */
