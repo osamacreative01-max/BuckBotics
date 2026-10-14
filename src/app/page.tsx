@@ -26,16 +26,16 @@ export default function HomePage() {
             as the BUCKCORE band below, toned down so it stays behind the copy. */}
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <Particles
-            particleCount={70}
+            particleCount={90}
             particleColors={["#091321", "#0a5590", "#0e6eb8"]}
-            particleBaseSize={110}
+            particleBaseSize={135}
             speed={0.12}
-            glow={0.6}
-            twinkle={0.35}
+            glow={0.85}
+            twinkle={0.3}
             connections
-            connectionDistance={140}
+            connectionDistance={150}
             lightMode
-            className="opacity-40"
+            className="opacity-80"
           />
         </div>
 
