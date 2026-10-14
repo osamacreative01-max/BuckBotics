@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Wordmark } from "@/components/ui/Wordmark";
 import { ImageSlider } from "@/components/ui/ImageSlider";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
@@ -25,8 +24,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden border-b border-line bg-white">
         <div className="mx-auto grid max-w-[min(93vw,1800px)] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
           <div className="lg:col-span-5">
-            <Wordmark variant="dark" className="h-9" />
-            <p className="eyebrow mt-7">
+            <p className="eyebrow">
               <DecryptedText text={homeHero.eyebrow} animateOn="view" sequential speed={32} />
             </p>
             <SplitText
