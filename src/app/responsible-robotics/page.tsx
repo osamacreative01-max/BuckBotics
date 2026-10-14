@@ -1,4 +1,4 @@
-import { PageHeader, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
+import { ButtonLink, SectionHeading } from "@/components/ui/Primitives";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Notice } from "@/components/ui/Content";
 import { RESPONSIBLE_BLOCKS } from "@/data/persona";
@@ -44,19 +44,11 @@ export default function ResponsibleRoboticsPage() {
         alt="Responsible robotics banner — 'Responsible Robotics, Written Down.' A site supervisor in a hard hat and high-visibility vest reviewing a tablet beside a BUCKi humanoid service robot in a factory. Concept visualization."
         priority
       />
-      <PageHeader
-        eyebrow="Policy"
-        title="Responsible robotics, written down."
-        intro="Identity, consent, clinical boundaries, child protection and independent physical safety controls — the standing rules that shape every concept we publish."
-        tone="dark"
-      >
-        <ButtonLink href="/contact?type=support" surface="dark">
-          Raise a concern
-        </ButtonLink>
-        <ButtonLink href="/legal/privacy" tone="secondary" surface="dark">
-          Privacy Policy
-        </ButtonLink>
-      </PageHeader>
+      {/* The banner artwork carries this page's headline and intro, so the
+          semantic hero that used to sit underneath it is gone rather than
+          repeating the image word for word. The h1 stays, visually hidden:
+          dropping it would leave the page with no heading outline at all. */}
+      <h1 className="sr-only">Responsible robotics, written down.</h1>
 
       {/* FIVE PILLARS */}
       <section className="section border-b border-line">
@@ -171,7 +163,10 @@ export default function ResponsibleRoboticsPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <ButtonLink href="/robots/bucki-persona">BUCKi PERSONA collections</ButtonLink>
+            <ButtonLink href="/contact?type=support">Raise a concern</ButtonLink>
+            <ButtonLink href="/robots/bucki-persona" tone="secondary">
+              BUCKi PERSONA collections
+            </ButtonLink>
             <ButtonLink href="/technology/buckcore" tone="secondary">
               BUCKCORE safety boundaries
             </ButtonLink>
