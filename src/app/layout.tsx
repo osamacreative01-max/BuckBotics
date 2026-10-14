@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { RouteBoot } from "@/components/layout/RouteBoot";
 import { site, homeHero } from "@/data/site";
 
 import "./globals.css";
@@ -90,6 +91,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <Header />
+        {/* Boot sequence on every internal navigation — see RouteBoot. */}
+        <RouteBoot />
         <main id="main">{children}</main>
         <Footer />
         <script
