@@ -173,7 +173,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
       </section>
 
       {/* TARGET WORKFLOWS + INDUSTRY CROSS-LINKS */}
-      <section className="section surface-arctic border-b border-line" id="workflows">
+      <section className="section surface-midnight border-b border-white/10" id="workflows">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
@@ -181,9 +181,9 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
               <h2 className="display-md mt-3">Proposed applications for {family.name}</h2>
               <ol className="mt-6 grid gap-3">
                 {family.workflows.map((w, i) => (
-                  <li key={w} className="flex gap-4 rounded-xl border border-line bg-white p-4">
-                    <span className="font-mono text-xs text-blue">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-[0.95rem] leading-relaxed text-graphite">{w}</span>
+                  <li key={w} className="flex gap-4 rounded-xl border border-white/15 bg-white/[0.06] p-4">
+                    <span className="font-mono text-xs text-cyan">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-[0.95rem] leading-relaxed text-[#d5e0ec]">{w}</span>
                   </li>
                 ))}
               </ol>
@@ -193,12 +193,12 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
               <p className="eyebrow">Planned vs demonstrated</p>
               <h2 className="display-md mt-3">Capability honesty</h2>
               <div className="mt-6 grid gap-4">
-                <div className="rounded-xl border border-line bg-white p-5">
+                <div className="rounded-xl border border-white/15 bg-white/[0.06] p-5">
                   <p className="spec-label">Planned capabilities (proposed)</p>
-                  <ul className="mt-3 grid gap-2 text-[0.95rem] text-graphite">
+                  <ul className="mt-3 grid gap-2 text-[0.95rem] text-[#d5e0ec]">
                     {family.capabilities.map((c) => (
                       <li key={c} className="flex gap-2.5">
-                        <span aria-hidden="true" className="text-blue">
+                        <span aria-hidden="true" className="text-cyan">
                           ▸
                         </span>
                         {c}
@@ -206,22 +206,22 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-xl border border-line bg-white p-5">
+                <div className="rounded-xl border border-white/15 bg-white/[0.06] p-5">
                   <p className="spec-label">Demonstrated / verified capabilities</p>
-                  <p className="mt-3 text-[0.95rem] text-graphite">
+                  <p className="mt-3 text-[0.95rem] text-[#d5e0ec]">
                     <strong className="font-semibold">None published.</strong> No operational test,
                     deployment or third-party verification exists for this family. Status is{" "}
                     <strong className="font-semibold">CONCEPT</strong>.
                   </p>
                 </div>
-                <div className="rounded-xl border border-line bg-white p-5">
+                <div className="rounded-xl border border-white/15 bg-white/[0.06] p-5">
                   <p className="spec-label">Industry cross-links</p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {family.industryLinks.map((l) => (
                       <a
                         key={l.href + l.label}
                         href={l.href}
-                        className="rounded-full border border-line bg-arctic px-3.5 py-1.5 text-sm text-graphite hover:border-blue hover:text-blue"
+                        className="rounded-full border border-white/20 bg-white/[0.06] px-3.5 py-1.5 text-sm text-[#d5e0ec] hover:border-cyan hover:text-cyan"
                       >
                         {l.label}
                       </a>
