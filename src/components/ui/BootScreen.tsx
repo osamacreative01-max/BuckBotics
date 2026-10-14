@@ -1,16 +1,18 @@
 /**
  * BUCKCORE core — the single visual for every loading state.
  *
- * Deliberately presentational and server-safe (no hooks, no "use client"): it
- * is rendered both by the route fallback in app/loading.tsx and by the client
- * navigation overlay in layout/RouteBoot.tsx, and the two must look identical
- * so a handover between them is invisible.
+ * Holds no state or effects of its own, so the route fallback in
+ * app/loading.tsx and the navigation overlay in layout/RouteBoot.tsx render
+ * it identically and a handover between them is invisible.
  *
  * The mark is a sensor core: a dial of ticks, two counter-rotating rings, a
- * radar sector sweeping the inner well and a pulsing node at the centre. Every
- * animation is CSS with an infinite loop rather than a timer, because the
- * route fallback is prerendered and cannot rely on JS to dismiss itself.
+ * radar sector sweeping the inner well and a pulsing node at the centre,
+ * above the approved wordmark. Every animation is CSS with an infinite loop
+ * rather than a timer, because the route fallback is prerendered and cannot
+ * rely on JS to dismiss itself.
  */
+
+import { Wordmark } from "./Wordmark";
 
 export function BootScreen() {
   return (
@@ -106,9 +108,7 @@ export function BootScreen() {
         </svg>
 
         <div className="flex flex-col items-center gap-4">
-          <p className="font-mono text-[0.7rem] uppercase tracking-[0.42em] text-[#c9d6e4]">
-            Buckbotics
-          </p>
+          <Wordmark variant="light" asLink={false} className="h-5 sm:h-6" />
           <div className="h-px w-40 overflow-hidden bg-white/12 sm:w-56">
             <div className="boot-bar h-px bg-cyan" />
           </div>
