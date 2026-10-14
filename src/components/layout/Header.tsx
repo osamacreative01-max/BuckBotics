@@ -97,7 +97,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={PRIMARY_CTA.href}
-              className="hidden items-center justify-center gap-2 rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-deep sm:inline-flex"
+              className="btn-fx btn-lift btn-grad btn-glow-blue hidden items-center justify-center gap-2 rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white sm:inline-flex"
             >
               {PRIMARY_CTA.label}
             </Link>
@@ -187,7 +187,7 @@ export function Header() {
 
           <Link
             href="/contact"
-            className="mt-5 mb-2 block rounded-full bg-blue px-5 py-3 text-center font-semibold text-white transition-colors hover:bg-blue-deep"
+            className="btn-fx btn-lift btn-grad btn-glow-blue mt-5 mb-2 block rounded-full bg-blue px-5 py-3 text-center font-semibold text-white"
           >
             Discuss a Robotics Project
           </Link>

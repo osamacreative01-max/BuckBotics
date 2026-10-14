@@ -50,6 +50,11 @@ export function StatusPill({
 
    White is the primary action on dark so the CTA keeps maximum
    contrast; blue-on-midnight only reaches 3.5:1.
+
+   Every tone additionally picks up the four motions from the "Button
+   effects" block in globals.css — shine sweep, lift with glow, the
+   gradient slide on primary or the gradient wipe on secondary, and a
+   chevron — selected by the btn-* marker in each string below.
 --------------------------------------------------------------- */
 type ButtonTone = "primary" | "secondary" | "ghost" | "light";
 type ButtonSurface = "light" | "brand" | "dark";
@@ -70,29 +75,33 @@ export function ButtonLink({
   className?: string;
   size?: "sm" | "md" | "lg";
 }) {
+  /* btn-fx carries the shine, the chevron and every transition; btn-lift the
+     rise and the glow. Both are declared in globals.css — see "Button
+     effects". transition-colors is deliberately absent: it would override
+     the shorthand in .btn-fx and drop transform and box-shadow. */
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-blue focus-visible:outline-offset-2";
+    "btn-fx btn-lift inline-flex items-center justify-center gap-2 rounded-full font-semibold focus-visible:outline-2 focus-visible:outline-blue focus-visible:outline-offset-2";
   const sizes = {
     sm: "px-4 py-2 text-sm",
     md: "px-6 py-3 text-[0.95rem]",
     lg: "px-7 py-3.5 text-base",
   }[size];
   const onDark = {
-    primary: "bg-white text-midnight hover:bg-arctic",
-    secondary: "border border-white/40 text-white hover:border-white hover:bg-white/10",
-    ghost: "text-white underline-offset-4 hover:underline hover:text-cyan",
-    light: "bg-white text-midnight hover:bg-arctic",
+    primary: "btn-fill btn-glow-cyan bg-white text-midnight",
+    secondary: "btn-fill btn-glow-cyan border border-white/40 text-white",
+    ghost: "btn-ghost text-white underline-offset-4 hover:underline hover:text-cyan",
+    light: "btn-fill btn-glow-cyan bg-white text-midnight",
   } satisfies Record<ButtonTone, string>;
   const onBrand = {
-    primary: "bg-white text-midnight hover:bg-arctic",
-    secondary: "border border-midnight/35 text-midnight hover:border-midnight hover:bg-white/50",
-    ghost: "text-midnight underline-offset-4 hover:underline",
-    light: "bg-white text-midnight hover:bg-arctic",
+    primary: "btn-fill btn-glow-cyan bg-white text-midnight",
+    secondary: "btn-fill btn-glow-cyan border border-midnight/35 text-midnight",
+    ghost: "btn-ghost text-midnight underline-offset-4 hover:underline",
+    light: "btn-fill btn-glow-cyan bg-white text-midnight",
   } satisfies Record<ButtonTone, string>;
   const onLight = {
-    primary: "bg-blue text-white hover:bg-blue-deep",
+    primary: "btn-grad btn-glow-blue bg-blue text-white",
     secondary: "btn-outline",
-    ghost: "text-blue hover:text-blue-deep underline-offset-4 hover:underline",
+    ghost: "btn-ghost text-blue hover:text-blue-deep underline-offset-4 hover:underline",
     light: "bg-white text-midnight hover:bg-arctic",
   } satisfies Record<ButtonTone, string>;
   const tones =
@@ -100,16 +109,44 @@ export function ButtonLink({
   const external = href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:");
   const cls = `${base} ${sizes} ${tones[tone]} ${className}`;
 
+  /* The chevron is absolute in the right padding, so hovering never reflows
+     the label. size="sm" has only 16px of padding there and a 12px glyph
+     would reach into the text, so it goes without one. */
+  const content = (
+    <>
+      {children}
+      {size !== "sm" ? (
+        <svg
+          className="btn-arrow"
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M4.3 2.4 7.9 6l-3.6 3.6"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ) : null}
+    </>
+  );
+
   if (external) {
     return (
       <a href={href} className={cls}>
-        {children}
+        {content}
       </a>
     );
   }
   return (
     <Link href={href} className={cls}>
-      {children}
+      {content}
     </Link>
   );
 }

@@ -229,41 +229,12 @@
     color: var(--color-blue-deep);
   }
 
-  /* Outlined pill — one source of truth for every secondary button and
-     link-chip on a light surface.
+  /* Button system — outline, shine, lift, gradient and chevron — is
+     declared in its own `utilities` block at the foot of this file.
+     It cannot live here: Tailwind's utilities layer outranks components,
+     so a text-midnight or transition-colors on the same element would beat
+     every hover rule below. */
 
-     The recipe used to be `border border-line bg-white … hover:border-blue`,
-     copied out to eight call sites. border-line (#dbe4ec) measures 1.3:1
-     against white, so a white pill on a white section lost its outline
-     entirely and read as loose text beside the solid primary — the control
-     stopped looking like a control. Graphite at 45% lands the outline near
-     2.6:1: unmistakably a button, still clearly second in the hierarchy.
-
-     `color` is declared here rather than as a text-* utility on each call
-     site, and on purpose: Tailwind's utilities layer outranks components, so
-     a text-midnight on the element would pin the label and quietly defeat
-     the hover rule below. Owning border, radius, fill, label and transition
-     in one place is what lets hover move the whole pill at once. */
-  .btn-outline {
-    border: 1px solid color-mix(in srgb, var(--color-graphite) 45%, transparent);
-    border-radius: 9999px;
-    background-color: #fff;
-    color: var(--color-midnight);
-    transition:
-      border-color 0.15s ease,
-      color 0.15s ease,
-      background-color 0.15s ease;
-  }
-  .btn-outline:hover {
-    border-color: var(--color-blue);
-    color: var(--color-blue);
-    background-color: var(--color-arctic);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .btn-outline {
-      transition: none;
-    }
-  }
 
   .skip-link {
     position: absolute;
@@ -354,5 +325,202 @@
 @keyframes boot-bar-sweep {
   to {
     width: 100%;
+  }
+}
+
+/* ----------------------------------------------------------------
+   Button effects
+
+   Four motions on every CTA, composed so each can be taken alone:
+
+     shine — a light streak crosses the pill once per hover
+     lift   — a 2px rise with a coloured glow
+     grad   — the primary's own fill slides from deep blue toward cyan
+     fill   — an outline wipes in the brand gradient from the left edge
+
+   plus a chevron that slides in from the right padding.
+
+   Declared in `utilities` rather than `components`: text-midnight and
+   transition-colors on the element are utilities themselves, and the
+   utilities layer outranks components — a hover rule written in components
+   would lose to the very colour it is trying to override.
+
+   The shell is shared with .btn-outline so link-chips get the same polish
+   without each call site repeating it. Icon controls take the shine but not
+   the lift: they carry their own -translate-y-1/2 and a hover transform
+   would discard it. ------------------------------------------------ */
+@layer utilities {
+  .btn-fx,
+  .btn-outline {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1),
+      box-shadow 0.3s ease,
+      background-position 0.6s ease,
+      background-color 0.22s ease,
+      border-color 0.22s ease,
+      color 0.22s ease;
+  }
+
+  /* Shine — clipped to the pill, painted above the label. */
+  .btn-fx::after,
+  .btn-outline::after {
+    content: "";
+    position: absolute;
+    top: -25%;
+    bottom: -25%;
+    left: -50%;
+    width: 40%;
+    z-index: 1;
+    background: linear-gradient(
+      100deg,
+      transparent,
+      var(--btn-shine, rgba(255, 255, 255, 0.7)),
+      transparent
+    );
+    transform: translateX(0) skewX(-18deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .btn-fx:hover::after,
+  .btn-outline:hover::after {
+    animation: btn-shine-sweep 0.85s cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  /* Lift + glow — colour comes from --btn-glow so each surface gets its own. */
+  .btn-lift:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 14px 26px -14px var(--btn-glow, rgba(14, 110, 184, 0.85)),
+      0 4px 10px -6px var(--btn-glow, rgba(14, 110, 184, 0.45));
+  }
+
+  .btn-glow-blue {
+    --btn-glow: rgba(21, 141, 230, 0.85);
+  }
+  .btn-glow-cyan {
+    --btn-glow: rgba(53, 182, 243, 0.8);
+  }
+
+  /* Chevron — absolute in the right padding, so the label never moves. */
+  .btn-arrow {
+    position: absolute;
+    right: 0.6rem;
+    top: 50%;
+    opacity: 0;
+    transform: translate(0.4rem, -50%);
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1),
+      opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .btn-fx:hover .btn-arrow {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  /* Primary fill — the gradient itself travels toward cyan. */
+  .btn-grad {
+    background-image: linear-gradient(
+      115deg,
+      #0a5590 0%,
+      #0e6eb8 30%,
+      #158de6 66%,
+      #35b6f3 100%
+    );
+    background-size: 260% 100%;
+    background-position: 6% 50%;
+  }
+  .btn-grad:hover {
+    background-position: 94% 50%;
+  }
+
+  /* Outlined pill — shared by secondary buttons and link-chips.
+
+     border-line (#dbe4ec) measures 1.3:1 against white, so a white pill on
+     a white section lost its outline completely and read as loose text
+     beside the solid primary. Graphite at 45% lands it near 2.6:1:
+     unmistakably a control, still clearly second in the hierarchy. */
+  .btn-outline {
+    border: 1px solid color-mix(in srgb, var(--color-graphite) 45%, transparent);
+    border-radius: 9999px;
+    background-color: #fff;
+    color: var(--color-midnight);
+    --btn-shine: rgba(53, 182, 243, 0.55);
+    --btn-glow: rgba(14, 110, 184, 0.5);
+  }
+
+  /* Gradient wipe — background sweeps in from the left edge on hover. */
+  .btn-fill::before,
+  .btn-outline::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(115deg, #0e6eb8 0%, #158de6 55%, #35b6f3 100%);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+    pointer-events: none;
+  }
+  .btn-fill {
+    --btn-shine: rgba(190, 232, 255, 0.85);
+  }
+  .btn-fill:hover,
+  .btn-outline:hover {
+    color: #fff;
+    border-color: transparent;
+  }
+  .btn-fill:hover::before,
+  .btn-outline:hover::before {
+    transform: scaleX(1);
+  }
+
+  /* Ghost is text with no body to streak across or halo beneath — lift and
+     chevron only. Declared after .btn-lift so it wins the tie. */
+  .btn-ghost::after {
+    display: none;
+  }
+  .btn-ghost:hover {
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-fx,
+  .btn-outline,
+  .btn-fill::before,
+  .btn-outline::before,
+  .btn-arrow {
+    transition: none;
+  }
+  .btn-fx:hover::after,
+  .btn-outline:hover::after {
+    animation: none;
+  }
+  .btn-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Left edge to fully past the right edge: the streak starts half off the
+   pill (left: -50%, width: 40%) and must clear it before fading. */
+@keyframes btn-shine-sweep {
+  0% {
+    transform: translateX(0) skewX(-18deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(400%) skewX(-18deg);
+    opacity: 0;
   }
 }

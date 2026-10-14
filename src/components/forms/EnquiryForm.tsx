@@ -356,7 +356,7 @@ export function EnquiryForm({
         <button
           type="submit"
           disabled={pending}
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-blue px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-blue-deep disabled:cursor-not-allowed disabled:opacity-60"
+          className="btn-fx btn-lift btn-grad btn-glow-blue inline-flex items-center justify-center gap-2 rounded-full bg-blue px-7 py-3.5 text-base font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60"
         >
           {pending ? "Sending…" : "Send enquiry"}
         </button>
