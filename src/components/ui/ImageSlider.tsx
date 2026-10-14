@@ -59,7 +59,7 @@ export function ImageSlider({
             type="button"
             onClick={() => go(-1)}
             aria-label={`Previous ${label} image`}
-            className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-white/95 text-xl leading-none text-graphite shadow-sm transition-colors hover:border-blue hover:text-blue focus-visible:outline-2 focus-visible:outline-blue"
+            className="btn-outline absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center text-xl leading-none shadow-sm focus-visible:outline-2 focus-visible:outline-blue"
           >
             <span aria-hidden="true">‹</span>
           </button>
@@ -67,7 +67,7 @@ export function ImageSlider({
             type="button"
             onClick={() => go(1)}
             aria-label={`Next ${label} image`}
-            className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-white/95 text-xl leading-none text-graphite shadow-sm transition-colors hover:border-blue hover:text-blue focus-visible:outline-2 focus-visible:outline-blue"
+            className="btn-outline absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center text-xl leading-none shadow-sm focus-visible:outline-2 focus-visible:outline-blue"
           >
             <span aria-hidden="true">›</span>
           </button>

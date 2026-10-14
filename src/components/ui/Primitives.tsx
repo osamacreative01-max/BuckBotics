@@ -37,7 +37,7 @@ export function StatusPill({
    Tone × surface matrix (used consistently across the site):
 
      surface="light"  (white / arctic backgrounds)
-       primary   blue solid      secondary  white + line border
+       primary   blue solid      secondary  .btn-outline (see globals.css)
        ghost     blue text link  light      white solid (rare)
 
      surface="brand" (the #46BFEE → #3887C8 gradient band)
@@ -91,8 +91,7 @@ export function ButtonLink({
   } satisfies Record<ButtonTone, string>;
   const onLight = {
     primary: "bg-blue text-white hover:bg-blue-deep",
-    secondary:
-      "border border-line bg-white text-midnight hover:border-blue hover:text-blue",
+    secondary: "btn-outline",
     ghost: "text-blue hover:text-blue-deep underline-offset-4 hover:underline",
     light: "bg-white text-midnight hover:bg-arctic",
   } satisfies Record<ButtonTone, string>;

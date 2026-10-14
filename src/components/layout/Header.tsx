@@ -97,7 +97,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={PRIMARY_CTA.href}
-              className="hidden rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-deep sm:inline-flex"
+              className="hidden items-center justify-center gap-2 rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-deep sm:inline-flex"
             >
               {PRIMARY_CTA.label}
             </Link>
@@ -278,7 +278,7 @@ function MegaPanel({ group }: { group: NavGroup }) {
             <li key={l.href + l.label}>
               <Link
                 href={l.href}
-                className="block rounded-full border border-line bg-white px-4 py-2 text-sm text-graphite transition-colors hover:border-blue hover:text-blue"
+                className="btn-outline block px-4 py-2 text-sm"
               >
                 {l.label}
               </Link>

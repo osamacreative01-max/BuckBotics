@@ -64,7 +64,7 @@ export function EnquiryForm({
         <button
           type="button"
           onClick={() => window.location.reload()}
-          className="mt-6 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-semibold text-midnight transition-colors hover:border-blue hover:text-blue"
+          className="btn-outline mt-6 px-5 py-2.5 text-sm font-semibold"
         >
           Submit another enquiry
         </button>

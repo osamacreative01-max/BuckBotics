@@ -31,7 +31,7 @@ export default function NotFound() {
               <li key={f.slug}>
                 <Link
                   href={`/robots/${f.slug}`}
-                  className="block rounded-full border border-line bg-white px-4 py-1.5 text-sm text-graphite transition-colors hover:border-blue hover:text-blue"
+                  className="btn-outline block px-4 py-1.5 text-sm"
                 >
                   {f.name}
                 </Link>
@@ -40,7 +40,7 @@ export default function NotFound() {
             <li>
               <Link
                 href="/industries"
-                className="block rounded-full border border-line bg-white px-4 py-1.5 text-sm text-graphite transition-colors hover:border-blue hover:text-blue"
+                className="btn-outline block px-4 py-1.5 text-sm"
               >
                 Industry directory
               </Link>
@@ -48,7 +48,7 @@ export default function NotFound() {
             <li>
               <Link
                 href="/technology/buckcore"
-                className="block rounded-full border border-line bg-white px-4 py-1.5 text-sm text-graphite transition-colors hover:border-blue hover:text-blue"
+                className="btn-outline block px-4 py-1.5 text-sm"
               >
                 BUCKCORE
               </Link>

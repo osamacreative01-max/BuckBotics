@@ -36,7 +36,7 @@ export default function IndustriesPage() {
             <a
               key={d.slug}
               href={`/industries/${d.slug}`}
-              className="rounded-full border border-line bg-white px-4 py-1.5 text-sm text-graphite hover:border-blue hover:text-blue"
+              className="btn-outline px-4 py-1.5 text-sm"
             >
               {d.title}
             </a>

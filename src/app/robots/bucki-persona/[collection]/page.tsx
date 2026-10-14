@@ -226,7 +226,7 @@ export default async function PersonaCollectionPage({
                 <Link
                   key={c.slug}
                   href={`/robots/bucki-persona/${c.slug}`}
-                  className="rounded-full border border-line bg-white px-4 py-2 text-sm text-graphite hover:border-blue hover:text-blue"
+                  className="btn-outline px-4 py-2 text-sm"
                 >
                   {c.name} {c.model}
                 </Link>
