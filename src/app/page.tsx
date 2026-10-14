@@ -22,7 +22,24 @@ export default function HomePage() {
     <>
       {/* 01 — HERO ------------------------------------------------- */}
       <section className="relative overflow-hidden border-b border-line bg-white">
-        <div className="mx-auto grid max-w-[min(93vw,1800px)] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
+        {/* Particle constellation backdrop (React Bits Particles) — same system
+            as the BUCKCORE band below, toned down so it stays behind the copy. */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <Particles
+            particleCount={70}
+            particleColors={["#091321", "#0a5590", "#0e6eb8"]}
+            particleBaseSize={110}
+            speed={0.12}
+            glow={0.6}
+            twinkle={0.35}
+            connections
+            connectionDistance={140}
+            lightMode
+            className="opacity-40"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto grid max-w-[min(93vw,1800px)] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
           <div className="lg:col-span-5">
             <p className="eyebrow">
               <DecryptedText text={homeHero.eyebrow} animateOn="view" sequential speed={32} />
