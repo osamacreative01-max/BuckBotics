@@ -134,6 +134,8 @@ export interface IndustryDetail {
   pathway: string[];
   /** Industry-specific feasibility question (exact spec wording). */
   enquiryPrompt: string;
+  /** `/images/banners/{slug}.jpg` — delivered 3:1 marketing banner (headline baked in). */
+  banner?: { src: string; alt: string };
 }
 
 export const INDUSTRY_DETAILS: IndustryDetail[] = [
@@ -175,6 +177,10 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     ],
     enquiryPrompt:
       "What materials must move, between which locations, and how many times per shift?",
+    banner: {
+      src: "/images/banners/warehousing-logistics.jpg",
+      alt: "Warehousing and Logistics banner — a FORGE W200 mobile manipulator handling a cardboard box inside a racked distribution centre aisle. Concept visualization.",
+    },
   },
   {
     slug: "food-processing",
@@ -252,6 +258,10 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "Measured evaluation against a pre-agreed transport baseline and incident criteria.",
     ],
     enquiryPrompt: "Which nonclinical items and secure transfers need routing?",
+    banner: {
+      src: "/images/banners/healthcare-logistics.jpg",
+      alt: "Healthcare Logistics banner — 'The physical bottleneck.' A CARE C100 delivery robot carrying sealed medical supplies down a bright hospital corridor. Concept visualization.",
+    },
   },
   {
     slug: "greenhouses",
@@ -289,6 +299,10 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "Measured evaluation against baseline monitoring coverage and handling times, with stop criteria.",
     ],
     enquiryPrompt: "Which crop, aisle geometry and handling action matter?",
+    banner: {
+      src: "/images/banners/greenhouses.jpg",
+      alt: "Greenhouses banner — 'Green Houses.' A TERRA A200 rover carrying crates of tomatoes through a commercial glasshouse growing aisle. Concept visualization.",
+    },
   },
   {
     slug: "mining",

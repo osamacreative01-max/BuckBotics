@@ -28,3 +28,7 @@ yarn-error.log*
 
 # platform hosting
 .vercel
+
+# source artwork drop — files are copied into /public/images/banners with
+# URL-safe names; this folder keeps spaces in paths, so it stays local only.
+/public/images/Bukcbotics Website Banners/

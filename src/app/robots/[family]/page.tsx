@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { StatusPill, ButtonLink, Breadcrumbs } from "@/components/ui/Primitives";
 import { ModelCard } from "@/components/ui/Cards";
 import { ModelGallery } from "@/components/ui/ModelGallery";
@@ -42,6 +43,13 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
   return (
     <>
+      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      <PageBanner
+        src={family.banner?.src}
+        alt={family.banner?.alt ?? `${family.name} concept banner`}
+        priority
+      />
+
       {/* HERO — exact family name, concept badge, white-background render */}
       <header className="border-b border-line bg-arctic/50">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 pt-10 pb-14 sm:px-8">

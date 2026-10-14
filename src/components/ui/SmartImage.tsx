@@ -40,6 +40,12 @@ export interface SmartImageProps {
   priority?: boolean;
   /** Caption shown under the placeholder (concept disclosure). */
   caption?: string;
+  /**
+   * Object-fit for the delivered file. `contain` (default) suits the white
+   * studio renders; `cover` suits the wide 3:1 marketing banners, which are
+   * composed to be cropped to the wrapper ratio.
+   */
+  fit?: "contain" | "cover";
 }
 
 export function SmartImage({
@@ -51,6 +57,7 @@ export function SmartImage({
   sizes,
   priority,
   caption,
+  fit = "contain",
 }: SmartImageProps) {
   const [failed, setFailed] = useState(false);
   const [mobileFailed, setMobileFailed] = useState(false);
@@ -67,7 +74,7 @@ export function SmartImage({
               alt={alt}
               loading={priority ? "eager" : "lazy"}
               decoding="async"
-              className={`h-full w-full object-contain ${imgClassName}`}
+              className={`h-full w-full ${fit === "cover" ? "object-cover" : "object-contain"} ${imgClassName}`}
               onError={() => {
                 // Mobile crop failed on a small viewport → placeholder;
                 // otherwise fall back to the desktop image.
@@ -89,7 +96,7 @@ export function SmartImage({
             fill
             sizes={sizes ?? "100vw"}
             priority={priority}
-            className={`object-contain ${imgClassName}`}
+            className={`${fit === "cover" ? "object-cover" : "object-contain"} ${imgClassName}`}
             onError={() => setFailed(true)}
           />
         )

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { ImageSlider } from "@/components/ui/ImageSlider";
+import { SmartImage } from "@/components/ui/SmartImage";
 import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
 import { FamilyCard } from "@/components/ui/Cards";
 import { ProcessSteps } from "@/components/ui/Content";
@@ -105,6 +106,18 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* 02b — DELIVERED BRAND BAND (3:1 artwork, headline & stats baked in) */}
+      <section aria-label="BUCKBOTICS — intelligence that moves the world" className="border-b border-line bg-white">
+        <SmartImage
+          src="/images/banners/home-band-light.jpg"
+          alt="BUCKBOTICS — intelligent robots, real-world impact. A group of concept robots including BUCKi, TITAN, TERRA, LAB and a subsea rover, alongside the portfolio figures: 9 robot families, 27 models, 30 industries, BUCKCORE AI platform and the PERSONA collection. Concept visualizations."
+          fit="cover"
+          className="mx-auto aspect-[3/1] w-full max-w-[min(96vw,2200px)]"
+          imgClassName="object-center"
+          sizes="100vw"
+        />
       </section>
 
       {/* 03 — ROBOT FAMILY GRID ------------------------------------ */}

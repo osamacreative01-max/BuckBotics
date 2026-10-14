@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ButtonLink, Breadcrumbs, StatusPill } from "@/components/ui/Primitives";
+import { PageBanner } from "@/components/ui/PageBanner";
 import { Notice, ProcessSteps } from "@/components/ui/Content";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { INDUSTRY_DETAILS, getIndustryDetail, INDUSTRIES } from "@/data/industries";
@@ -47,6 +48,13 @@ export default async function IndustryDetailPage({
 
   return (
     <>
+      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      <PageBanner
+        src={detail.banner?.src}
+        alt={detail.banner?.alt ?? `${detail.title} concept banner`}
+        priority
+      />
+
       {/* HERO — exact introduction from the master spec */}
       <header className="section border-b border-line bg-arctic/50">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
