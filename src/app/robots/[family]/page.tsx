@@ -50,17 +50,18 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         priority
       />
 
-      {/* HERO — CTA row + white-background render. The headline, intro, status
-          badge and tier copy now live only in the delivered banner artwork. */}
+      {/* HERO — family name, headline, intro and the CTA row beside the
+          white-background render. The status badge, model count and tier
+          metadata are dropped; those live in the delivered banner artwork. */}
       <header className="border-b border-line bg-arctic/50">
-        {/* Headline copy lives in the delivered banner artwork; the h1 stays in the
-            DOM (visually hidden) so each family page keeps exactly one top heading
-            for search engines and screen readers. */}
-        <h1 className="sr-only">{family.name}</h1>
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 pt-10 pb-14 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <div className="flex flex-wrap gap-3">
+              <h1 className="display-xl">{family.name}</h1>
+              <p className="font-display text-2xl font-medium text-blue">{family.headline}</p>
+              <p className="lede mt-4 max-w-xl">{family.intro}</p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
                 <ButtonLink href={`/contact?type=project&model=${family.slug}`}>
                   Discuss an Application
                 </ButtonLink>
