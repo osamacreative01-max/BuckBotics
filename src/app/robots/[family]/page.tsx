@@ -40,6 +40,9 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
   if (!family) notFound();
 
   const isPersona = family.slug === "bucki-persona";
+  // Only models whose approved renders are exported into /images/robots/{dir}/
+  // get a gallery — the rest are omitted rather than shown as placeholders.
+  const galleryModels = family.models.filter((m) => m.imageDir && m.views?.length);
 
   return (
     <>
@@ -272,30 +275,39 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         </div>
       </section>
 
-      {/* IMAGE GALLERY TEMPLATE — 6 viewpoints + 3 close-ups per model */}
-      <section className="section surface-arctic border-b border-line" id="gallery">
-        <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <p className="eyebrow">Image gallery</p>
-          <h2 className="display-md mt-3">Six viewpoints + three engineering close-ups</h2>
-          <p className="lede mt-4 max-w-3xl">
-            Every model reserves nine approved angles: front, rear, left and right profiles, 3/4
-            front and 3/4 rear, plus sensor, manipulator and chassis close-ups. Morphology stays
-            identical across views of a model.
-          </p>
-          <div className="mt-8 grid gap-8">
-            {family.models.map((model) => (
-              <div key={model.id}>
-                <div className="mb-3 flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-lg font-semibold">{model.name}</h3>
-                  <code className="font-mono text-xs text-muted">{model.id}</code>
-                  <StatusPill status={model.status} size="sm" />
+      {/* IMAGE GALLERY — shown per model once its approved renders are exported
+          into /images/robots/{imageDir}/; models still awaiting exports are
+          omitted instead of being rendered as concept placeholders. */}
+      {galleryModels.length > 0 && (
+        <section className="section surface-arctic border-b border-line" id="gallery">
+          <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
+            <p className="eyebrow">Image gallery</p>
+            <h2 className="display-md mt-3">Approved viewpoints and close-ups</h2>
+            <p className="lede mt-4 max-w-3xl">
+              Every model reserves nine approved angles — front, rear, left and right profiles,
+              3/4 front and 3/4 rear, plus sensor, manipulator and chassis close-ups. Morphology
+              stays identical across views of a model; each angle appears here once its approved
+              render has been exported.
+            </p>
+            <div className="mt-8 grid gap-8">
+              {galleryModels.map((model) => (
+                <div key={model.id}>
+                  <div className="mb-3 flex flex-wrap items-center gap-3">
+                    <h3 className="font-display text-lg font-semibold">{model.name}</h3>
+                    <code className="font-mono text-xs text-muted">{model.id}</code>
+                    <StatusPill status={model.status} size="sm" />
+                  </div>
+                  <ModelGallery
+                    imageDir={model.imageDir as string}
+                    views={model.views as string[]}
+                    modelName={model.name}
+                  />
                 </div>
-                <ModelGallery modelId={model.id} modelName={model.name} />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* SAFETY & INTENDED-USE BOUNDARIES + ASSESSMENT CTA */}
       <section className="section surface-midnight border-b border-white/10" id="safety">

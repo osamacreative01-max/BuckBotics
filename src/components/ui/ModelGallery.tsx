@@ -25,13 +25,25 @@ const CLOSEUPS = [
   { key: "closeup-chassis", label: "Chassis & branding" },
 ] as const;
 
-export function ModelGallery({ modelId, modelName }: { modelId: string; modelName: string }) {
-  const [active, setActive] = useState<string>(VIEWPOINTS[0].key);
-  const allViews = [...VIEWPOINTS, ...CLOSEUPS];
-  const current = allViews.find((v) => v.key === active) ?? VIEWPOINTS[0];
-  const src = `/images/robots/${modelId.toLowerCase()}/${active}.webp`;
+export function ModelGallery({
+  imageDir,
+  views,
+  modelName,
+}: {
+  /** Folder under /images/robots/ holding this model's approved renders. */
+  imageDir: string;
+  /** Viewpoint keys that were actually exported into `imageDir`. */
+  views: string[];
+  modelName: string;
+}) {
+  const [active, setActive] = useState<string>(views[0]);
+  // Only the angles actually exported get a tab — an unexported viewpoint is
+  // omitted rather than falling back to the concept placeholder.
+  const allViews = [...VIEWPOINTS, ...CLOSEUPS].filter((v) => views.includes(v.key));
+  const current = allViews.find((v) => v.key === active) ?? allViews[0];
+  const src = `/images/robots/${imageDir}/${current.key}.webp`;
   // Unique DOM ids — a family page renders one gallery per model.
-  const uid = modelId.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const uid = imageDir.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const panelId = `gallery-panel-${uid}`;
   const tabId = (key: string) => `gallery-tab-${uid}-${key}`;
 
