@@ -9,7 +9,7 @@ import { ModelGallery } from "@/components/ui/ModelGallery";
 import { Notice, AccordionItem } from "@/components/ui/Content";
 import { FAMILIES, getFamily } from "@/data/families";
 import { SPEC_ROWS } from "@/data/status";
-import { conceptCaption, conceptDisclaimer } from "@/data/site";
+import { conceptDisclaimer } from "@/data/site";
 import { PERSONA_COLLECTIONS, PERSONA_ATELIER, PERSONA_FAQS, PERSONA } from "@/data/persona";
 import { pageMeta } from "@/lib/metadata";
 
@@ -50,23 +50,17 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         priority
       />
 
-      {/* HERO — exact family name, concept badge, white-background render */}
+      {/* HERO — CTA row + white-background render. The headline, intro, status
+          badge and tier copy now live only in the delivered banner artwork. */}
       <header className="border-b border-line bg-arctic/50">
+        {/* Headline copy lives in the delivered banner artwork; the h1 stays in the
+            DOM (visually hidden) so each family page keeps exactly one top heading
+            for search engines and screen readers. */}
+        <h1 className="sr-only">{family.name}</h1>
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 pt-10 pb-14 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <div className="flex flex-wrap items-center gap-3">
-                <StatusPill status={family.status} />
-                <span className="spec-label">{family.models.length} concept models</span>
-                <span className="spec-label">
-                  Tier: {family.tier === "now" ? "commercial focus" : family.tier === "private" ? "private review" : "visible vision"}
-                </span>
-              </div>
-              <h1 className="display-xl mt-4">{family.name}</h1>
-              <p className="font-display text-2xl font-medium text-blue">{family.headline}</p>
-              <p className="lede mt-4 max-w-xl">{family.intro}</p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3">
                 <ButtonLink href={`/contact?type=project&model=${family.slug}`}>
                   Discuss an Application
                 </ButtonLink>
@@ -85,9 +79,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                 className="aspect-[4/3] rounded-2xl border border-line bg-white"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
-                caption={conceptCaption}
               />
-              <figcaption className="mt-2 text-xs text-muted">{conceptCaption}</figcaption>
             </figure>
           </div>
         </div>

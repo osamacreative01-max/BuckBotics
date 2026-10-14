@@ -92,7 +92,9 @@ export function ModelCard({
   model: RobotModel;
   index?: number;
 }) {
-  const imageSrc = `/images/robots/${model.id.toLowerCase()}/front.webp`;
+  // Approved render for the model, falling back to the registry's default
+  // per-model path (`/images/robots/{id}/front.webp`).
+  const imageSrc = model.image ?? `/images/robots/${model.id.toLowerCase()}/front.webp`;
   const href = model.collectionSlug
     ? `/robots/bucki-persona/${model.collectionSlug}`
     : `/contact?type=project&model=${encodeURIComponent(model.id)}`;

@@ -24,6 +24,12 @@ export interface RobotModel {
   /** Primary concept purpose (spec registry wording). */
   purpose: string;
   status: StatusKey;
+  /**
+   * Optional card image. When omitted the card resolves
+   * `/images/robots/{id}/front.webp` — set this only for models whose
+   * approved render lives at a different path (e.g. a shared family view).
+   */
+  image?: string;
   /** Only set for PERSONA collections with a dedicated launch page. */
   collectionSlug?: string;
 }
@@ -110,9 +116,9 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/forge/slide-5.webp", alt: "FORGE W200 — close-up of gripper and wrist camera module, concept render" },
     ],
     models: [
-      { id: "FOR-W100", name: "FORGE W100", short: "W100", purpose: "Mobile work platform", status: CONCEPT },
+      { id: "FOR-W100", name: "FORGE W100", short: "W100", purpose: "Mobile work platform", status: CONCEPT, image: "/images/families/forge/slide-1.webp" },
       { id: "FOR-W200", name: "FORGE W200", short: "W200", purpose: "Coordinated manipulation", status: CONCEPT },
-      { id: "FOR-W300", name: "FORGE W300", short: "W300", purpose: "Advanced flexible humanoid research", status: CONCEPT },
+      { id: "FOR-W300", name: "FORGE W300", short: "W300", purpose: "Advanced flexible humanoid research", status: CONCEPT, image: "/images/families/forge/slide-3.webp" },
     ],
   },
   {
@@ -165,9 +171,9 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/bucki/slide-5.webp", alt: "BUCKi H200 — close-up of face screen and upper torso, concept render" },
     ],
     models: [
-      { id: "BKI-H100", name: "BUCKi H100", short: "H100", purpose: "Stationary social interaction terminal", status: CONCEPT },
+      { id: "BKI-H100", name: "BUCKi H100", short: "H100", purpose: "Stationary social interaction terminal", status: CONCEPT, image: "/images/families/bucki/slide-1.webp" },
       { id: "BKI-H200", name: "BUCKi H200", short: "H200", purpose: "Mobile friendly interaction platform", status: CONCEPT },
-      { id: "BKI-H300", name: "BUCKi H300", short: "H300", purpose: "Extended social presentation concept", status: CONCEPT },
+      { id: "BKI-H300", name: "BUCKi H300", short: "H300", purpose: "Extended social presentation concept", status: CONCEPT, image: "/images/families/bucki/slide-3.webp" },
     ],
   },
   {
@@ -218,8 +224,8 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/bucki-home/slide-4.webp", alt: "BUCKi HOME H100 — rear view, concept render" },
     ],
     models: [
-      { id: "HOM-H200", name: "BUCKi HOME H200", short: "H200", purpose: "Basic indoor assistance concept", status: CONCEPT },
-      { id: "HOM-H300", name: "BUCKi HOME H300", short: "H300", purpose: "Extended household manipulation research", status: CONCEPT },
+      { id: "HOM-H200", name: "BUCKi HOME H200", short: "H200", purpose: "Basic indoor assistance concept", status: CONCEPT, image: "/images/robots/hom-h100/front.webp" },
+      { id: "HOM-H300", name: "BUCKi HOME H300", short: "H300", purpose: "Extended household manipulation research", status: CONCEPT, image: "/images/robots/hom-h100/three-quarter-front.webp" },
     ],
   },
   {
@@ -277,10 +283,10 @@ export const FAMILIES: RobotFamily[] = [
     ],
     models: [
       { id: "PER-E200", name: "BUCKi PERSONA E200", short: "E200", purpose: "EXECUTIVE — luxury reception", status: CONCEPT, collectionSlug: "executive" },
-      { id: "PER-H200", name: "BUCKi PERSONA H200", short: "H200", purpose: "HOME — private living", status: CONCEPT, collectionSlug: "home" },
-      { id: "PER-C200", name: "BUCKi PERSONA C200", short: "C200", purpose: "CARE — supervised senior support", status: CONCEPT, collectionSlug: "care" },
-      { id: "PER-M200", name: "BUCKi PERSONA M200", short: "M200", purpose: "MEMORIA — authorized remembrance", status: CONCEPT, collectionSlug: "memoria" },
-      { id: "PER-S300", name: "BUCKi PERSONA S300", short: "S300", purpose: "SIGNATURE — bespoke configuration", status: CONCEPT, collectionSlug: "signature" },
+      { id: "PER-H200", name: "BUCKi PERSONA H200", short: "H200", purpose: "HOME — private living", status: CONCEPT, image: "/images/families/bucki-persona/slide-2.webp", collectionSlug: "home" },
+      { id: "PER-C200", name: "BUCKi PERSONA C200", short: "C200", purpose: "CARE — supervised senior support", status: CONCEPT, image: "/images/families/bucki-persona/slide-3.webp", collectionSlug: "care" },
+      { id: "PER-M200", name: "BUCKi PERSONA M200", short: "M200", purpose: "MEMORIA — authorized remembrance", status: CONCEPT, image: "/images/families/bucki-persona/slide-4.webp", collectionSlug: "memoria" },
+      { id: "PER-S300", name: "BUCKi PERSONA S300", short: "S300", purpose: "SIGNATURE — bespoke configuration", status: CONCEPT, image: "/images/robots/per-s300/three-quarter-front.webp", collectionSlug: "signature" },
     ],
   },
   {
@@ -334,8 +340,8 @@ export const FAMILIES: RobotFamily[] = [
     ],
     models: [
       { id: "CAR-C100", name: "CARE C100", short: "C100", purpose: "Secure internal logistics", status: CONCEPT },
-      { id: "CAR-C200", name: "CARE C200", short: "C200", purpose: "Nonclinical assistance", status: CONCEPT },
-      { id: "CAR-C300", name: "CARE C300", short: "C300", purpose: "Clinician-assistive research", status: CONCEPT },
+      { id: "CAR-C200", name: "CARE C200", short: "C200", purpose: "Nonclinical assistance", status: CONCEPT, image: "/images/families/care/slide-2.webp" },
+      { id: "CAR-C300", name: "CARE C300", short: "C300", purpose: "Clinician-assistive research", status: CONCEPT, image: "/images/families/care/slide-3.webp" },
     ],
   },
   {
@@ -388,9 +394,9 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/titan/slide-6.webp", alt: "TITAN M100 — close-up of front camera and LiDAR cluster, concept render" },
     ],
     models: [
-      { id: "TIT-T100", name: "TITAN T100", short: "T100", purpose: "Facility inspection", status: CONCEPT },
+      { id: "TIT-T100", name: "TITAN T100", short: "T100", purpose: "Facility inspection", status: CONCEPT, image: "/images/families/titan/slide-1.webp" },
       { id: "TIT-M100", name: "TITAN M100", short: "M100", purpose: "Rugged mine inspection", status: CONCEPT },
-      { id: "TIT-X200", name: "TITAN X200", short: "X200", purpose: "Specialized heavy remote operation", status: CONCEPT },
+      { id: "TIT-X200", name: "TITAN X200", short: "X200", purpose: "Specialized heavy remote operation", status: CONCEPT, image: "/images/families/titan/slide-3.webp" },
     ],
   },
   {
@@ -441,9 +447,9 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/terra/slide-5.webp", alt: "TERRA A200 — close-up of mast head with stereo camera and LiDAR, concept render" },
     ],
     models: [
-      { id: "TER-A100", name: "TERRA A100", short: "A100", purpose: "Crop inspection", status: CONCEPT },
+      { id: "TER-A100", name: "TERRA A100", short: "A100", purpose: "Crop inspection", status: CONCEPT, image: "/images/families/terra/slide-1.webp" },
       { id: "TER-A200", name: "TERRA A200", short: "A200", purpose: "Produce handling and grading", status: CONCEPT },
-      { id: "TER-A300", name: "TERRA A300", short: "A300", purpose: "Harvesting research", status: CONCEPT },
+      { id: "TER-A300", name: "TERRA A300", short: "A300", purpose: "Harvesting research", status: CONCEPT, image: "/images/families/terra/slide-3.webp" },
     ],
   },
   {
@@ -494,8 +500,8 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/tide/slide-5.webp", alt: "TIDE U300 — close-up of gripper claw and main lens, concept render" },
     ],
     models: [
-      { id: "TID-S100", name: "TIDE S100", short: "S100", purpose: "Seafood processing", status: CONCEPT },
-      { id: "TID-M200", name: "TIDE M200", short: "M200", purpose: "Marine deck support", status: CONCEPT },
+      { id: "TID-S100", name: "TIDE S100", short: "S100", purpose: "Seafood processing", status: CONCEPT, image: "/images/families/tide/slide-1.webp" },
+      { id: "TID-M200", name: "TIDE M200", short: "M200", purpose: "Marine deck support", status: CONCEPT, image: "/images/families/tide/slide-2.webp" },
       { id: "TID-U300", name: "TIDE U300", short: "U300", purpose: "Underwater remotely operated vehicle", status: CONCEPT },
     ],
   },
@@ -542,7 +548,7 @@ export const FAMILIES: RobotFamily[] = [
       { src: "/images/families/lab/slide-5.webp", alt: "LAB D200 — close-up of front camera bar, concept render" },
     ],
     models: [
-      { id: "LAB-D100", name: "LAB D100", short: "D100", purpose: "Teaching/developer platform", status: CONCEPT },
+      { id: "LAB-D100", name: "LAB D100", short: "D100", purpose: "Teaching/developer platform", status: CONCEPT, image: "/images/families/lab/slide-1.webp" },
       { id: "LAB-D200", name: "LAB D200", short: "D200", purpose: "Advanced developer platform", status: CONCEPT },
     ],
   },
