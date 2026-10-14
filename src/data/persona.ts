@@ -102,7 +102,7 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     buyer: "Private domestic communication and supervised assistance",
     status: "concept",
     tier: "private",
-    image: "/images/persona/home.webp",
+    image: "/images/families/bucki-persona/slide-5.webp",
   },
   {
     slug: "care",
@@ -126,7 +126,7 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     buyer: "Senior engagement and nonclinical, supervised support",
     status: "concept",
     tier: "private",
-    image: "/images/persona/care.webp",
+    image: "/images/families/bucki-persona/slide-4.webp",
   },
   {
     slug: "memoria",
@@ -149,7 +149,7 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     buyer: "Private, consent-led remembrance and legacy storytelling",
     status: "concept",
     tier: "private",
-    image: "/images/persona/memoria.webp",
+    image: "/images/families/bucki-persona/slide-3.webp",
   },
   {
     slug: "signature",
@@ -207,7 +207,7 @@ export const PERSONA_ATELIER = {
     "No prices or guaranteed delivery dates are published until supplier and engineering quotations are approved.",
   cta: "Begin a Private Design Consultation",
   ctaHref: "/contact?type=private-consultation",
-  image: "/images/persona/atelier.webp",
+  image: "/images/families/bucki-persona/slide-1.webp",
 } as const;
 
 /** Required on all PERSONA-related pages — Chapter 10. */
