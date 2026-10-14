@@ -29,9 +29,11 @@ export default function RobotsIndexPage() {
       <section className="section">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2">
-            <p className="spec-label">
+            {/* h2 so the family cards below (h3) follow the h1 without skipping
+                a level. Same spec-label styling, so the page is unchanged. */}
+            <h2 className="spec-label">
               {FAMILY_COUNT} families · {MODEL_COUNT} models · all concept status
-            </p>
+            </h2>
             <p className="text-sm text-muted">
               Publication tiers: <strong className="font-semibold text-graphite">Now</strong> — FORGE
               &amp; PERSONA EXECUTIVE ·{" "}

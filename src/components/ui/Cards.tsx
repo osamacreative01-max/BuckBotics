@@ -113,7 +113,9 @@ export function ModelCard({
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="spec-label">{family.name}</p>
-            <h4 className="mt-1 font-display text-lg font-semibold">{model.name}</h4>
+            {/* h3, not h4 — ModelCard only renders under the family page's
+                "Models in this family" h2, and h4 there skipped a level. */}
+            <h3 className="mt-1 font-display text-lg font-semibold">{model.name}</h3>
           </div>
           <StatusPill status={model.status} size="sm" />
         </div>
@@ -234,7 +236,9 @@ export function PersonaCard({ collection }: { collection: PersonaCollection }) {
             <h3 className="mt-1 font-display text-xl font-semibold">
               <Link
                 href={`/robots/bucki-persona/${collection.slug}`}
-                className="rounded-sm hover:text-copper"
+                /* copper-ink, not copper: this link sits on a white card and
+                 #c58c55 is only 2.89:1 there. copper-ink reads 5.74:1. */
+              className="rounded-sm hover:text-copper-ink"
               >
                 {collection.name} <span className="font-mono text-base text-muted">{collection.model}</span>
                 <span className="sr-only"> — view collection</span>

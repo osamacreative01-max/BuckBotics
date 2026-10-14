@@ -117,7 +117,7 @@ export default function ResponsibleRoboticsPage() {
                   "Real recordings and AI-generated simulation are separated and clearly labelled.",
                 ].map((r) => (
                   <li key={r} className="flex gap-3 rounded-xl border border-line bg-white p-4">
-                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper">
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper-ink">
                       !
                     </span>
                     {r}
@@ -138,7 +138,7 @@ export default function ResponsibleRoboticsPage() {
                   "Marketing imagery never implies completed deployments, tests or customer facilities.",
                 ].map((r) => (
                   <li key={r} className="flex gap-3 rounded-xl border border-line bg-white p-4">
-                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper">
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper-ink">
                       !
                     </span>
                     {r}

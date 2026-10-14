@@ -99,7 +99,7 @@ export default function PartnershipsPage() {
                   "Concept-stage work stays labelled as concept — partners must present it the same way.",
                 ].map((b) => (
                   <li key={b} className="flex gap-3 rounded-xl border border-line bg-white p-4 text-[0.95rem] leading-relaxed text-graphite">
-                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper">
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper-ink">
                       !
                     </span>
                     {b}

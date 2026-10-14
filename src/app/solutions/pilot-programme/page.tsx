@@ -102,7 +102,7 @@ export default function PilotProgrammePage() {
                   "Customer identities, sites and results are published only with written approval.",
                 ].map((t) => (
                   <li key={t} className="flex gap-3 rounded-xl border border-line bg-white p-4">
-                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper">
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper-ink">
                       !
                     </span>
                     {t}
