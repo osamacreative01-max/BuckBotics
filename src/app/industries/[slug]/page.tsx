@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ButtonLink, Breadcrumbs, StatusPill } from "@/components/ui/Primitives";
+import { ButtonLink, StatusPill } from "@/components/ui/Primitives";
 import { PageBanner } from "@/components/ui/PageBanner";
 import { Notice, ProcessSteps } from "@/components/ui/Content";
 import { SmartImage } from "@/components/ui/SmartImage";
@@ -58,9 +58,6 @@ export default async function IndustryDetailPage({
       {/* HERO — exact introduction from the master spec */}
       <header className="section border-b border-line bg-arctic/50">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <Breadcrumbs
-            items={[{ label: "Industries", href: "/industries" }, { label: detail.title }]}
-          />
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <p className="eyebrow">

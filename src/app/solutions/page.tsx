@@ -46,7 +46,6 @@ export default function SolutionsPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Solutions" }]}
         eyebrow="Solutions"
         title="From one physical task to a measured pilot."
         intro="Three staged offerings: a robotics feasibility assessment, a controlled pilot programme, and proposed managed services. Nothing is sold as delivered capability — each stage produces documented decisions."

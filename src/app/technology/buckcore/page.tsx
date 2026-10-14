@@ -14,7 +14,6 @@ export default function BuckcorePage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Technology", href: "/technology/buckcore" }, { label: "BUCKCORE" }]}
         eyebrow="Technology · proposed platform"
         title={BUCKCORE.h1}
         intro={BUCKCORE.body}

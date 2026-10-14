@@ -58,7 +58,6 @@ export default function ProductStatusPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Resources", href: "/resources/faq" }, { label: "Product status" }]}
         eyebrow="Resources"
         title="What each status actually means"
         intro="Every model, family and BUCKCORE module on this site carries one of five lifecycle labels. They are defined once, used everywhere, and never softened for marketing."

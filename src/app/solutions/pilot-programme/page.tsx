@@ -13,10 +13,6 @@ export default function PilotProgrammePage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[
-          { label: "Solutions", href: "/solutions" },
-          { label: "Pilot programme" },
-        ]}
         eyebrow="Solutions · controlled pilot"
         title="A pilot is a measurement, not a deployment."
         intro="The pilot programme gives qualified buyers a supervised, bounded trial on one task set — designed to produce evidence, including evidence against proceeding. It begins only after a feasibility assessment confirms the task is a sensible candidate."

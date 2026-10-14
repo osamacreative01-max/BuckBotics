@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SmartImage } from "@/components/ui/SmartImage";
-import { StatusPill, ButtonLink, Breadcrumbs } from "@/components/ui/Primitives";
+import { StatusPill, ButtonLink } from "@/components/ui/Primitives";
 import { AccordionItem, Notice } from "@/components/ui/Content";
 import {
   PERSONA,
@@ -56,13 +56,6 @@ export default async function PersonaCollectionPage({
       <>
         <header className="section border-b border-line bg-arctic/50">
           <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-            <Breadcrumbs
-              items={[
-                { label: "Robots", href: "/robots" },
-                { label: "BUCKi PERSONA", href: "/robots/bucki-persona" },
-                { label: "ATELIER" },
-              ]}
-            />
             <div className="flex flex-wrap items-center gap-3">
               <span className="rounded-full border border-copper/50 bg-copper/10 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[#6d4a26]">
                 Service · not a robot model
@@ -131,13 +124,6 @@ export default async function PersonaCollectionPage({
     <>
       <header className="section border-b border-line bg-arctic/50">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <Breadcrumbs
-            items={[
-              { label: "Robots", href: "/robots" },
-              { label: "BUCKi PERSONA", href: "/robots/bucki-persona" },
-              { label: `${collection.name} ${collection.model}` },
-            ]}
-          />
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <div className="flex flex-wrap items-center gap-3">

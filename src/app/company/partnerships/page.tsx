@@ -36,10 +36,6 @@ export default function PartnershipsPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[
-          { label: "Company", href: "/company/about" },
-          { label: "Partnerships" },
-        ]}
         eyebrow="Company · partnerships"
         title="Build the supply side with us."
         intro="Supplier, manufacturing, integration and academic discussions run separately from end-customer project enquiries. We are early-stage and evidence-driven — the best partnerships start with real specifications, not logos."

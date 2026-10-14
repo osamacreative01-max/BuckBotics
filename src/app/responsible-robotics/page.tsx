@@ -38,7 +38,6 @@ export default function ResponsibleRoboticsPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Responsible robotics" }]}
         eyebrow="Policy"
         title="Responsible robotics, written down."
         intro="Identity, consent, clinical boundaries, child protection and independent physical safety controls — the standing rules that shape every concept we publish."

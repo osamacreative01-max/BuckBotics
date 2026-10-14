@@ -55,7 +55,6 @@ export async function ContactView({
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Contact" }]}
         eyebrow="Contact"
         title={heading}
         intro="One form, routed by intent. Your enquiry goes to a company-controlled inbox with consent recorded — we never claim a booking, pilot or delivery is confirmed by submitting it."

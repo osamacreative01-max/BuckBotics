@@ -16,7 +16,6 @@ export default function RobotsIndexPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Robots" }]}
         eyebrow="Robots"
         title="Nine families. Twenty-seven concept models."
         intro="This is the complete BUCKBOTICS portfolio as published at launch. Every family shows its models with unique product identifiers, intended purpose and lifecycle status — enquiry rather than checkout."

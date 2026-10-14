@@ -18,7 +18,6 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Industries" }]}
         eyebrow="Industry directory"
         title="Thirty markets. Six sectors. One directory."
         intro="A strategic market-opportunity catalogue for Canadian buyers — each tile names the proposed task, the relevant robot families and an enquiry route. Five sectors have full launch pages; the rest are enquiry tiles at launch, not empty articles."

@@ -23,7 +23,6 @@ export function LegalShell({
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Legal", href: "/legal/privacy" }, { label: title }]}
         eyebrow={`Legal · ${path.replace("/legal/", "")}`}
         title={title}
         intro={intro}

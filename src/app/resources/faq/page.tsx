@@ -26,7 +26,6 @@ export default function FaqPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Resources", href: "/resources/faq" }, { label: "FAQ" }]}
         eyebrow="Resources"
         title="Frequently asked questions"
         intro="Straight answers about concept status, how engagements work, what BUCKCORE is, and how identity, consent and safety are handled."

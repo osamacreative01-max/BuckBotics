@@ -16,7 +16,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        breadcrumbs={[{ label: "Company", href: "/company/about" }, { label: "About" }]}
         eyebrow="Company"
         title="A venture built around engineering honesty."
         intro="BUCKBOTICS develops intelligent robotic solutions and physical AI concepts — and publishes them with their true development status attached."

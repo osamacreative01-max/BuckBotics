@@ -124,14 +124,12 @@ export function PageHeader({
   intro,
   children,
   tone = "light",
-  breadcrumbs,
 }: {
   eyebrow?: string;
   title: string;
   intro?: ReactNode;
   children?: ReactNode;
   tone?: "light" | "dark";
-  breadcrumbs?: Array<{ label: string; href?: string }>;
 }) {
   const dark = tone === "dark";
   return (
@@ -141,7 +139,6 @@ export function PageHeader({
       }`}
     >
       <div className="mx-auto w-full max-w-[min(93vw,1800px)] px-5 sm:px-8">
-        {breadcrumbs ? <Breadcrumbs items={breadcrumbs} tone={tone} /> : null}
         {eyebrow ? (
           <p className={`eyebrow ${dark ? "text-cyan!" : ""}`}>{eyebrow}</p>
         ) : null}
@@ -154,46 +151,6 @@ export function PageHeader({
         {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
       </div>
     </header>
-  );
-}
-
-/* ---------------------------------------------------------------
-   Breadcrumbs (SEO + orientation)
---------------------------------------------------------------- */
-export function Breadcrumbs({
-  items,
-  tone = "light",
-}: {
-  items: Array<{ label: string; href?: string }>;
-  tone?: "light" | "dark";
-}) {
-  const dark = tone === "dark";
-  return (
-    <nav aria-label="Breadcrumb" className="mb-5">
-      <ol className="flex flex-wrap items-center gap-2 font-mono text-[0.72rem] uppercase tracking-[0.1em]">
-        <li>
-          <Link href="/" className={dark ? "text-[#8fa4bb] hover:text-white" : "text-muted hover:text-blue"}>
-            Home
-          </Link>
-        </li>
-        {items.map((item, i) => (
-          <li key={item.label} className="flex items-center gap-2">
-            <span aria-hidden="true" className={dark ? "text-[#5c7089]" : "text-line"}>
-              /
-            </span>
-            {item.href && i < items.length - 1 ? (
-              <Link href={item.href} className={dark ? "text-[#8fa4bb] hover:text-white" : "text-muted hover:text-blue"}>
-                {item.label}
-              </Link>
-            ) : (
-              <span className={dark ? "text-white" : "text-midnight"} aria-current="page">
-                {item.label}
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
   );
 }
 
