@@ -1,21 +1,16 @@
 /**
- * BUCKCORE power-on readout — the single visual for every loading state.
+ * BUCKCORE core — the single visual for every loading state.
  *
  * Deliberately presentational and server-safe (no hooks, no "use client"): it
  * is rendered both by the route fallback in app/loading.tsx and by the client
  * navigation overlay in layout/RouteBoot.tsx, and the two must look identical
  * so a handover between them is invisible.
  *
- * All motion is CSS with staggered delays, because the route fallback is
- * prerendered and cannot rely on timers or a JS dismiss.
+ * The mark is a sensor core: a dial of ticks, two counter-rotating rings, a
+ * radar sector sweeping the inner well and a pulsing node at the centre. Every
+ * animation is CSS with an infinite loop rather than a timer, because the
+ * route fallback is prerendered and cannot rely on JS to dismiss itself.
  */
-
-const STEPS: Array<{ label: string; result: string }> = [
-  { label: "Initializing BUCKCORE", result: "OK" },
-  { label: "Calibrating sensor array", result: "OK" },
-  { label: "Loading model registry", result: "27 units" },
-  { label: "Verifying lifecycle status", result: "Concept" },
-];
 
 export function BootScreen() {
   return (
@@ -23,40 +18,104 @@ export function BootScreen() {
       role="status"
       aria-live="polite"
       aria-label="Loading"
-      className="fixed inset-0 z-[9999] flex flex-col justify-between bg-midnight px-6 py-8 sm:px-12"
+      className="fixed inset-0 z-[9999] overflow-hidden bg-midnight"
     >
-      <div className="flex items-baseline justify-between font-mono text-[0.65rem] uppercase tracking-[0.28em] text-[#8fa4bb]">
-        <span>BUCKBOTICS</span>
-        <span className="text-cyan">BUCKCORE</span>
-      </div>
+      {/* Ambient bloom behind the core */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,rgba(53,182,243,0.16),transparent_58%)]"
+      />
 
-      <div className="mx-auto w-full max-w-lg">
-        <ul className="space-y-2.5">
-          {STEPS.map((step, i) => (
-            <li
-              key={step.label}
-              className="boot-step flex items-baseline justify-between gap-4 font-mono text-[0.72rem] uppercase tracking-[0.16em] text-[#c9d6e4]"
-              style={{ animationDelay: `${i * 130}ms` }}
-            >
-              <span className="flex items-baseline gap-2">
-                <span aria-hidden="true" className="text-cyan">
-                  ▸
-                </span>
-                {step.label}
-              </span>
-              <span className="text-[#8fa4bb]">{step.result}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Faint engineering grid */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.35] [background-image:linear-gradient(rgba(53,182,243,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(53,182,243,0.05)_1px,transparent_1px)] [background-size:56px_56px]"
+      />
 
-      <div>
-        <div className="h-px w-full bg-white/15">
-          <div className="boot-bar h-px bg-cyan" />
+      <div className="relative flex h-full flex-col items-center justify-center gap-12 px-6">
+        <svg
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          className="h-44 w-44 sm:h-56 sm:w-56"
+        >
+          <defs>
+            <linearGradient id="boot-sweep" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stopColor="#35b6f3" stopOpacity="0" />
+              <stop offset="100%" stopColor="#35b6f3" stopOpacity="0.55" />
+            </linearGradient>
+            <radialGradient id="boot-node">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="45%" stopColor="#35b6f3" />
+              <stop offset="100%" stopColor="#35b6f3" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+
+          {/* Tick dial */}
+          <g className="boot-spin-slow">
+            <circle
+              cx="100"
+              cy="100"
+              r="94"
+              fill="none"
+              stroke="#35b6f3"
+              strokeOpacity="0.28"
+              strokeWidth="1"
+              strokeDasharray="1.5 10"
+            />
+          </g>
+
+          {/* Outer ring — broken into arcs, turning clockwise */}
+          <g className="boot-spin-mid">
+            <circle
+              cx="100"
+              cy="100"
+              r="78"
+              fill="none"
+              stroke="#35b6f3"
+              strokeOpacity="0.45"
+              strokeWidth="1.5"
+              strokeDasharray="74 22 34 22"
+              strokeLinecap="round"
+            />
+          </g>
+
+          {/* Inner well + radar sector */}
+          <circle cx="100" cy="100" r="58" fill="none" stroke="#35b6f3" strokeOpacity="0.22" strokeWidth="1" />
+          <g className="boot-spin-fast">
+            <path d="M100 100 L100 42 A58 58 0 0 1 150.2 71 Z" fill="url(#boot-sweep)" />
+          </g>
+
+          {/* Counter-rotating ring */}
+          <g className="boot-spin-rev">
+            <circle
+              cx="100"
+              cy="100"
+              r="42"
+              fill="none"
+              stroke="#35b6f3"
+              strokeOpacity="0.75"
+              strokeWidth="1.5"
+              strokeDasharray="46 18"
+              strokeLinecap="round"
+            />
+          </g>
+
+          {/* Node */}
+          <circle cx="100" cy="100" r="26" fill="url(#boot-node)" className="boot-node" />
+          <circle cx="100" cy="100" r="4.5" fill="#ffffff" className="boot-node" />
+        </svg>
+
+        <div className="flex flex-col items-center gap-4">
+          <p className="font-mono text-[0.7rem] uppercase tracking-[0.42em] text-[#c9d6e4]">
+            Buckbotics
+          </p>
+          <div className="h-px w-40 overflow-hidden bg-white/12 sm:w-56">
+            <div className="boot-bar h-px bg-cyan" />
+          </div>
+          <p className="font-mono text-[0.58rem] uppercase tracking-[0.3em] text-[#6f86a0]">
+            Buckcore · Concept-stage portfolio
+          </p>
         </div>
-        <p className="mt-3 font-mono text-[0.6rem] uppercase tracking-[0.28em] text-[#8fa4bb]">
-          Concept-stage portfolio — proposed designs only
-        </p>
       </div>
     </div>
   );
