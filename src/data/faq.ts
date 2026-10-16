@@ -15,7 +15,7 @@ export const FAQS: Array<{ q: string; a: string; group: string }> = [
   {
     group: "Products & status",
     q: "What do I do if a specification I need is missing?",
-    a: "It is published as “Not specified / under engineering evaluation.” Payload, runtime, speed, protection ratings, certifications and similar figures cannot be guessed — each requires a dated test log or an approved source before it appears on the site.",
+    a: "It is published as “Not specified / under engineering evaluation.” Payload, runtime, speed, protection ratings, certifications and similar figures cannot be guessed, each requires a dated test log or an approved source before it appears on the site.",
   },
   {
     group: "Products & status",
@@ -40,12 +40,12 @@ export const FAQS: Array<{ q: string; a: string; group: string }> = [
   {
     group: "Engagements",
     q: "Do you partner with OEMs, integrators and researchers?",
-    a: "Yes — use the Partnerships route. Supplier, manufacturing and academic discussions are handled separately from end-customer project enquiries.",
+    a: "Yes, use the Partnerships route. Supplier, manufacturing and academic discussions are handled separately from end-customer project enquiries.",
   },
   {
     group: "Technology",
     q: "Is BUCKCORE finished software I can install?",
-    a: "No. BUCKCORE is a proposed architecture. All ten modules — intelligence, vision, motion, skills, memory, fleet, sim, guard, ops and voice — carry Concept status at launch.",
+    a: "No. BUCKCORE is a proposed architecture. All ten modules, intelligence, vision, motion, skills, memory, fleet, sim, guard, ops and voice, carry Concept status at launch.",
   },
   {
     group: "Technology",
@@ -55,7 +55,7 @@ export const FAQS: Array<{ q: string; a: string; group: string }> = [
   {
     group: "Safety & responsibility",
     q: "How do you handle identity, consent and sensitive PERSONA uses?",
-    a: "Only original synthetic adult faces appear publicly. MEMORIA starts with a low-information enquiry and moves identity and rights verification to a secured channel — no open uploads of faces, voices or family archives. Full standards are published on the Responsible Robotics page.",
+    a: "Only original synthetic adult faces appear publicly. MEMORIA starts with a low-information enquiry and moves identity and rights verification to a secured channel, no open uploads of faces, voices or family archives. Full standards are published on the Responsible Robotics page.",
   },
   {
     group: "Safety & responsibility",

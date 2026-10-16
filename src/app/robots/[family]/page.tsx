@@ -26,7 +26,7 @@ export async function generateMetadata({
   const family = getFamily(slug);
   if (!family) return {};
   return pageMeta({
-    title: `${family.name} — ${family.headline}`,
+    title: `${family.name}, ${family.headline}`,
     description: `${family.intro} ${family.models.length} concept models: ${family.models
       .map((m) => m.name)
       .join(", ")}. Status: concept.`,
@@ -41,19 +41,19 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
 
   const isPersona = family.slug === "bucki-persona";
   // Only models whose approved renders are exported into /images/robots/{dir}/
-  // get a gallery — the rest are omitted rather than shown as placeholders.
+  // get a gallery, the rest are omitted rather than shown as placeholders.
   const galleryModels = family.models.filter((m) => m.imageDir && m.views?.length);
 
   return (
     <>
-      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      {/* DELIVERED BANNER, 3:1 marketing artwork, headline baked in */}
       <PageBanner
         src={family.banner?.src}
         alt={family.banner?.alt ?? `${family.name} concept banner`}
         priority
       />
 
-      {/* HERO — family name, headline, intro and the CTA row beside the
+      {/* HERO, family name, headline, intro and the CTA row beside the
           white-background render. The status badge, model count and tier
           metadata are dropped; those live in the delivered banner artwork. */}
       <header className="border-b border-line bg-arctic/50">
@@ -79,7 +79,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
             <figure className="lg:col-span-6">
               <SmartImage
                 src={family.image}
-                alt={`${family.name} — white-background robot concept render`}
+                alt={`${family.name}, white-background robot concept render`}
                 className="aspect-[4/3] rounded-2xl border border-line bg-white"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
@@ -158,14 +158,14 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         </section>
       ) : null}
 
-      {/* MODEL CARDS — all variants with unique product identifiers */}
+      {/* MODEL CARDS, all variants with unique product identifiers */}
       <section className="section border-b border-line" id="models">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Model registry</p>
           <h2 className="display-lg mt-3">Models in this family</h2>
           <p className="lede mt-4 max-w-3xl">
             Every model below is a proposed concept with a unique internal identifier. Full public
-            names are always shown — {family.name} designations are never abbreviated.
+            names are always shown, {family.name} designations are never abbreviated.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {family.models.map((model, i) => (
@@ -210,14 +210,6 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                   </ul>
                 </div>
                 <div className="rounded-xl border border-white/15 bg-white/[0.06] p-5">
-                  <p className="spec-label">Demonstrated / verified capabilities</p>
-                  <p className="mt-3 text-[0.95rem] text-[#d5e0ec]">
-                    <strong className="font-semibold">None published.</strong> No operational test,
-                    deployment or third-party verification exists for this family. Status is{" "}
-                    <strong className="font-semibold">CONCEPT</strong>.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-white/15 bg-white/[0.06] p-5">
                   <p className="spec-label">Industry cross-links</p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {family.industryLinks.map((l) => (
@@ -237,7 +229,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         </div>
       </section>
 
-      {/* TECHNICAL SPECIFICATIONS — "Not specified" until measured */}
+      {/* TECHNICAL SPECIFICATIONS, "Not specified" until measured */}
       <section className="section border-b border-line" id="specifications">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Technical specifications</p>
@@ -245,7 +237,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
           <p className="lede mt-4 max-w-3xl">
             Prohibited figures (payload, runtime, speed, IP rating, certifications and similar) are
             never guessed. Each row stays at its default until a dated test log or approved source
-            exists — applies to every model in this family.
+            exists, applies to every model in this family.
           </p>
           <div className="mt-8 overflow-x-auto rounded-2xl border border-line">
             <table className="w-full min-w-[560px] border-collapse bg-white text-left">
@@ -275,7 +267,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         </div>
       </section>
 
-      {/* IMAGE GALLERY — shown per model once its approved renders are exported
+      {/* IMAGE GALLERY, shown per model once its approved renders are exported
           into /images/robots/{imageDir}/; models still awaiting exports are
           omitted instead of being rendered as concept placeholders. */}
       {galleryModels.length > 0 && (
@@ -284,7 +276,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
             <p className="eyebrow">Image gallery</p>
             <h2 className="display-md mt-3">Approved viewpoints and close-ups</h2>
             <p className="lede mt-4 max-w-3xl">
-              Every model reserves nine approved angles — front, rear, left and right profiles,
+              Every model reserves nine approved angles, front, rear, left and right profiles,
               3/4 front and 3/4 rear, plus sensor, manipulator and chassis close-ups. Morphology
               stays identical across views of a model; each angle appears here once its approved
               render has been exported.
@@ -341,7 +333,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#b7c6d8]">
                   Bring the task, the environment and the shift pattern. We will tell you honestly
-                  whether a feasibility study makes sense — no stock claims, no delivery dates.
+                  whether a feasibility study makes sense, no stock claims, no delivery dates.
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
                   <ButtonLink href="/contact?type=project" surface="dark">

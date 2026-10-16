@@ -1,5 +1,5 @@
 /**
- * Primary navigation — Master Spec V2.0, Chapter 05.
+ * Primary navigation, Master Spec V2.0, Chapter 05.
  * Desktop: sticky header, logo left, menus right, persistent
  * "Discuss a Project" CTA. Mobile: accordion drawer.
  */

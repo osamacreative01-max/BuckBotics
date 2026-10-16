@@ -214,7 +214,7 @@ export function EnquiryForm({
             <option value="">Not industry-specific</option>
             {industryOptions.map((i) => (
               <option key={i.n} value={i.title}>
-                {String(i.n).padStart(2, "0")} — {i.title}
+                {String(i.n).padStart(2, "0")}, {i.title}
               </option>
             ))}
           </select>

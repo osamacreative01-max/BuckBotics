@@ -6,7 +6,7 @@ import { ALL_MODELS } from "@/data/families";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "Product Status — What the Stages Mean",
+  title: "Product Status, What the Stages Mean",
   description:
     "The meaning of CONCEPT, IN DEVELOPMENT, PROTOTYPE, PILOT and AVAILABLE at BUCKBOTICS, plus the evidence rules required before any specification is published.",
   path: "/product-status",
@@ -19,7 +19,7 @@ const EVIDENCE_EXAMPLES = [
   },
   {
     h: "Robot payload",
-    p: "Arm payload, carry capacity, lift fixture and operating mode are distinguished — measured units only.",
+    p: "Arm payload, carry capacity, lift fixture and operating mode are distinguished, measured units only.",
   },
   {
     h: "AI language capability",
@@ -27,7 +27,7 @@ const EVIDENCE_EXAMPLES = [
   },
   {
     h: "Healthcare suitability",
-    p: "Only approved intended use and a documented regulatory position may be published — reviewed with a Canadian professional.",
+    p: "Only approved intended use and a documented regulatory position may be published, reviewed with a Canadian professional.",
   },
   {
     h: "Visual safety",
@@ -58,10 +58,10 @@ const PROHIBITED = [
 export default function ProductStatusPage() {
   return (
     <>
-      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      {/* DELIVERED BANNER, 3:1 marketing artwork, headline baked in */}
       <PageBanner
         src="/images/banners/product-status.jpg"
-        alt="Status definitions banner — 'What Each Status Actually Means.' A BUCKBOTICS robotic arm with a two-finger gripper and wrist camera on a deep navy background with faint concentric arcs. Concept visualization."
+        alt="Status definitions banner, 'What Each Status Actually Means.' A BUCKBOTICS robotic arm with a two-finger gripper and wrist camera on a deep navy background with faint concentric arcs. Concept visualization."
         priority
       />
       <PageHeader
@@ -93,7 +93,7 @@ export default function ProductStatusPage() {
               At launch, <strong className="font-semibold text-white">all 27 models, all nine
               families and all ten BUCKCORE modules are labelled CONCEPT.</strong> Nothing has an
               operational test shown. If a status changes on this site, it changes because evidence
-              was accepted — with source, date and approver.
+              was accepted, with source, date and approver.
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function ProductStatusPage() {
                 specification register stays at its default value.
               </p>
               <div className="mt-6 rounded-xl border border-line bg-white p-5">
-                <p className="spec-label">Never guessed — prohibited until evidenced</p>
+                <p className="spec-label">Never guessed, prohibited until evidenced</p>
                 <ul className="mt-3 flex flex-wrap gap-1.5">
                   {PROHIBITED.map((p) => (
                     <li
@@ -128,7 +128,7 @@ export default function ProductStatusPage() {
             <div className="lg:col-span-7">
               <div className="rounded-2xl border border-line bg-white px-6 sm:px-8">
                 <h2 className="pt-6 font-display text-lg font-semibold">
-                  Evidence &amp; spec controls — examples
+                  Evidence &amp; spec controls, examples
                 </h2>
                 <div className="mt-2">
                   {EVIDENCE_EXAMPLES.map((e) => (

@@ -1,5 +1,5 @@
 /**
- * BUCKCORE — proposed physical AI architecture.
+ * BUCKCORE, proposed physical AI architecture.
  * Source: Master Spec V2.0, Chapter 14.
  *
  * Every module is claim status "Concept". Nothing may be described as
@@ -35,7 +35,7 @@ export const BUCKCORE_MODULES: BuckcoreModule[] = [
   { name: "BUCKCORE VOICE", purpose: "Accessible dialogue for robot interfaces", status: "Concept" },
 ];
 
-/** Architecture flow — spec diagram description (Chapter 14). */
+/** Architecture flow, spec diagram description (Chapter 14). */
 export const ARCHITECTURE_FLOW = [
   "Customer workflow",
   "Approved application tasks",
@@ -45,7 +45,7 @@ export const ARCHITECTURE_FLOW = [
 ] as const;
 
 export const ARCHITECTURE_NOTES = [
-  "Data logging and human supervision sit alongside the stack — not inside a fictitious finished feature.",
+  "Data logging and human supervision sit alongside the stack, not inside a fictitious finished feature.",
   "The independent motion and safety layer is a separate, verified subsystem; language models never bypass it.",
   "BUCKCORE integrates with robot platforms only where a documented compatibility review exists.",
 ] as const;

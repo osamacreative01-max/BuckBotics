@@ -1,5 +1,5 @@
 /**
- * BUCKCORE core — the single visual for every loading state.
+ * BUCKCORE core, the single visual for every loading state.
  *
  * Holds no state or effects of its own, so the route fallback in
  * app/loading.tsx and the navigation overlay in layout/RouteBoot.tsx render
@@ -66,7 +66,7 @@ export function BootScreen() {
             />
           </g>
 
-          {/* Outer ring — broken into arcs, turning clockwise */}
+          {/* Outer ring, broken into arcs, turning clockwise */}
           <g className="boot-spin-mid">
             <circle
               cx="100"

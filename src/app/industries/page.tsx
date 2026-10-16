@@ -5,9 +5,9 @@ import { industriesBySector, INDUSTRY_DETAILS, INDUSTRIES } from "@/data/industr
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "Industries — 30 Canadian Market Opportunities",
+  title: "Industries, 30 Canadian Market Opportunities",
   description:
-    "A searchable directory of 30 Canadian industry opportunities for robotics — grouped into six sectors, with five fully developed launch pages for warehousing, food processing, healthcare logistics, greenhouses and mining.",
+    "A searchable directory of 30 Canadian industry opportunities for robotics, grouped into six sectors, with five fully developed launch pages for warehousing, food processing, healthcare logistics, greenhouses and mining.",
   path: "/industries",
 });
 
@@ -20,7 +20,7 @@ export default function IndustriesPage() {
       <PageHeader
         eyebrow="Industry directory"
         title="Thirty markets. Six sectors. One directory."
-        intro="A strategic market-opportunity catalogue for Canadian buyers — each tile names the proposed task, the relevant robot families and an enquiry route. Five sectors have full launch pages; the rest are enquiry tiles at launch, not empty articles."
+        intro="A strategic market-opportunity catalogue for Canadian buyers, each tile names the proposed task, the relevant robot families and an enquiry route. Five sectors have full launch pages; the rest are enquiry tiles at launch, not empty articles."
       >
         <ButtonLink href="/contact?type=project">Discuss your operation</ButtonLink>
         <ButtonLink href="/solutions/pilot-programme" tone="secondary">
@@ -74,7 +74,7 @@ export default function IndustriesPage() {
               enquiry flow rather than to thin SEO stubs.
             </Notice>
             <Notice title="Not sure where you fit?" tone="concept">
-              Describe the physical task — what moves, what is inspected, how often — and we will
+              Describe the physical task, what moves, what is inspected, how often, and we will
               route it to the right family during the discovery call.{" "}
               <strong className="font-semibold">{INDUSTRIES.length} markets</strong> are covered by
               the nine robot families.

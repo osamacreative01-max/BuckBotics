@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/metadata";
 export const metadata = pageMeta({
   title: "Terms of Use",
   description:
-    "Terms governing use of the BUCKBOTICS website — concept-stage content, intellectual property, acceptable use and disclaimers.",
+    "Terms governing use of the BUCKBOTICS website, concept-stage content, intellectual property, acceptable use and disclaimers.",
   path: "/legal/terms",
 });
 
@@ -100,7 +100,7 @@ export default function TermsPage() {
       <LegalSection id="contact" h="10. Contact">
         <p>
           Questions about these terms: BUCKBOTICS, 26-2359 Royal Windsor Drive, Mississauga, Ontario
-          L5J 4S9, Canada — info@buckbotics.com, 1 888 272 7884.
+          L5J 4S9, Canada, info@buckbotics.com, 1 888 272 7884.
         </p>
       </LegalSection>
     </LegalShell>

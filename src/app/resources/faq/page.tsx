@@ -26,10 +26,10 @@ export default function FaqPage() {
 
   return (
     <>
-      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      {/* DELIVERED BANNER, 3:1 marketing artwork, headline baked in */}
       <PageBanner
         src="/images/banners/faq.jpg"
-        alt="FAQ banner — 'Frequently Asked Questions.' A FORGE W200 mobile manipulator with its arm extended over a gear in a dark industrial production hall. Concept visualization."
+        alt="FAQ banner, 'Frequently Asked Questions.' A FORGE W200 mobile manipulator with its arm extended over a gear in a dark industrial production hall. Concept visualization."
         priority
       />
       <PageHeader
@@ -85,7 +85,7 @@ export default function FaqPage() {
 
               <div className="mt-4">
                 <Notice title="Can’t find your answer?" tone="concept">
-                  Write to us with the task or family you are asking about — general questions are
+                  Write to us with the task or family you are asking about, general questions are
                   fine too.
                 </Notice>
               </div>

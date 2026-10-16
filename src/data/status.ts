@@ -1,5 +1,5 @@
 /**
- * Product status schema — Master Spec V2.0, Chapter 16.
+ * Product status schema, Master Spec V2.0, Chapter 16.
  * Every model card, family hero and detail page derives its status
  * wording from this table. Never invent a status.
  */
@@ -50,11 +50,11 @@ export const STATUS_SCHEMA: Record<StatusKey, StatusDefinition> = {
 
 export const STATUS_LIST = Object.values(STATUS_SCHEMA);
 
-/** Every model in the launch registry is CONCEPT — no evidence exists yet. */
+/** Every model in the launch registry is CONCEPT, no evidence exists yet. */
 export const DEFAULT_MODEL_STATUS: StatusKey = "concept";
 
 /**
- * Placeholder specification value — Master Spec, Chapter 16.
+ * Placeholder specification value, Master Spec, Chapter 16.
  * Prohibited figures (payload, runtime, speed, IP rating, certifications…)
  * must never be guessed.
  */

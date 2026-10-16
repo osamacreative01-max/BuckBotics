@@ -3,9 +3,9 @@ import { Notice } from "@/components/ui/Content";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "Partnerships — OEM, Supplier & Research Enquiries",
+  title: "Partnerships, OEM, Supplier & Research Enquiries",
   description:
-    "Supplier, manufacturing, integration and academic partnership enquiries for BUCKBOTICS — a Buckingham venture developing robotic concepts and physical AI frameworks.",
+    "Supplier, manufacturing, integration and academic partnership enquiries for BUCKBOTICS, a Buckingham venture developing robotic concepts and physical AI frameworks.",
   path: "/company/partnerships",
 });
 
@@ -38,7 +38,7 @@ export default function PartnershipsPage() {
       <PageHeader
         eyebrow="Company · partnerships"
         title="Build the supply side with us."
-        intro="Supplier, manufacturing, integration and academic discussions run separately from end-customer project enquiries. We are early-stage and evidence-driven — the best partnerships start with real specifications, not logos."
+        intro="Supplier, manufacturing, integration and academic discussions run separately from end-customer project enquiries. We are early-stage and evidence-driven, the best partnerships start with real specifications, not logos."
       >
         <ButtonLink href="/contact?type=partnership">Send a partnership enquiry</ButtonLink>
         <ButtonLink href="/company/about" tone="secondary">
@@ -96,7 +96,7 @@ export default function PartnershipsPage() {
                   "No partnership is announced, logo-published or implied before an executed agreement.",
                   "No mutual claims of performance, certification or market leadership without evidence from both sides.",
                   "No exclusivity, volume commitment or delivery schedule is promised at enquiry stage.",
-                  "Concept-stage work stays labelled as concept — partners must present it the same way.",
+                  "Concept-stage work stays labelled as concept, partners must present it the same way.",
                 ].map((b) => (
                   <li key={b} className="flex gap-3 rounded-xl border border-line bg-white p-4 text-[0.95rem] leading-relaxed text-graphite">
                     <span aria-hidden="true" className="mt-0.5 shrink-0 font-mono text-xs text-copper-ink">

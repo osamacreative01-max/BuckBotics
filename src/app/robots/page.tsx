@@ -6,9 +6,9 @@ import { conceptDisclaimer } from "@/data/site";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "All Robot Families — 9 Families, 27 Concept Models",
+  title: "All Robot Families, 9 Families, 27 Concept Models",
   description:
-    "Explore all nine BUCKBOTICS robot families — BUCKi, BUCKi HOME, BUCKi PERSONA, FORGE, CARE, TITAN, TERRA, TIDE and LAB — 27 concept models with lifecycle status and enquiry routes.",
+    "Explore all nine BUCKBOTICS robot families, BUCKi, BUCKi HOME, BUCKi PERSONA, FORGE, CARE, TITAN, TERRA, TIDE and LAB, 27 concept models with lifecycle status and enquiry routes.",
   path: "/robots",
 });
 
@@ -18,7 +18,7 @@ export default function RobotsIndexPage() {
       <PageHeader
         eyebrow="Robots"
         title="Nine families. Twenty-seven concept models."
-        intro="This is the complete BUCKBOTICS portfolio as published at launch. Every family shows its models with unique product identifiers, intended purpose and lifecycle status — enquiry rather than checkout."
+        intro="This is the complete BUCKBOTICS portfolio as published at launch. Every family shows its models with unique product identifiers, intended purpose and lifecycle status, enquiry rather than checkout."
       >
         <ButtonLink href="/contact?type=project">Discuss an Application</ButtonLink>
         <ButtonLink href="/product-status" tone="secondary">
@@ -35,11 +35,11 @@ export default function RobotsIndexPage() {
               {FAMILY_COUNT} families · {MODEL_COUNT} models · all concept status
             </h2>
             <p className="text-sm text-muted">
-              Publication tiers: <strong className="font-semibold text-graphite">Now</strong> — FORGE
+              Publication tiers: <strong className="font-semibold text-graphite">Now</strong>, FORGE
               &amp; PERSONA EXECUTIVE ·{" "}
-              <strong className="font-semibold text-graphite">Visible vision</strong> — remaining
+              <strong className="font-semibold text-graphite">Visible vision</strong>, remaining
               families ·{" "}
-              <strong className="font-semibold text-graphite">Private review</strong> — PERSONA HOME,
+              <strong className="font-semibold text-graphite">Private review</strong>, PERSONA HOME,
               CARE, MEMORIA, SIGNATURE.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function RobotsIndexPage() {
           <div className="mt-10">
             <Notice title="Concept stage" tone="concept">
               {conceptDisclaimer} Model designations such as “H200” or “C200” always appear with
-              their full family name — more than one family uses the same number.
+              their full family name, more than one family uses the same number.
             </Notice>
           </div>
         </div>

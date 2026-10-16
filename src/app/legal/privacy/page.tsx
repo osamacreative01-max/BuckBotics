@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/metadata";
 export const metadata = pageMeta({
   title: "Privacy Policy",
   description:
-    "How BUCKBOTICS collects, uses, stores and protects enquiry data — consent, retention, access and deletion rights under Canadian privacy law.",
+    "How BUCKBOTICS collects, uses, stores and protects enquiry data, consent, retention, access and deletion rights under Canadian privacy law.",
   path: "/legal/privacy",
 });
 
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
     <LegalShell
       title="Privacy Policy"
       path="/legal/privacy"
-      intro="What we collect when you contact us, why we collect it, how long we keep it and the choices you have. Written for Canadian users — drafted for counsel review before publication."
+      intro="What we collect when you contact us, why we collect it, how long we keep it and the choices you have. Written for Canadian users, drafted for counsel review before publication."
     >
       <LegalSection id="who" h="1. Who we are">
         <p>
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
           <li>Feasibility, pilot and partnership discussions you request.</li>
           <li>Keeping a consent-timestamped record of what you agreed to.</li>
           <li>Security, spam prevention and abuse detection.</li>
-          <li>Optional project updates — only if you separately opt in (CASL).</li>
+          <li>Optional project updates, only if you separately opt in (CASL).</li>
         </ul>
         <p>
           We do not sell personal information, and we do not use enquiry content to train public AI
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
       <LegalSection id="changes" h="11. Changes and contact">
         <p>
           Material changes will be published on this page with a revised version number and date.
-          Contact: {site.fullName}, {site.addressLine} — {site.email}, {site.phoneDisplay}.
+          Contact: {site.fullName}, {site.addressLine}, {site.email}, {site.phoneDisplay}.
         </p>
       </LegalSection>
     </LegalShell>

@@ -1,12 +1,12 @@
 /**
- * Industry directory — Master Spec V2.0, Chapters 12 & 13.
+ * Industry directory, Master Spec V2.0, Chapters 12 & 13.
  *
  * 30 Canadian market opportunity tiles grouped into six sectors.
  * Only five sectors have full detail pages at launch; the remaining 25
- * tiles link to the enquiry flow — never to empty SEO stubs.
+ * tiles link to the enquiry flow, never to empty SEO stubs.
  *
  * Framing rule: gaps are described as task, operating and productivity
- * challenges — not as verified labour-shortage statistics.
+ * challenges, not as verified labour-shortage statistics.
  */
 
 export interface Industry {
@@ -109,7 +109,7 @@ export function industriesBySector(): Array<{ sector: Sector; items: Industry[] 
 }
 
 /* ---------------------------------------------------------------
-   Five fully developed industry landing pages — Chapter 13
+   Five fully developed industry landing pages, Chapter 13
 --------------------------------------------------------------- */
 
 export interface IndustryDetail {
@@ -134,7 +134,7 @@ export interface IndustryDetail {
   pathway: string[];
   /** Industry-specific feasibility question (exact spec wording). */
   enquiryPrompt: string;
-  /** `/images/banners/{slug}.jpg` — delivered 3:1 marketing banner (headline baked in). */
+  /** `/images/banners/{slug}.jpg`, delivered 3:1 marketing banner (headline baked in). */
   banner?: { src: string; alt: string };
 }
 
@@ -148,23 +148,23 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     relatedFamilySlugs: ["forge"],
     taskExamples: ["Tote routes", "Part movement", "Replenishment", "Exception handling"],
     challenge:
-      "Inside most distribution centres the same handful of routes carry the majority of internal moves: replenishment from reserve to pick face, tote transfers between zones, and exception handling for misplaced or damaged items. These repeats are predictable in structure but variable in timing — aisles narrow, carts stop, scanners fail and people work around them. The operational question is not whether labour is available, but whether the same physical moves can be performed consistently without disrupting pick rates, changing floor layouts or adding supervision overhead.",
+      "Inside most distribution centres the same handful of routes carry the majority of internal moves: replenishment from reserve to pick face, tote transfers between zones, and exception handling for misplaced or damaged items. These repeats are predictable in structure but variable in timing, aisles narrow, carts stop, scanners fail and people work around them. The operational question is not whether labour is available, but whether the same physical moves can be performed consistently without disrupting pick rates, changing floor layouts or adding supervision overhead.",
     opportunity: [
       { task: "Tote routes between reserve storage and pick faces", note: "Fixed origin/destination pairs, repeated many times per shift; frequency and aisle width must be documented before any pilot." },
       { task: "Part and pallet movement between zones", note: "Payload geometry and floor condition vary; requires route surveys and clearly marked travel lanes." },
       { task: "Replenishment runs triggered by stock thresholds", note: "Integration with warehouse systems is a later step; a pilot can begin with instructed or scheduled runs." },
-      { task: "Exception handling for misplaced or held items", note: "Exceptions are irregular by nature — usually better suited to supervised tasks than to fixed automation." },
+      { task: "Exception handling for misplaced or held items", note: "Exceptions are irregular by nature, usually better suited to supervised tasks than to fixed automation." },
     ],
     assumptions: [
       "Floor surfaces are level, dry and within the robot's specified operating envelope (values remain under engineering evaluation).",
       "Travel lanes can be marked or clearly identifiable; changing racking layouts mid-pilot is out of scope.",
-      "Site Wi-Fi or network coverage supports telemetry — coverage gaps must be mapped in advance.",
+      "Site Wi-Fi or network coverage supports telemetry, coverage gaps must be mapped in advance.",
       "An operator role exists to start, pause and escalate tasks; no unattended operation is assumed.",
       "Hygiene and dust conditions are documented, since sealing and washdown ratings are not yet certified.",
     ],
     safety: [
       "Pedestrian and forklift interaction zones require an application-specific hazard assessment before any trial.",
-      "Speed and force limitations, stop systems and fault recovery must be defined per site — not assumed from marketing material.",
+      "Speed and force limitations, stop systems and fault recovery must be defined per site, not assumed from marketing material.",
       "No IP rating, battery runtime or payload figure is published until a dated test log exists for that duty cycle.",
       "Operational data from a pilot stays customer-controlled; retention and access terms are agreed before deployment.",
     ],
@@ -179,7 +179,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "What materials must move, between which locations, and how many times per shift?",
     banner: {
       src: "/images/banners/warehousing-logistics.jpg",
-      alt: "Warehousing and Logistics banner — a FORGE W200 mobile manipulator handling a cardboard box inside a racked distribution centre aisle. Concept visualization.",
+      alt: "Warehousing and Logistics banner, a FORGE W200 mobile manipulator handling a cardboard box inside a racked distribution centre aisle. Concept visualization.",
     },
   },
   {
@@ -191,10 +191,10 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     relatedFamilySlugs: ["forge"],
     taskExamples: ["Line feeding", "Visual checks", "Repetitive handling", "Sanitation planning"],
     challenge:
-      "Food and beverage plants run tight changeovers: packaging formats rotate, cleaning regimes are scheduled around production, and lines depend on consistent material supply at the right moment. Repetitive movements — moving product from staging to line, supplying packaging materials, transferring packed cases — consume operator time but tolerate little variability. Any automation concept must respect sanitation zoning, wet or dusty conditions and documented cleaning procedures before it is placed near a production line.",
+      "Food and beverage plants run tight changeovers: packaging formats rotate, cleaning regimes are scheduled around production, and lines depend on consistent material supply at the right moment. Repetitive movements, moving product from staging to line, supplying packaging materials, transferring packed cases, consume operator time but tolerate little variability. Any automation concept must respect sanitation zoning, wet or dusty conditions and documented cleaning procedures before it is placed near a production line.",
     opportunity: [
       { task: "Line feeding with packaging and consumables", note: "Highly repeatable; requires changeover compatibility and confirmed container geometry." },
-      { task: "Visual checks on packs or seals at defined stations", note: "Camera-based checks are a BUCKCORE VISION concept — accuracy must be validated on the customer's own products." },
+      { task: "Visual checks on packs or seals at defined stations", note: "Camera-based checks are a BUCKCORE VISION concept, accuracy must be validated on the customer's own products." },
       { task: "Case and tote handling between staging and packing", note: "Depends on floor condition, temperature zone and trolley design." },
       { task: "Repetitive transfer of finished goods to palletising areas", note: "Payload and grip tooling are model-specific and currently unspecified." },
     ],
@@ -206,7 +206,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "Staff are trained to override or stop the system at any time.",
     ],
     safety: [
-      "Food-contact suitability and regulatory positioning must be reviewed with the customer's quality team — no certification is claimed here.",
+      "Food-contact suitability and regulatory positioning must be reviewed with the customer's quality team, no certification is claimed here.",
       "Chemical exposure during cleaning can affect sensors and seals; compatibility is assessed case by case.",
       "Visual inspection concepts do not replace quality-control staff or certified inspection processes.",
       "No labour-saving, yield or uptime figure is published without a measured, dated trial record.",
@@ -230,7 +230,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     relatedFamilySlugs: ["care"],
     taskExamples: ["Sealed supply deliveries", "Corridor navigation", "Staff control", "Delivery logs"],
     challenge:
-      "Hospitals move a constant volume of nonclinical goods — sealed supplies, linen, meals, records and equipment — between stores, wards and departments. Much of this travel falls on clinical staff whose time is better spent with patients. Corridors are shared spaces with visitors, gurneys and unpredictable obstacles, and every new process must fit infection-control policies and information-governance rules. The opportunity is narrow and specific: transport tasks that require no clinical judgement and no patient contact.",
+      "Hospitals move a constant volume of nonclinical goods, sealed supplies, linen, meals, records and equipment, between stores, wards and departments. Much of this travel falls on clinical staff whose time is better spent with patients. Corridors are shared spaces with visitors, gurneys and unpredictable obstacles, and every new process must fit infection-control policies and information-governance rules. The opportunity is narrow and specific: transport tasks that require no clinical judgement and no patient contact.",
     opportunity: [
       { task: "Sealed supply deliveries between stores and units", note: "Closed containers, defined routes, staff-controlled dispatch." },
       { task: "Linen and consumable movement on scheduled runs", note: "Fixed cadence suits supervised pilot operations." },
@@ -238,7 +238,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       { task: "Corridor navigation with staff priority handling", note: "Requires route mapping, right-of-way rules and continuous override ability." },
     ],
     assumptions: [
-      "Task scope is explicitly nonclinical — no patient contact, no medication handling, no clinical decision support.",
+      "Task scope is explicitly nonclinical, no patient contact, no medication handling, no clinical decision support.",
       "Elevator access, door widths, floor surfaces and network coverage are surveyed in advance.",
       "Infection-prevention and facilities teams approve the trial routes and cleaning procedure.",
       "A staff owner is named for dispatch, supervision and incident review during the pilot.",
@@ -260,7 +260,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     enquiryPrompt: "Which nonclinical items and secure transfers need routing?",
     banner: {
       src: "/images/banners/healthcare-logistics.jpg",
-      alt: "Healthcare Logistics banner — 'The physical bottleneck.' A CARE C100 delivery robot carrying sealed medical supplies down a bright hospital corridor. Concept visualization.",
+      alt: "Healthcare Logistics banner, 'The physical bottleneck.' A CARE C100 delivery robot carrying sealed medical supplies down a bright hospital corridor. Concept visualization.",
     },
   },
   {
@@ -271,7 +271,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     relatedFamilySlugs: ["terra"],
     taskExamples: ["Vision", "Produce movement", "Grading", "Greenhouse navigation"],
     challenge:
-      "Greenhouse operations combine living crops with rigid logistics: monitoring rounds cover long aisles, harvested produce moves from bays to packing quickly to protect quality, and grading decisions repeat hundreds of times per hour. Aisle geometry, hanging structures, drip lines and wet floors make movement delicate, while crop conditions change weekly. The practical starting point is sensing and transport tasks that improve visibility and reduce manual carries — not unsupervised harvesting.",
+      "Greenhouse operations combine living crops with rigid logistics: monitoring rounds cover long aisles, harvested produce moves from bays to packing quickly to protect quality, and grading decisions repeat hundreds of times per hour. Aisle geometry, hanging structures, drip lines and wet floors make movement delicate, while crop conditions change weekly. The practical starting point is sensing and transport tasks that improve visibility and reduce manual carries, not unsupervised harvesting.",
     opportunity: [
       { task: "Crop monitoring rounds with mounted vision", note: "Repeatable routes; image interpretation accuracy must be validated on the specific crop." },
       { task: "Produce movement from harvest bays to packing", note: "Depends on trolley design, aisle width and floor condition." },
@@ -286,7 +286,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "Staff training covers dispatch, cleaning and emergency stop procedures.",
     ],
     safety: [
-      "Selective harvesting remains research — no autonomous harvest guarantee is made or implied.",
+      "Selective harvesting remains research, no autonomous harvest guarantee is made or implied.",
       "Water, humidity and pesticide exposure environments must be reviewed against sealing ratings, which are not yet certified.",
       "No yield, labour-saving or payback figure is published without measured trials.",
       "Trial data (including imagery of facilities) remains customer-owned with agreed retention.",
@@ -301,7 +301,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     enquiryPrompt: "Which crop, aisle geometry and handling action matter?",
     banner: {
       src: "/images/banners/greenhouses.jpg",
-      alt: "Greenhouses banner — 'Green Houses.' A TERRA A200 rover carrying crates of tomatoes through a commercial glasshouse growing aisle. Concept visualization.",
+      alt: "Greenhouses banner, 'Green Houses.' A TERRA A200 rover carrying crates of tomatoes through a commercial glasshouse growing aisle. Concept visualization.",
     },
   },
   {
@@ -312,7 +312,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     relatedFamilySlugs: ["titan"],
     taskExamples: ["Sensor routes", "Hazard assessments", "Mapping", "Communications plans"],
     challenge:
-      "Mining sites ask people to enter areas that are dark, dusty, thermally extreme or structurally uncertain for routine inspection work: checking drifts, stockpiles, conveyor corridors and utility infrastructure. Many of these checks are periodic and data-light — a temperature reading, a visual condition note, a gas or structural observation — yet each one carries exposure risk. Remote or robotic sensing can move the first look away from people, provided communications, ground conditions and site rules are mapped first.",
+      "Mining sites ask people to enter areas that are dark, dusty, thermally extreme or structurally uncertain for routine inspection work: checking drifts, stockpiles, conveyor corridors and utility infrastructure. Many of these checks are periodic and data-light, a temperature reading, a visual condition note, a gas or structural observation, yet each one carries exposure risk. Remote or robotic sensing can move the first look away from people, provided communications, ground conditions and site rules are mapped first.",
     opportunity: [
       { task: "Scheduled sensor routes in drifts and stockpile areas", note: "Requires route marking, communications coverage and obstacle tolerance." },
       { task: "Thermal and visual condition checks on fixed assets", note: "Inspection value depends on sensor payload selection and baseline comparison records." },
@@ -324,7 +324,7 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
       "Communications coverage (leaky feeder, Wi-Fi or mesh) is mapped before autonomy expectations are set.",
       "The site's exclusion zones, blasting schedules and permit rules govern any trial.",
       "A trained site operator supervises the system throughout the pilot.",
-      "Explosion-proof or underground certifications are NOT claimed — equipment suitability is confirmed case by case.",
+      "Explosion-proof or underground certifications are NOT claimed, equipment suitability is confirmed case by case.",
     ],
     safety: [
       "No explosion-proof approval, intrinsically safe rating or underground certification is implied by this website.",

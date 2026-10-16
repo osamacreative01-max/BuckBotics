@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/metadata";
 export const metadata = pageMeta({
   title: "Accessibility Statement",
   description:
-    "BUCKBOTICS accessibility commitment — design target WCAG 2.2 AA, keyboard navigation, visible focus, text alternatives and known limitations.",
+    "BUCKBOTICS accessibility commitment, design target WCAG 2.2 AA, keyboard navigation, visible focus, text alternatives and known limitations.",
   path: "/legal/accessibility",
 });
 
@@ -19,7 +19,7 @@ export default function AccessibilityPage() {
       <LegalSection id="commitment" h="1. Our commitment">
         <p>
           This website is designed toward <strong className="font-semibold text-midnight">WCAG 2.2
-          Level AA</strong>. Accessibility is part of the design system — not a retro-fit — and
+          Level AA</strong>. Accessibility is part of the design system, not a retro-fit, and
           issues found during testing are tracked to closure before launch.
         </p>
       </LegalSection>
@@ -33,7 +33,7 @@ export default function AccessibilityPage() {
           <li>Descriptive alternative text for imagery, including concept-visualization disclosures.</li>
           <li>Responsive layouts down to 320px width with no clipped content and generous tap targets.</li>
           <li>
-            <code className="font-mono text-sm">prefers-reduced-motion</code> respected — non-essential
+            <code className="font-mono text-sm">prefers-reduced-motion</code> respected, non-essential
             animation and smooth scrolling are disabled when requested.
           </li>
           <li>Forms use labelled inputs, inline error messages tied to fields and clear success states.</li>
@@ -60,7 +60,7 @@ export default function AccessibilityPage() {
 
       <LegalSection id="feedback" h="4. Feedback and contact">
         <p>
-          Found a barrier? Tell us what page, what you were trying to do and what happened — we
+          Found a barrier? Tell us what page, what you were trying to do and what happened, we
           treat accessibility reports as defects and aim to respond promptly.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
@@ -70,7 +70,7 @@ export default function AccessibilityPage() {
           </ButtonLink>
         </div>
         <p className="mt-4 text-sm text-muted">
-          If you need content in an alternative format, ask — we can provide page content in
+          If you need content in an alternative format, ask, we can provide page content in
           larger text or plain HTML on request while French-language pages remain in preparation.
         </p>
       </LegalSection>

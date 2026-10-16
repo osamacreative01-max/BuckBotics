@@ -8,7 +8,7 @@ import { site } from "@/data/site";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "About — BUCKBOTICS, A Buckingham Venture",
+  title: "About, BUCKBOTICS, A Buckingham Venture",
   description:
     "BUCKBOTICS is a Buckingham venture based in Mississauga, Ontario, developing intelligent robotic solutions and physical AI concepts for industry, essential services and thoughtful human interaction.",
   path: "/company/about",
@@ -17,16 +17,16 @@ export const metadata = pageMeta({
 export default function AboutPage() {
   return (
     <>
-      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      {/* DELIVERED BANNER, 3:1 marketing artwork, headline baked in */}
       <PageBanner
         src="/images/banners/about.jpg"
-        alt="About banner — 'A venture built around engineering honesty.' A TITAN M100 quadruped inspection robot on a laboratory bench beside a technician in a white coat, against a deep navy panel. Concept visualization."
+        alt="About banner, 'A venture built around engineering honesty.' A TITAN M100 quadruped inspection robot on a laboratory bench beside a technician in a white coat, against a deep navy panel. Concept visualization."
         priority
       />
       <PageHeader
         eyebrow="Company"
         title="A venture built around engineering honesty."
-        intro="BUCKBOTICS develops intelligent robotic solutions and physical AI concepts — and publishes them with their true development status attached."
+        intro="BUCKBOTICS develops intelligent robotic solutions and physical AI concepts, and publishes them with their true development status attached."
       >
         <ButtonLink href="/contact?type=project">Discuss a Robotics Project</ButtonLink>
         <ButtonLink href="/company/partnerships" tone="secondary">
@@ -52,7 +52,7 @@ export default function AboutPage() {
                   architecture called BUCKCORE.
                 </p>
                 <p>
-                  We start from a single physical task — what moves, what is inspected, how often,
+                  We start from a single physical task, what moves, what is inspected, how often,
                   in which environment and under whose supervision. From there the work follows an
                   engineering sequence: assessment, supplier selection, controlled pilot and
                   measured evaluation. The website documents that sequence honestly: design
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 <div className="mt-5">
                   <Notice title="Editorial rule" tone="info">
                     This page intentionally avoids company history, facility photographs, headcounts
-                    or client lists — none are verified for publication.
+                    or client lists, none are verified for publication.
                   </Notice>
                 </div>
               </div>
@@ -123,13 +123,13 @@ export default function AboutPage() {
       {/* BUCKINGHAM VENTURE RELATIONSHIP */}
       <section className="section surface-arctic border-b border-line" id="buckingham">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          {/* DELIVERED BANNER — 3:1 artwork whose baked-in headline and copy are
+          {/* DELIVERED BANNER, 3:1 artwork whose baked-in headline and copy are
               this section's own title and intro, so it sits inside the section
               rather than at the top of the page. Rounded, not edge-to-edge,
               because the page banner already carries the about artwork. */}
           <SmartImage
             src="/images/banners/buckingham.jpg"
-            alt="Buckingham venture relationship banner — 'Buckingham Venture Relationship.' A BUCKi HOME humanoid service robot in the foreground of an open-plan facility, with people meeting behind a glass wall. Concept visualization."
+            alt="Buckingham venture relationship banner, 'Buckingham Venture Relationship.' A BUCKi HOME humanoid service robot in the foreground of an open-plan facility, with people meeting behind a glass wall. Concept visualization."
             fit="cover"
             className="aspect-[3/1] w-full overflow-hidden rounded-2xl border border-line"
             sizes="(max-width: 1800px) 93vw, 1800px"
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="Ownership"
               title="Buckingham venture relationship"
-              intro="BUCKBOTICS operates as a Buckingham venture. The relationship is disclosed on this page — the public wordmark is BUCKBOTICS alone, and no separate incorporated subsidiary is claimed."
+              intro="BUCKBOTICS operates as a Buckingham venture. The relationship is disclosed on this page, the public wordmark is BUCKBOTICS alone, and no separate incorporated subsidiary is claimed."
             />
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">

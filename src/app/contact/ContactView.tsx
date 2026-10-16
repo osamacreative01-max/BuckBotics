@@ -19,7 +19,7 @@ const ROUTES = [
   {
     key: "project",
     title: "Discuss a Robotics Project",
-    text: "Industrial feasibility, task assessment and pilot interest — the main route for customers.",
+    text: "Industrial feasibility, task assessment and pilot interest, the main route for customers.",
   },
   {
     key: "private-consultation",
@@ -57,7 +57,7 @@ export async function ContactView({
       <PageHeader
         eyebrow="Contact"
         title={heading}
-        intro="One form, routed by intent. Your enquiry goes to a company-controlled inbox with consent recorded — we never claim a booking, pilot or delivery is confirmed by submitting it."
+        intro="One form, routed by intent. Your enquiry goes to a company-controlled inbox with consent recorded, we never claim a booking, pilot or delivery is confirmed by submitting it."
       />
 
       <section className="section border-b border-line">
@@ -140,7 +140,7 @@ export async function ContactView({
               </Notice>
 
               <Notice title="Support requests" tone="info">
-                Installed-fleet support does not exist yet — select “General or support enquiry”
+                Installed-fleet support does not exist yet, select “General or support enquiry”
                 and we will route it honestly rather than imply a service desk.
               </Notice>
             </div>

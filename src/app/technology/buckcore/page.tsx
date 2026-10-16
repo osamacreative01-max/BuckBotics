@@ -4,7 +4,7 @@ import { BUCKCORE, BUCKCORE_MODULES, ARCHITECTURE_FLOW, ARCHITECTURE_NOTES } fro
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "BUCKCORE — Proposed Physical AI Architecture",
+  title: "BUCKCORE, Proposed Physical AI Architecture",
   description:
     "BUCKCORE is the proposed shared software and physical AI framework connecting perception, task orchestration, robot skills, supervised operation and fleet visibility across BUCKBOTICS solutions. All ten modules are Concept stage.",
   path: "/technology/buckcore",
@@ -78,7 +78,7 @@ export default function BuckcorePage() {
                 </span>
                 <span className="text-sm text-graphite">Human supervision</span>
                 <span className="text-sm text-muted">
-                  — sitting beside the pipeline, never inside a fictitious finished feature.
+                  , sitting beside the pipeline, never inside a fictitious finished feature.
                 </span>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function BuckcorePage() {
                   "Keep operational and conversation context controlled and auditable.",
                   "Queue jobs and report fleet telemetry and lifecycle data.",
                   "Train scenarios in simulation before physical trials.",
-                  "Apply application rules and safety interfaces — without claiming certification.",
+                  "Apply application rules and safety interfaces, without claiming certification.",
                 ].map((c) => (
                   <li key={c} className="flex gap-3 rounded-xl border border-line bg-white p-4">
                     <span aria-hidden="true" className="text-blue">
@@ -178,7 +178,7 @@ export default function BuckcorePage() {
                 <div className="rounded-2xl border border-line bg-white p-5">
                   <p className="spec-label">Demonstrated today</p>
                   <p className="mt-2 text-[0.97rem] text-graphite">
-                    Nothing. No module is released, deployed or certified software — each row above
+                    Nothing. No module is released, deployed or certified software, each row above
                     is a Concept claim only.
                   </p>
                 </div>
@@ -216,7 +216,7 @@ export default function BuckcorePage() {
               Evaluate BUCKCORE against your workflow
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#b7c6d8]">
-              Bring an approved application task list. We will scope which modules would apply —
+              Bring an approved application task list. We will scope which modules would apply,
               and which safety layer must remain independent.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

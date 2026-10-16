@@ -1,5 +1,5 @@
 /**
- * BUCKi PERSONA — luxury humanlike division.
+ * BUCKi PERSONA, luxury humanlike division.
  * Source: Master Spec V2.0, Chapters 09, 10 & 11.
  *
  * Hierarchy: BUCKBOTICS (master) → BUCKi (interaction ecosystem) →
@@ -29,7 +29,7 @@ export interface PersonaCollection {
   ctaHref: string;
   buyer: string;
   status: StatusKey;
-  /** Publication tier — Chapter 07 portfolio table. */
+  /** Publication tier, Chapter 07 portfolio table. */
   tier: "now" | "private";
   image: string;
   /** Slider images for the collection card (delivered android renders). */
@@ -74,11 +74,11 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     tier: "now",
     image: "/images/persona/executive.webp",
     images: [
-      { src: "/images/persona/executive/slide-1.webp", alt: "PERSONA EXECUTIVE E200 — male persona in navy suit, three-quarter front view, fictional adult android concept render" },
-      { src: "/images/persona/executive/slide-2.webp", alt: "PERSONA EXECUTIVE E200 — male persona front view standing, fictional adult android concept render" },
-      { src: "/images/persona/executive/slide-3.webp", alt: "PERSONA EXECUTIVE E200 — side profile with ear module visible, fictional adult android concept render" },
-      { src: "/images/persona/executive/slide-4.webp", alt: "PERSONA EXECUTIVE E200 — close-up of chrome robotic hand in suit sleeve, concept render" },
-      { src: "/images/persona/executive/slide-5.webp", alt: "PERSONA EXECUTIVE E200 — close-up of jaw line and illuminated neck mechanics, concept render" },
+      { src: "/images/persona/executive/slide-1.webp", alt: "PERSONA EXECUTIVE E200, male persona in navy suit, three-quarter front view, fictional adult android concept render" },
+      { src: "/images/persona/executive/slide-2.webp", alt: "PERSONA EXECUTIVE E200, male persona front view standing, fictional adult android concept render" },
+      { src: "/images/persona/executive/slide-3.webp", alt: "PERSONA EXECUTIVE E200, side profile with ear module visible, fictional adult android concept render" },
+      { src: "/images/persona/executive/slide-4.webp", alt: "PERSONA EXECUTIVE E200, close-up of chrome robotic hand in suit sleeve, concept render" },
+      { src: "/images/persona/executive/slide-5.webp", alt: "PERSONA EXECUTIVE E200, close-up of jaw line and illuminated neck mechanics, concept render" },
     ],
   },
   {
@@ -175,16 +175,16 @@ export const PERSONA_COLLECTIONS: PersonaCollection[] = [
     tier: "private",
     image: "/images/persona/signature.webp",
     images: [
-      { src: "/images/persona/signature/slide-1.webp", alt: "PERSONA SIGNATURE S300 — female persona in navy suit, three-quarter front view, fictional adult android concept render" },
-      { src: "/images/persona/signature/slide-2.webp", alt: "PERSONA SIGNATURE S300 — side profile, fictional adult android concept render" },
-      { src: "/images/persona/signature/slide-3.webp", alt: "PERSONA SIGNATURE S300 — close-up of wrist module and chrome bracelet, concept render" },
-      { src: "/images/persona/signature/slide-4.webp", alt: "PERSONA SIGNATURE S300 — close-up of back-of-head ear module and neck spine, concept render" },
-      { src: "/images/persona/signature/slide-5.webp", alt: "PERSONA SIGNATURE S300 — close-up of head with ear module and chrome neck, concept render" },
+      { src: "/images/persona/signature/slide-1.webp", alt: "PERSONA SIGNATURE S300, female persona in navy suit, three-quarter front view, fictional adult android concept render" },
+      { src: "/images/persona/signature/slide-2.webp", alt: "PERSONA SIGNATURE S300, side profile, fictional adult android concept render" },
+      { src: "/images/persona/signature/slide-3.webp", alt: "PERSONA SIGNATURE S300, close-up of wrist module and chrome bracelet, concept render" },
+      { src: "/images/persona/signature/slide-4.webp", alt: "PERSONA SIGNATURE S300, close-up of back-of-head ear module and neck spine, concept render" },
+      { src: "/images/persona/signature/slide-5.webp", alt: "PERSONA SIGNATURE S300, close-up of head with ear module and chrome neck, concept render" },
     ],
   },
 ];
 
-/** ATELIER — private personalization service (not a robot model). */
+/** ATELIER, private personalization service (not a robot model). */
 export const PERSONA_ATELIER = {
   slug: "atelier",
   name: "PERSONA ATELIER",
@@ -210,7 +210,7 @@ export const PERSONA_ATELIER = {
   image: "/images/families/bucki-persona/slide-1.webp",
 } as const;
 
-/** Required on all PERSONA-related pages — Chapter 10. */
+/** Required on all PERSONA-related pages, Chapter 10. */
 export const PERSONA_FAQS: Array<{ q: string; a: string }> = [
   {
     q: "Is PERSONA available today?",
@@ -222,7 +222,7 @@ export const PERSONA_FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Can MEMORIA revive a loved one?",
-    a: "No. MEMORIA is a clearly artificial remembrance concept — a tribute interface, never a recreation or resurrection of a person.",
+    a: "No. MEMORIA is a clearly artificial remembrance concept, a tribute interface, never a recreation or resurrection of a person.",
   },
   {
     q: "Can PERSONA independently care for children, patients or seniors?",
@@ -234,7 +234,7 @@ export const PERSONA_FAQS: Array<{ q: string; a: string }> = [
   },
 ];
 
-/** Mandatory safety, consent and identity standards — Chapter 11. */
+/** Mandatory safety, consent and identity standards, Chapter 11. */
 export const RESPONSIBLE_BLOCKS = [
   {
     id: "memoria-protocol",
@@ -242,10 +242,10 @@ export const RESPONSIBLE_BLOCKS = [
     items: [
       "No open website upload of photos, voices, deceased identity records or sensitive family archives.",
       "Enquiries begin low-information; identity verification and legal process move to a secured channel.",
-      "Applicant authority and rights to images, voice, recordings and private material are verified — an estate or family request alone may be insufficient.",
+      "Applicant authority and rights to images, voice, recordings and private material are verified, an estate or family request alone may be insufficient.",
       "Documented lifetime consent is preferred. No scraping of social networks or private correspondence.",
       "Real recordings are separated from AI-generated simulation and each is clearly labelled.",
-      "MEMORIA is explained as an artificial tribute — not consciousness, resurrection or the actual deceased person.",
+      "MEMORIA is explained as an artificial tribute, not consciousness, resurrection or the actual deceased person.",
       "Cancellation, deletion and retention controls are offered; no grief-pressure sales tactics.",
     ],
   },

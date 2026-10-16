@@ -8,7 +8,7 @@ import { NAV_GROUPS, PRIMARY_CTA, type NavGroup } from "@/data/navigation";
 import { site } from "@/data/site";
 
 /**
- * Sticky header — Master Spec, Chapter 05:
+ * Sticky header, Master Spec, Chapter 05:
  * logo left, primary menus right, persistent "Discuss a Project" CTA,
  * mega menus on desktop, accordion drawer on mobile.
  */
@@ -61,7 +61,7 @@ export function Header() {
           <p className="truncate">
             <span className="font-mono uppercase tracking-[0.14em] text-cyan">Concept-stage portfolio</span>
             <span className="hidden sm:inline">
-              {" "}— robot designs are proposed concepts.{" "}
+              , robot designs are proposed concepts.{" "}
               <Link href="/product-status" className="underline underline-offset-2 hover:text-white">
                 Status definitions
               </Link>

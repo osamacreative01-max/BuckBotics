@@ -6,7 +6,7 @@ import { conceptDisclaimer } from "@/data/site";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "Responsible Robotics — Safety, Identity & Consent",
+  title: "Responsible Robotics, Safety, Identity & Consent",
   description:
     "BUCKBOTICS responsible robotics standards: MEMORIA consent protocol, senior-support safeguards, appearance and marketing rules, and BUCKCORE physical safety limitations.",
   path: "/responsible-robotics",
@@ -15,7 +15,7 @@ export const metadata = pageMeta({
 const PILLARS = [
   {
     h: "Identity disclosure",
-    p: "Every robot on this site stays recognizable as a machine and discloses artificial identity — including the humanlike PERSONA designs.",
+    p: "Every robot on this site stays recognizable as a machine and discloses artificial identity, including the humanlike PERSONA designs.",
   },
   {
     h: "Consent by default",
@@ -38,10 +38,10 @@ const PILLARS = [
 export default function ResponsibleRoboticsPage() {
   return (
     <>
-      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      {/* DELIVERED BANNER, 3:1 marketing artwork, headline baked in */}
       <PageBanner
         src="/images/banners/responsible-robotics.jpg"
-        alt="Responsible robotics banner — 'Responsible Robotics, Written Down.' A site supervisor in a hard hat and high-visibility vest reviewing a tablet beside a BUCKi humanoid service robot in a factory. Concept visualization."
+        alt="Responsible robotics banner, 'Responsible Robotics, Written Down.' A site supervisor in a hard hat and high-visibility vest reviewing a tablet beside a BUCKi humanoid service robot in a factory. Concept visualization."
         priority
       />
       {/* The banner artwork carries this page's headline and intro, so the
@@ -56,7 +56,7 @@ export default function ResponsibleRoboticsPage() {
           <SectionHeading
             eyebrow="Standing commitments"
             title="Five pillars"
-            intro="These apply to the whole site — not only to the PERSONA programme."
+            intro="These apply to the whole site, not only to the PERSONA programme."
           />
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {PILLARS.map((p) => (
@@ -75,7 +75,7 @@ export default function ResponsibleRoboticsPage() {
           <SectionHeading
             eyebrow="Mandatory standards"
             title="Sensitive uses, handled explicitly"
-            intro="Chapter 11 of the master specification is implemented as public policy — the same rules our content must follow."
+            intro="Chapter 11 of the master specification is implemented as public policy, the same rules our content must follow."
           />
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {RESPONSIBLE_BLOCKS.map((block) => (
@@ -109,7 +109,7 @@ export default function ResponsibleRoboticsPage() {
               <h2 className="display-md mt-3">Data rules for interaction systems</h2>
               <ul className="mt-5 grid gap-3 text-[0.97rem] text-graphite">
                 {[
-                  "Meaningful consent with safe defaults — nothing sensitive enabled on first run.",
+                  "Meaningful consent with safe defaults, nothing sensitive enabled on first run.",
                   "Purpose limitation: interaction data serves the approved task, nothing else.",
                   "Records of consent and processing, with deletion workflows on request.",
                   "No open upload channels for faces, voices or family archives anywhere on this site.",
@@ -131,7 +131,7 @@ export default function ResponsibleRoboticsPage() {
               <ul className="mt-5 grid gap-3 text-[0.97rem] text-graphite">
                 {[
                   "Application-specific hazard assessment before any robot moves near people.",
-                  "Speed and force limitations defined per application — not assumed from marketing material.",
+                  "Speed and force limitations defined per application, not assumed from marketing material.",
                   "Stop systems, fault recovery and documented supervisory authority for every trial.",
                   "No certification is portrayed publicly until it exists; no explosion-proof or underground claims.",
                   "Marketing imagery never implies completed deployments, tests or customer facilities.",

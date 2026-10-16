@@ -1,7 +1,7 @@
 import { BootScreen } from "@/components/ui/BootScreen";
 
 /**
- * Root route fallback — the Suspense boundary for the whole app, rendered
+ * Root route fallback, the Suspense boundary for the whole app, rendered
  * while the next segment streams in. Covers the cases a click interceptor
  * cannot: a direct URL load, a dynamic route such as /contact, and any
  * navigation whose destination was not prefetched.

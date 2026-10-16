@@ -1,6 +1,6 @@
 /**
  * Enquiry form constants and types.
- * (Constants cannot live in a "use server" file — server modules may only
+ * (Constants cannot live in a "use server" file, server modules may only
  * export async functions.)
  */
 

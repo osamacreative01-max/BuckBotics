@@ -7,7 +7,7 @@ export default function NotFound() {
     <section className="section">
       <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow">404 — route not found</p>
+          <p className="eyebrow">404, route not found</p>
           <h1 className="display-xl mt-3">This path does not exist.</h1>
           <p className="lede mt-5">
             The page may have moved as the site structure evolved. Try one of these canonical

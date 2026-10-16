@@ -4,16 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 
 /**
- * Wordmark — BUCKBOTICS | A Buckingham Venture.
+ * Wordmark, BUCKBOTICS | A Buckingham Venture.
  *
- * Master Spec, Chapter 03: the wordmark is type-as-mark only — no icon,
+ * Master Spec, Chapter 03: the wordmark is type-as-mark only, no icon,
  * antler, crest or pictogram. BUCK renders white-on-navy (light variant)
  * or navy-on-white (dark variant); BOTICS uses the approved blue;
  * BUCKi carries a lowercase cyan i.
  *
  * When /images/logo/logo-{variant}.svg is supplied (exported from the
  * approved master artwork, not retyped), it is used automatically.
- * Until then a geometrically consistent fallback lockup is shown —
+ * Until then a geometrically consistent fallback lockup is shown,
  * REPLACE WITH APPROVED VECTOR OUTLINES BEFORE LAUNCH (acceptance 01).
  */
 
@@ -23,7 +23,7 @@ interface WordmarkProps {
   variant?: Variant;
   /** Height in Tailwind units (default h-7). */
   className?: string;
-  /** Render as plain text (no link) — e.g. inside the footer identity block. */
+  /** Render as plain text (no link), e.g. inside the footer identity block. */
   asLink?: boolean;
   href?: string;
 }

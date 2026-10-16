@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/metadata";
 export const metadata = pageMeta({
   title: "Cookie Notice",
   description:
-    "Which cookies and similar technologies the BUCKBOTICS website uses, why, and how to control them — essential cookies at launch, analytics only with consent.",
+    "Which cookies and similar technologies the BUCKBOTICS website uses, why, and how to control them, essential cookies at launch, analytics only with consent.",
   path: "/legal/cookies",
 });
 
@@ -25,7 +25,7 @@ const COOKIES = [
   },
   {
     name: "Analytics (privacy-friendly, aggregated)",
-    purpose: "Measures qualified enquiries, form completions and industry interest — disabled until you consent.",
+    purpose: "Measures qualified enquiries, form completions and industry interest, disabled until you consent.",
     category: "Analytics",
     duration: "13 months maximum",
     consent: "Required",
@@ -42,7 +42,7 @@ export default function CookiesPage() {
       <LegalSection id="what" h="1. What cookies are">
         <p>
           Cookies and similar technologies are small files stored on your device to make a site
-          work, remember choices and — only with permission — measure usage. You can block or
+          work, remember choices and, only with permission, measure usage. You can block or
           delete them in your browser; blocking strictly necessary cookies may affect form
           submission.
         </p>

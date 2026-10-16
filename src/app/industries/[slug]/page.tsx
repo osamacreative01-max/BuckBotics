@@ -23,7 +23,7 @@ export async function generateMetadata({
   const detail = getIndustryDetail(slug);
   if (!detail) return {};
   return pageMeta({
-    title: `${detail.title} — Robotics Opportunity`,
+    title: `${detail.title}, Robotics Opportunity`,
     description: detail.heroIntro,
     path: `/industries/${detail.slug}`,
   });
@@ -48,14 +48,14 @@ export default async function IndustryDetailPage({
 
   return (
     <>
-      {/* DELIVERED BANNER — 3:1 marketing artwork, headline baked in */}
+      {/* DELIVERED BANNER, 3:1 marketing artwork, headline baked in */}
       <PageBanner
         src={detail.banner?.src}
         alt={detail.banner?.alt ?? `${detail.title} concept banner`}
         priority
       />
 
-      {/* HERO — exact introduction from the master spec */}
+      {/* HERO, exact introduction from the master spec */}
       <header className="section border-b border-line bg-arctic/50">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
@@ -113,7 +113,7 @@ export default async function IndustryDetailPage({
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <p className="eyebrow">01 — Customer operational challenge</p>
+              <p className="eyebrow">01, Customer operational challenge</p>
               <h2 className="display-md mt-3">The physical bottleneck</h2>
               <p className="mt-5 text-[1.02rem] leading-relaxed text-graphite">{detail.challenge}</p>
             </div>
@@ -137,7 +137,7 @@ export default async function IndustryDetailPage({
       {/* TASK MAP + MODEL CANDIDATES */}
       <section className="section surface-arctic border-b border-line" id="models">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <p className="eyebrow">02 — Task map &amp; model candidates</p>
+          <p className="eyebrow">02, Task map &amp; model candidates</p>
           <h2 className="display-md mt-3">Proposed fit, not test-proven compatibility</h2>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
@@ -181,7 +181,7 @@ export default async function IndustryDetailPage({
 
           <div className="mt-6">
             <Notice title="Editorial validation" tone="info">
-              Families below show <em>proposed application fit</em> for the tasks described — not
+              Families below show <em>proposed application fit</em> for the tasks described, not
               compatibility proven by testing. Related concepts named on this page:{" "}
               {detail.related.join(", ")}.
             </Notice>
@@ -192,7 +192,7 @@ export default async function IndustryDetailPage({
       {/* FEASIBILITY ASSUMPTIONS */}
       <section className="section border-b border-line" id="feasibility">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <p className="eyebrow">03 — Feasibility &amp; implementation assumptions</p>
+          <p className="eyebrow">03, Feasibility &amp; implementation assumptions</p>
           <h2 className="display-md mt-3">What a buyer must confirm before a pilot</h2>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {detail.assumptions.map((a, i) => (
@@ -208,7 +208,7 @@ export default async function IndustryDetailPage({
       {/* SAFETY & DATA LIMITATIONS */}
       <section className="section surface-midnight" id="safety">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <p className="eyebrow text-cyan!">04 — Safety &amp; data limitations</p>
+          <p className="eyebrow text-cyan!">04, Safety &amp; data limitations</p>
           <h2 className="display-md mt-3 text-white">Where the limits are</h2>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {detail.safety.map((s) => (
@@ -229,7 +229,7 @@ export default async function IndustryDetailPage({
       {/* PILOT PATHWAY */}
       <section className="section border-b border-line" id="pathway">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
-          <p className="eyebrow">05 — Pilot pathway</p>
+          <p className="eyebrow">05, Pilot pathway</p>
           <h2 className="display-md mt-3">From discovery to measured evaluation</h2>
           <div className="mt-8">
             <ProcessSteps
@@ -244,12 +244,12 @@ export default async function IndustryDetailPage({
         </div>
       </section>
 
-      {/* CTA — preselected industry enquiry */}
+      {/* CTA, preselected industry enquiry */}
       <section className="section bg-arctic border-b border-line" id="enquiry">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid items-center gap-8 rounded-2xl border border-line bg-white p-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <p className="eyebrow">06 — Industry enquiry</p>
+              <p className="eyebrow">06, Industry enquiry</p>
               <h2 className="display-md mt-3">Start with this question</h2>
               <p className="mt-4 font-mono text-[0.95rem] leading-relaxed text-graphite">
                 “{detail.enquiryPrompt}”

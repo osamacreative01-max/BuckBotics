@@ -11,7 +11,7 @@ export interface SliderImage {
 }
 
 /**
- * ImageSlider — accessible image slider for cards that have several
+ * ImageSlider, accessible image slider for cards that have several
  * delivered renders (families ship 3–6 angles each). Arrow buttons,
  * dot navigation and an aria-live caption. Degrades to a single
  * SmartImage (placeholder when no file exists) when only one image

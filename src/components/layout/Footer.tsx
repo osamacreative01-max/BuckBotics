@@ -4,14 +4,14 @@ import { FOOTER_LINKS } from "@/data/navigation";
 import { site } from "@/data/site";
 
 /**
- * Footer — Master Spec, Chapter 05:
+ * Footer, Master Spec, Chapter 05:
  * BUCKBOTICS | A Buckingham Venture; domain; email; telephone;
  * full mailing address; nine-family links; legal links.
  * No social badges until official accounts are verified.
  *
  * Design: premium dark-navy surface with cyan accents, icon-tagged
  * contact column, cyan-ruled navigation headings and a modern copyright
- * bar. All content, links and semantics are unchanged from the spec —
+ * bar. All content, links and semantics are unchanged from the spec,
  * presentation only.
  */
 
@@ -72,7 +72,7 @@ export function Footer() {
 
   return (
     <footer className="surface-midnight relative overflow-hidden">
-      {/* Decorative navy depth — cyan glow top-right, soft blue lift bottom-left. */}
+      {/* Decorative navy depth, cyan glow top-right, soft blue lift bottom-left. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(56rem_26rem_at_88%_-8%,rgba(53,182,243,0.12),transparent_62%),radial-gradient(42rem_22rem_at_-6%_104%,rgba(21,141,230,0.08),transparent_60%)]"

@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { BootScreen } from "@/components/ui/BootScreen";
 
 /**
- * Navigation overlay — makes the boot sequence visible on client-side route
+ * Navigation overlay, makes the boot sequence visible on client-side route
  * changes.
  *
  * `loading.tsx` alone cannot do this: Next.js prefetches static routes, so a
  * click usually resolves before React mounts the fallback and the frame swaps
  * in with no loading state at all. This component listens for internal link
  * clicks, raises the same BootScreen immediately, and lowers it once the new
- * pathname has rendered — after a minimum on-screen time, so the sequence is
+ * pathname has rendered, after a minimum on-screen time, so the sequence is
  * readable even when the destination was already in cache.
  *
  * Only same-origin, same-tab navigations qualify. Modifier-key clicks,
@@ -23,7 +23,7 @@ import { BootScreen } from "@/components/ui/BootScreen";
 
 /** Minimum time the sequence stays up, so a cached route still reads as one. */
 const MIN_MS = 620;
-/** Absolute ceiling — an interrupted navigation must never trap the overlay. */
+/** Absolute ceiling, an interrupted navigation must never trap the overlay. */
 const MAX_MS = 2600;
 
 function isNavigatingLink(anchor: HTMLAnchorElement, event: MouseEvent): boolean {

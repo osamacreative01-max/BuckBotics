@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/data/site";
 
 /**
- * Per-page metadata helper — unique title, description and canonical URL
+ * Per-page metadata helper, unique title, description and canonical URL
  * for every canonical route (Performance chapter, Chapter 20).
  */
 export function pageMeta({
@@ -31,7 +31,7 @@ export function pageMeta({
       url,
       siteName: site.name,
       type: "website",
-      images: [{ url: image, width: 1200, height: 630, alt: `${title} — concept visualization` }],
+      images: [{ url: image, width: 1200, height: 630, alt: `${title}, concept visualization` }],
     },
     twitter: {
       card: "summary_large_image",

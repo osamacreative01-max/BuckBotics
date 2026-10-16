@@ -26,7 +26,7 @@ export async function generateMetadata({
   const { collection: slug } = await params;
   if (slug === "atelier") {
     return pageMeta({
-      title: "PERSONA ATELIER — Private Design Consultation",
+      title: "PERSONA ATELIER, Private Design Consultation",
       description: PERSONA_ATELIER.intro,
       path: "/robots/bucki-persona/atelier",
     });
@@ -34,14 +34,14 @@ export async function generateMetadata({
   const c = getCollection(slug);
   if (!c) return {};
   return pageMeta({
-    title: `BUCKi PERSONA ${c.name} ${c.model} — Concept Collection`,
-    description: `${c.h1} ${c.intro} Concept programme — not manufactured or for sale.`,
+    title: `BUCKi PERSONA ${c.name} ${c.model}, Concept Collection`,
+    description: `${c.h1} ${c.intro} Concept programme, not manufactured or for sale.`,
     path: `/robots/bucki-persona/${c.slug}`,
   });
 }
 
 const CONFIDENTIAL_NOTE =
-  "Private review tier. Content is a concept programme — no manufactured product, no pricing and no delivery dates.";
+  "Private review tier. Content is a concept programme, no manufactured product, no pricing and no delivery dates.";
 
 export default async function PersonaCollectionPage({
   params,
@@ -98,7 +98,7 @@ export default async function PersonaCollectionPage({
               <div className="lg:col-span-5">
                 <SmartImage
                   src={PERSONA_ATELIER.image}
-                  alt="PERSONA ATELIER — private design consultation concept visualization"
+                  alt="PERSONA ATELIER, private design consultation concept visualization"
                   className="aspect-[4/3] rounded-2xl border border-line"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   caption="Fictional adult android concept visualization."
@@ -132,7 +132,7 @@ export default async function PersonaCollectionPage({
                 <code className="font-mono text-xs text-muted">{collection.internalId}</code>
               </div>
               <p className="eyebrow mt-5 text-copper-ink!">
-                BUCKi PERSONA — {collection.name} | {collection.model}
+                BUCKi PERSONA, {collection.name} | {collection.model}
               </p>
               <h1 className="display-xl mt-3">{collection.h1}</h1>
               <p className="lede mt-5 max-w-xl">{collection.intro}</p>
@@ -152,14 +152,14 @@ export default async function PersonaCollectionPage({
             <figure className="lg:col-span-6">
               <SmartImage
                 src={collection.image}
-                alt={`BUCKi PERSONA ${collection.name} ${collection.model} — fictional adult synthetic android concept`}
+                alt={`BUCKi PERSONA ${collection.name} ${collection.model}, fictional adult synthetic android concept`}
                 className="aspect-[4/3] rounded-2xl border border-line bg-white"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
-                caption="Fictional adult android — synthetic design, not a real person."
+                caption="Fictional adult android, synthetic design, not a real person."
               />
               <figcaption className="mt-2 text-xs text-muted">
-                Concept visualization — proposed design. Adult synthetic appearance; clearly
+                Concept visualization, proposed design. Adult synthetic appearance; clearly
                 artificial mechanical indicators; not a manufactured product.
               </figcaption>
             </figure>
@@ -196,7 +196,7 @@ export default async function PersonaCollectionPage({
               <div className="mt-4">
                 <Notice title={CONFIDENTIAL_NOTE} tone="concept">
                   {collection.status === "concept"
-                    ? "Status: CONCEPT — no operational test is shown for this collection."
+                    ? "Status: CONCEPT, no operational test is shown for this collection."
                     : null}
                   Human caregivers, security staff and supervising operators remain responsible;
                   the machine always discloses that it is artificial.
@@ -247,7 +247,7 @@ export default async function PersonaCollectionPage({
   );
 }
 
-/** Required on all PERSONA pages — Chapter 10 + mandatory disclaimer. */
+/** Required on all PERSONA pages, Chapter 10 + mandatory disclaimer. */
 function PersonaSharedSections() {
   return (
     <section className="section border-b border-line" id="faqs">

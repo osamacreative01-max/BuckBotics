@@ -29,7 +29,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${homeHero.headline}`,
+    default: `${site.name}, ${homeHero.headline}`,
     template: `%s | ${site.name}`,
   },
   description: homeHero.subheadline,
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
         url: "/images/og/cover-1200x630.jpg",
         width: 1200,
         height: 630,
-        alt: `${site.name} — robot concept lineup (concept visualization)`,
+        alt: `${site.name}, robot concept lineup (concept visualization)`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${homeHero.headline}`,
+    title: `${site.name}, ${homeHero.headline}`,
     description: homeHero.subheadline,
     images: ["/images/og/cover-1200x630.jpg"],
   },
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <Header />
-        {/* Boot sequence on every internal navigation — see RouteBoot. */}
+        {/* Boot sequence on every internal navigation, see RouteBoot. */}
         <RouteBoot />
         <main id="main">{children}</main>
         <Footer />

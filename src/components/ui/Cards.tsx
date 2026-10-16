@@ -9,7 +9,7 @@ import type { Industry } from "@/data/industries";
 import type { PersonaCollection } from "@/data/persona";
 
 /* ---------------------------------------------------------------
-   Family card — homepage grid & /robots directory.
+   Family card, homepage grid & /robots directory.
    Required fields (Chapter 06): family name, one-line positioning,
    development stage, image with concept badge, 3 application chips,
    one Explore link. Keyboard accessible; 2 cols tablet / 1 col mobile.
@@ -27,7 +27,7 @@ export function FamilyCard({ family, priority = false }: { family: RobotFamily; 
 
   return (
     <article className="card group flex flex-col overflow-hidden">
-      {/* React Bits GlareHover — soft sheen sweeps the card on hover/focus. */}
+      {/* React Bits GlareHover, soft sheen sweeps the card on hover/focus. */}
       <GlareHover className="flex flex-1 flex-col" height="100%" variant="sheen" glareOpacity={0.4}>
         <div className="relative border-b border-line">
           <ImageSlider
@@ -47,7 +47,7 @@ export function FamilyCard({ family, priority = false }: { family: RobotFamily; 
             <h3 className="font-display text-xl font-semibold">
               <Link href={`/robots/${family.slug}`} className="rounded-sm hover:text-blue">
                 {family.name}
-                <span className="sr-only"> — explore family</span>
+                <span className="sr-only">, explore family</span>
               </Link>
             </h3>
             <p className="mt-1.5 text-[0.95rem] leading-relaxed text-muted">{family.positioning}</p>
@@ -81,7 +81,7 @@ export function FamilyCard({ family, priority = false }: { family: RobotFamily; 
 }
 
 /* ---------------------------------------------------------------
-   Model card — Chapter 16 model schema (cards inside family pages).
+   Model card, Chapter 16 model schema (cards inside family pages).
 --------------------------------------------------------------- */
 export function ModelCard({
   family,
@@ -103,7 +103,7 @@ export function ModelCard({
     <article className="card flex flex-col overflow-hidden">
       <SmartImage
         src={imageSrc}
-        alt={`${model.name} — front view concept visualization`}
+        alt={`${model.name}, front view concept visualization`}
         className="aspect-[4/3] border-b border-line"
         sizes="(max-width: 768px) 100vw, 33vw"
         priority={index < 3}
@@ -113,7 +113,7 @@ export function ModelCard({
         <div className="flex items-start justify-between gap-3">
           <div>
             <p className="spec-label">{family.name}</p>
-            {/* h3, not h4 — ModelCard only renders under the family page's
+            {/* h3, not h4, ModelCard only renders under the family page's
                 "Models in this family" h2, and h4 there skipped a level. */}
             <h3 className="mt-1 font-display text-lg font-semibold">{model.name}</h3>
           </div>
@@ -125,7 +125,7 @@ export function ModelCard({
           {model.purpose}
         </p>
 
-        {/* Three bounded feature groups — proposed only, no measured values. */}
+        {/* Two bounded feature groups, proposed only, no measured values. */}
         <dl className="grid gap-2 rounded-lg border border-line bg-arctic/70 p-4 text-sm">
           <div className="flex gap-2">
             <dt className="spec-label shrink-0">Planned</dt>
@@ -134,10 +134,6 @@ export function ModelCard({
           <div className="flex gap-2">
             <dt className="spec-label shrink-0">Boundary</dt>
             <dd className="text-graphite">{family.boundaries[0]}</dd>
-          </div>
-          <div className="flex gap-2">
-            <dt className="spec-label shrink-0">Evidence</dt>
-            <dd className="text-graphite">No test evidence published — concept stage.</dd>
           </div>
         </dl>
 
@@ -157,7 +153,7 @@ export function ModelCard({
 }
 
 /* ---------------------------------------------------------------
-   Industry tile — 30-tile directory (Chapter 12).
+   Industry tile, 30-tile directory (Chapter 12).
 --------------------------------------------------------------- */
 export function IndustryTile({ industry }: { industry: Industry }) {
   const detailHref = industry.detailSlug ? `/industries/${industry.detailSlug}` : null;
@@ -213,7 +209,7 @@ export function IndustryTile({ industry }: { industry: Industry }) {
    PERSONA collection card.
 --------------------------------------------------------------- */
 export function PersonaCard({ collection }: { collection: PersonaCollection }) {
-  const altBase = `BUCKi PERSONA ${collection.name} ${collection.model} — adult synthetic android concept visualization`;
+  const altBase = `BUCKi PERSONA ${collection.name} ${collection.model}, adult synthetic android concept visualization`;
   const gallery: SliderImage[] =
     collection.images && collection.images.length > 0
       ? collection.images
@@ -221,7 +217,7 @@ export function PersonaCard({ collection }: { collection: PersonaCollection }) {
 
   return (
     <article className="card flex h-full flex-col overflow-hidden">
-      {/* React Bits GlareHover — soft sheen sweeps the card on hover/focus. */}
+      {/* React Bits GlareHover, soft sheen sweeps the card on hover/focus. */}
       <GlareHover className="flex flex-1 flex-col" height="100%" variant="sheen" glareOpacity={0.4}>
         <ImageSlider
           images={gallery}
@@ -241,7 +237,7 @@ export function PersonaCard({ collection }: { collection: PersonaCollection }) {
               className="rounded-sm hover:text-copper-ink"
               >
                 {collection.name} <span className="font-mono text-base text-muted">{collection.model}</span>
-                <span className="sr-only"> — view collection</span>
+                <span className="sr-only">, view collection</span>
               </Link>
             </h3>
           </div>

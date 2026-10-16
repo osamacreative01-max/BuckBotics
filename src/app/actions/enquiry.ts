@@ -9,7 +9,7 @@ import { ENQUIRY_TYPES, type FormState } from "@/lib/enquiry";
 export type { FormState };
 
 /**
- * Enquiry handling — Master Spec V2.0, Chapter 15.
+ * Enquiry handling, Master Spec V2.0, Chapter 15.
  *
  * • Server-side validation on every field.
  * • Honeypot + minimum-time trap + per-IP throttling (anti-spam).
@@ -19,8 +19,8 @@ export type { FormState };
  *   PERSONA-E200/H200/C200/M200/S300, general.
  * • Delivery: JSONL store owned by the project (company-controlled) and,
  *   when configured, an outbound CRM/webhook endpoint via env vars:
- *     CRM_WEBHOOK_URL  — POST lead JSON (CRM / inbox integration)
- *     LEADS_FILE       — override path of the JSONL lead store
+ *     CRM_WEBHOOK_URL, POST lead JSON (CRM / inbox integration)
+ *     LEADS_FILE, override path of the JSONL lead store
  *   No external service is contacted unless the owner configures one.
  * • Success copy never claims a booking, pilot or delivery is confirmed.
  */
@@ -29,7 +29,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const FORM_MIN_SECONDS = 3;
 const MAX_PER_HOUR = 5;
 
-/** In-memory throttle — replaced by CRM-side throttling in production. */
+/** In-memory throttle, replaced by CRM-side throttling in production. */
 const hits = new Map<string, { count: number; reset: number }>();
 
 function throttle(ip: string): boolean {
@@ -208,6 +208,6 @@ export async function submitEnquiry(
     status: "success",
     refId,
     tags,
-    message: `Thank you — your enquiry has been recorded (reference ${refId}). An acknowledgement will follow by email. This is not a confirmation of a booking, pilot or delivery; a team member will review the details first.`,
+    message: `Thank you, your enquiry has been recorded (reference ${refId}). An acknowledgement will follow by email. This is not a confirmation of a booking, pilot or delivery; a team member will review the details first.`,
   };
 }

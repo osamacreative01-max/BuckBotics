@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SmartImage } from "./SmartImage";
 
 /**
- * Model gallery — Chapter 08 required module:
+ * Model gallery, Chapter 08 required module:
  * "Image gallery template capable of 6 viewpoints and 3 engineering
  * close-ups per model." Accessible tabs; each angle is a separate file
  * under /images/robots/{id}/{view}.webp.
@@ -37,12 +37,12 @@ export function ModelGallery({
   modelName: string;
 }) {
   const [active, setActive] = useState<string>(views[0]);
-  // Only the angles actually exported get a tab — an unexported viewpoint is
+  // Only the angles actually exported get a tab, an unexported viewpoint is
   // omitted rather than falling back to the concept placeholder.
   const allViews = [...VIEWPOINTS, ...CLOSEUPS].filter((v) => views.includes(v.key));
   const current = allViews.find((v) => v.key === active) ?? allViews[0];
   const src = `/images/robots/${imageDir}/${current.key}.webp`;
-  // Unique DOM ids — a family page renders one gallery per model.
+  // Unique DOM ids, a family page renders one gallery per model.
   const uid = imageDir.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const panelId = `gallery-panel-${uid}`;
   const tabId = (key: string) => `gallery-tab-${uid}-${key}`;
@@ -51,10 +51,10 @@ export function ModelGallery({
     <div className="overflow-hidden rounded-2xl border border-line bg-white">
       <SmartImage
         src={src}
-        alt={`${modelName} — ${current.label.toLowerCase()} concept visualization`}
+        alt={`${modelName}, ${current.label.toLowerCase()} concept visualization`}
         className="aspect-[4/3] sm:aspect-[16/10]"
         sizes="(max-width: 1200px) 100vw, 66vw"
-        caption="Concept visualization — proposed design. Morphology is consistent across all registered views of this model."
+        caption="Concept visualization, proposed design. Morphology is consistent across all registered views of this model."
       />
 
       <div className="border-t border-line bg-arctic/60 p-4">
@@ -91,7 +91,7 @@ export function ModelGallery({
           aria-labelledby={tabId(current.key)}
           className="mt-3 text-sm text-muted"
         >
-          Showing <strong className="font-semibold text-midnight">{current.label}</strong> — all
+          Showing <strong className="font-semibold text-midnight">{current.label}</strong>, all
           views of {modelName} share one approved morphology, colour and wheel/limb layout.
         </p>
       </div>

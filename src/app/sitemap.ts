@@ -4,7 +4,7 @@ import { INDUSTRY_DETAILS } from "@/data/industries";
 import { PERSONA_COLLECTIONS } from "@/data/persona";
 import { site } from "@/data/site";
 
-/** All 36 mandatory launch routes — Master Spec, Chapter 05. */
+/** All 36 mandatory launch routes, Master Spec, Chapter 05. */
 const STATIC_ROUTES: Array<{ path: string; priority: number }> = [
   { path: "/", priority: 1.0 },
   { path: "/robots", priority: 0.9 },
@@ -25,7 +25,7 @@ const STATIC_ROUTES: Array<{ path: string; priority: number }> = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Deterministic timestamp — current time (`new Date()`) is blocked during prerender.
+  // Deterministic timestamp, current time (`new Date()`) is blocked during prerender.
   const now = new Date("2026-10-11T00:00:00.000Z");
 
   const staticEntries = STATIC_ROUTES.map((r) => ({

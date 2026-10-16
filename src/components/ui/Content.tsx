@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 /* ---------------------------------------------------------------
    Accessible accordion built on native <details>/<summary>
-   (works without JavaScript — keyboard & screen-reader friendly).
+   (works without JavaScript, keyboard & screen-reader friendly).
 --------------------------------------------------------------- */
 export function AccordionItem({
   question,
@@ -42,7 +42,7 @@ export function Accordion({ items }: { items: Array<{ q: string; a: string }> })
 }
 
 /* ---------------------------------------------------------------
-   Engagement process — homepage section 07 / solutions.
+   Engagement process, homepage section 07 / solutions.
 --------------------------------------------------------------- */
 export function ProcessSteps({ steps }: { steps: Array<{ title: string; text: string }> }) {
   return (

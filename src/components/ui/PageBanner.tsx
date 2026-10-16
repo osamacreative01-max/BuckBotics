@@ -1,7 +1,7 @@
 import { SmartImage } from "./SmartImage";
 
 /**
- * PageBanner — full-width 3:1 marketing banner at the very top of a
+ * PageBanner, full-width 3:1 marketing banner at the very top of a
  * family or industry page.
  *
  * The delivered artwork is pre-composed with its own headline, so it is

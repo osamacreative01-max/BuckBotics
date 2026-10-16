@@ -3,9 +3,9 @@ import { ProcessSteps, Notice, AccordionItem } from "@/components/ui/Content";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta({
-  title: "Solutions — Feasibility, Pilots & Managed Services",
+  title: "Solutions, Feasibility, Pilots & Managed Services",
   description:
-    "How a BUCKBOTICS engagement works: robotics feasibility assessment, controlled pilot programme and proposed managed services — staged from discovery to measured evaluation.",
+    "How a BUCKBOTICS engagement works: robotics feasibility assessment, controlled pilot programme and proposed managed services, staged from discovery to measured evaluation.",
   path: "/solutions",
 });
 
@@ -38,7 +38,7 @@ const ROUTES = [
   {
     who: "Support request",
     action: "Contact",
-    result: "Contact routing — installed-fleet support is not yet offered",
+    result: "Contact routing, installed-fleet support is not yet offered",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function SolutionsPage() {
       <PageHeader
         eyebrow="Solutions"
         title="From one physical task to a measured pilot."
-        intro="Three staged offerings: a robotics feasibility assessment, a controlled pilot programme, and proposed managed services. Nothing is sold as delivered capability — each stage produces documented decisions."
+        intro="Three staged offerings: a robotics feasibility assessment, a controlled pilot programme, and proposed managed services. Nothing is sold as delivered capability, each stage produces documented decisions."
       >
         <ButtonLink href="/contact?type=project">Request a feasibility discussion</ButtonLink>
         <ButtonLink href="/solutions/pilot-programme" tone="secondary">
@@ -65,7 +65,7 @@ export default function SolutionsPage() {
               <h2 className="display-md mt-3">Is the task a robotics task?</h2>
               <p className="lede mt-4">
                 A paid, scoped assessment of one repeatable physical task: what moves, where, how
-                often, under which constraints — and whether any concept family plausibly fits.
+                often, under which constraints, and whether any concept family plausibly fits.
               </p>
               <div className="mt-6">
                 <ButtonLink href="/contact?type=project">Start with discovery</ButtonLink>
@@ -78,9 +78,9 @@ export default function SolutionsPage() {
                   { h: "Task definition", p: "Physical action, origin/destination, frequency per shift, tolerances." },
                   { h: "Environment survey", p: "Floors, network, lighting, hygiene, obstacles, staff traffic." },
                   { h: "Constraint mapping", p: "Regulatory, data-governance and site-policy boundaries." },
-                  { h: "Candidate selection", p: "Which families and models could fit — proposed fit, not proven." },
+                  { h: "Candidate selection", p: "Which families and models could fit, proposed fit, not proven." },
                   { h: "Risk & safety scoping", p: "Hazard assessment outline, supervision model, stop criteria." },
-                  { h: "Pilot proposal", p: "Scope, duration, baseline KPIs and decision points — or an honest no." },
+                  { h: "Pilot proposal", p: "Scope, duration, baseline KPIs and decision points, or an honest no." },
                 ].map((i) => (
                   <li key={i.h} className="rounded-xl border border-line bg-white p-5">
                     <h3 className="font-display text-base font-semibold">{i.h}</h3>
@@ -114,7 +114,7 @@ export default function SolutionsPage() {
               <h2 className="display-md mt-3">Prove the task before anyone scales it</h2>
               <p className="lede mt-4">
                 A pilot runs a bounded set of tasks on-site with supervision, measured against a
-                baseline agreed before day one. It exists to generate evidence — including the
+                baseline agreed before day one. It exists to generate evidence, including the
                 evidence that something should not be automated.
               </p>
               <ul className="mt-5 grid gap-2 text-[0.97rem] text-graphite sm:grid-cols-2">
@@ -142,7 +142,7 @@ export default function SolutionsPage() {
                   {[
                     {
                       q: "Who owns the task today?",
-                      a: "A named process owner must exist — pilots without an owner cannot produce accountable results.",
+                      a: "A named process owner must exist, pilots without an owner cannot produce accountable results.",
                     },
                     {
                       q: "Is the task repeatable?",
@@ -154,7 +154,7 @@ export default function SolutionsPage() {
                     },
                     {
                       q: "What would stop the pilot?",
-                      a: "Stop criteria — safety, continuity or measurement failures — are agreed in writing beforehand.",
+                      a: "Stop criteria, safety, continuity or measurement failures, are agreed in writing beforehand.",
                     },
                   ].map((item) => (
                     <AccordionItem key={item.q} question={item.q}>
@@ -175,7 +175,7 @@ export default function SolutionsPage() {
       <section className="section border-b border-line" id="managed-services">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">03 · Proposed managed services</p>
-          <h2 className="display-md mt-3">Services under consideration — not yet contracted</h2>
+          <h2 className="display-md mt-3">Services under consideration, not yet contracted</h2>
           <p className="lede mt-4 max-w-3xl">
             These service shapes are proposed for later phases. They are published as concept-stage
             offerings without pricing, SLAs or availability claims; each would require its own
@@ -186,7 +186,7 @@ export default function SolutionsPage() {
             {[
               {
                 h: "Assessment-as-a-service",
-                p: "Repeatable feasibility assessments for portfolio operations — standardized task surveys, evidence templates and decision reports.",
+                p: "Repeatable feasibility assessments for portfolio operations, standardized task surveys, evidence templates and decision reports.",
               },
               {
                 h: "Pilot operations support",
@@ -215,7 +215,7 @@ export default function SolutionsPage() {
           <SectionHeading
             eyebrow="Which route fits?"
             title="Enquiry routes and where they lead"
-            intro="Every journey ends with a human reading your enquiry — never an automated promise of booking, stock or delivery."
+            intro="Every journey ends with a human reading your enquiry, never an automated promise of booking, stock or delivery."
           />
           <div className="mt-8 overflow-x-auto rounded-2xl border border-white/10">
             <table className="w-full min-w-[640px] border-collapse text-left">
@@ -249,12 +249,12 @@ export default function SolutionsPage() {
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             <Notice title="Support requests" tone="info" surface="dark">
-              Support routing exists, but installed-fleet support is not yet offered — we will not
+              Support routing exists, but installed-fleet support is not yet offered, we will not
               imply a service desk for robots that have not been deployed.
             </Notice>
             <Notice title="Ready to start?" tone="concept" surface="dark">
               Use the project form and pick “Robotics feasibility discussion”. Add the task,
-              environment and shift pattern — it speeds up the first call.
+              environment and shift pattern, it speeds up the first call.
             </Notice>
           </div>
 

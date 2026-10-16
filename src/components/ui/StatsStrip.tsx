@@ -1,7 +1,7 @@
 import CountUp from "@/components/bits/CountUp";
 
 /* ---------------------------------------------------------------
-   Scale stats strip (homepage, below the robot family grid) — animated
+   Scale stats strip (homepage, below the robot family grid), animated
    counters (React Bits CountUp).
    All figures are registry facts (9 families / 27 models /
    30 target industries / 10 BUCKCORE modules). SSR renders the

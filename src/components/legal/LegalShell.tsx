@@ -3,7 +3,7 @@ import { PageHeader, ButtonLink } from "@/components/ui/Primitives";
 import { Notice } from "@/components/ui/Content";
 
 /**
- * Shared shell for legal pages — Master Spec, Chapter 19:
+ * Shared shell for legal pages, Master Spec, Chapter 19:
  * real policy text (not generic promises), clearly marked as pending
  * counsel/owner review before publication (acceptance item 12).
  */

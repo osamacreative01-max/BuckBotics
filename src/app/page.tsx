@@ -20,9 +20,9 @@ export default function HomePage() {
 
   return (
     <>
-      {/* 01 — HERO ------------------------------------------------- */}
+      {/* 01, HERO ------------------------------------------------- */}
       <section className="relative overflow-hidden border-b border-line bg-white">
-        {/* Particle constellation backdrop (React Bits Particles) — same system
+        {/* Particle constellation backdrop (React Bits Particles), same system
             as the BUCKCORE band below, toned down so it stays behind the copy. */}
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <Particles
@@ -67,7 +67,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <StatusPill status="concept" />
               <p className="text-sm text-muted">
-                All nine families are concept-stage —{" "}
+                All nine families are concept-stage,{" "}
                 <Link href="/product-status" className="link-quiet">
                   see what that means
                 </Link>
@@ -90,24 +90,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 02 — COMPANY MISSION -------------------------------------- */}
+      {/* 02, COMPANY MISSION -------------------------------------- */}
       <section className="section surface-arctic border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="The company"
             title="Engineering first. Claims second."
-            intro="BUCKBOTICS is a Buckingham venture examining how robotics and physical AI can relieve repetitive physical work in Canadian industries — and being explicit about everything that is still unproven."
+            intro="BUCKBOTICS is a Buckingham venture examining how robotics and physical AI can relieve repetitive physical work in Canadian industries, and being explicit about everything that is still unproven."
             gradientAccent
           />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
                 h: "Engineering discipline",
-                p: "Every model on this site carries a lifecycle status and an evidence rule. Specifications stay unpublished until a dated test record exists — no estimated payload, runtime or accuracy figures.",
+                p: "Every model on this site carries a lifecycle status and an evidence rule. Specifications stay unpublished until a dated test record exists, no estimated payload, runtime or accuracy figures.",
               },
               {
                 h: "Targeted physical AI",
-                p: "BUCKCORE is proposed as a shared framework for perception, task orchestration, skills and supervised operation — scoped to specific workflows rather than general intelligence claims.",
+                p: "BUCKCORE is proposed as a shared framework for perception, task orchestration, skills and supervised operation, scoped to specific workflows rather than general intelligence claims.",
               },
               {
                 h: "Canadian operating realities",
@@ -123,11 +123,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 02b — DELIVERED BRAND BAND (3:1 artwork, headline & stats baked in) */}
-      <section aria-label="BUCKBOTICS — intelligence that moves the world" className="border-b border-line bg-white">
+      {/* 02b, DELIVERED BRAND BAND (3:1 artwork, headline & stats baked in) */}
+      <section aria-label="BUCKBOTICS, intelligence that moves the world" className="border-b border-line bg-white">
         <SmartImage
           src="/images/banners/home-band-light.jpg"
-          alt="BUCKBOTICS — intelligent robots, real-world impact. A group of concept robots including BUCKi, TITAN, TERRA, LAB and a subsea rover, alongside the portfolio figures: 9 robot families, 27 models, 30 industries, BUCKCORE AI platform and the PERSONA collection. Concept visualizations."
+          alt="BUCKBOTICS, intelligent robots, real-world impact. A group of concept robots including BUCKi, TITAN, TERRA, LAB and a subsea rover, alongside the portfolio figures: 9 robot families, 27 models, 30 industries, BUCKCORE AI platform and the PERSONA collection. Concept visualizations."
           fit="cover"
           className="mx-auto aspect-[3/1] w-full max-w-[min(96vw,2200px)]"
           imgClassName="object-center"
@@ -135,7 +135,7 @@ export default function HomePage() {
         />
       </section>
 
-      {/* 03 — ROBOT FAMILY GRID ------------------------------------ */}
+      {/* 03, ROBOT FAMILY GRID ------------------------------------ */}
       <section className="section border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
@@ -157,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 03b — SCALE BAND (animated counters, React Bits CountUp) -------- */}
+      {/* 03b, SCALE BAND (animated counters, React Bits CountUp) -------- */}
       <section
         aria-label="BUCKBOTICS at a glance"
         className="border-b border-line bg-white"
@@ -167,14 +167,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 04 — APPLICATIONS BY INDUSTRY ----------------------------- */}
+      {/* 04, APPLICATIONS BY INDUSTRY ----------------------------- */}
       <section className="section surface-arctic border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="30 target industries"
               title="Applications by industry"
-              intro="Six sector groups, one directory of thirty markets and five fully developed launch pages. Industries are framed as task and productivity challenges — not labour-shortage claims."
+              intro="Six sector groups, one directory of thirty markets and five fully developed launch pages. Industries are framed as task and productivity challenges, not labour-shortage claims."
             />
             <ButtonLink href="/industries" tone="secondary">
               Open the directory
@@ -202,7 +202,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 05 — BUCKCORE --------------------------------------------- */}
+      {/* 05, BUCKCORE --------------------------------------------- */}
       <section className="section surface-brand-gradient relative overflow-hidden">
         {/* Particle constellation backdrop (React Bits Particles). */}
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
@@ -230,7 +230,7 @@ export default function HomePage() {
               <p className="mt-5 leading-relaxed text-ink">
                 BUCKCORE is the proposed shared framework connecting sensing, planning, skills,
                 supervised operation and fleet visibility across BUCKBOTICS solutions. It is
-                concept-stage software — not a released platform.
+                concept-stage software, not a released platform.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <ButtonLink href="/technology/buckcore" surface="brand">
@@ -275,13 +275,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 07 — HOW ENGAGEMENTS WORK --------------------------------- */}
+      {/* 07, HOW ENGAGEMENTS WORK --------------------------------- */}
       <section className="section border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
             eyebrow="Solutions"
             title="How engagements work"
-            intro="A staged path from first conversation to measured evaluation — no delivery promises before assessment."
+            intro="A staged path from first conversation to measured evaluation, no delivery promises before assessment."
           />
           <div className="mt-10">
             <ProcessSteps
@@ -302,7 +302,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 08 — RESPONSIBLE ROBOTICS --------------------------------- */}
+      {/* 08, RESPONSIBLE ROBOTICS --------------------------------- */}
       <section className="section surface-arctic border-b border-line">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <SectionHeading
@@ -314,7 +314,7 @@ export default function HomePage() {
             {[
               { h: "Identity", p: "Robots disclose that they are machines; PERSONA uses only original synthetic adult faces." },
               { h: "Consent", p: "Meaningful consent, safe defaults and deletion workflows for speech and interaction data." },
-              { h: "Clinical limits", p: "CARE and PERSONA CARE are nonclinical concepts — never presented as medical devices." },
+              { h: "Clinical limits", p: "CARE and PERSONA CARE are nonclinical concepts, never presented as medical devices." },
               { h: "Child safety", p: "No childlike synthetic designs and no unattended childcare claims. Adult supervision only." },
               { h: "Physical safety", p: "Independent safety-rated controls; language models never bypass them." },
             ].map((item) => (
@@ -332,7 +332,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 09 — PILOT ENQUIRY ---------------------------------------- */}
+      {/* 09, PILOT ENQUIRY ---------------------------------------- */}
       <section className="section bg-midnight">
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-12">
@@ -343,7 +343,7 @@ export default function HomePage() {
               </h2>
               <p className="mt-5 max-w-2xl leading-relaxed text-[#b7c6d8]">
                 FORGE is our leading commercial focus and the pilot programme starts with a
-                feasibility conversation. We do not hold stock and we do not promise returns — we
+                feasibility conversation. We do not hold stock and we do not promise returns, we
                 assess, pilot and measure.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">

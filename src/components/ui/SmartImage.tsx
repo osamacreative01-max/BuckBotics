@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 /**
- * SmartImage — renders optimized Next.js imagery when the file exists in
+ * SmartImage, renders optimized Next.js imagery when the file exists in
  * /public, otherwise shows an art-directed CONCEPT placeholder.
  *
  * Media policy (Master Spec, Chapter 04): white studio backgrounds,
@@ -104,7 +104,7 @@ export function SmartImage({
         <div
           className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[linear-gradient(180deg,#ffffff_0%,#f0f5f9_100%)]"
           role="img"
-          aria-label={`${alt} — concept visualization placeholder`}
+          aria-label={`${alt}, concept visualization placeholder`}
         >
           <div
             aria-hidden="true"

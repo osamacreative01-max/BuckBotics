@@ -3,7 +3,7 @@ import Link from "next/link";
 import { STATUS_SCHEMA, type StatusKey } from "@/data/status";
 
 /* ---------------------------------------------------------------
-   Status pill — every model/family carries its lifecycle status.
+   Status pill, every model/family carries its lifecycle status.
 --------------------------------------------------------------- */
 export function StatusPill({
   status,
@@ -52,9 +52,9 @@ export function StatusPill({
    contrast; blue-on-midnight only reaches 3.5:1.
 
    Every tone additionally picks up the four motions from the "Button
-   effects" block in globals.css — shine sweep, lift with glow, the
+   effects" block in globals.css, shine sweep, lift with glow, the
    gradient slide on primary or the gradient wipe on secondary, and a
-   chevron — selected by the btn-* marker in each string below.
+   chevron, selected by the btn-* marker in each string below.
 --------------------------------------------------------------- */
 type ButtonTone = "primary" | "secondary" | "ghost" | "light";
 type ButtonSurface = "light" | "brand" | "dark";
@@ -70,13 +70,13 @@ export function ButtonLink({
   href: string;
   children: ReactNode;
   tone?: ButtonTone;
-  /** Background the button sits on — selects the matching colour set. */
+  /** Background the button sits on, selects the matching colour set. */
   surface?: ButtonSurface;
   className?: string;
   size?: "sm" | "md" | "lg";
 }) {
   /* btn-fx carries the shine, the chevron and every transition; btn-lift the
-     rise and the glow. Both are declared in globals.css — see "Button
+     rise and the glow. Both are declared in globals.css, see "Button
      effects". transition-colors is deliberately absent: it would override
      the shorthand in .btn-fx and drop transform and box-shadow. */
   const base =
@@ -152,7 +152,7 @@ export function ButtonLink({
 }
 
 /* ---------------------------------------------------------------
-   Page header — eyebrow + H1 + intro (used by all inner pages)
+   Page header, eyebrow + H1 + intro (used by all inner pages)
 --------------------------------------------------------------- */
 export function PageHeader({
   eyebrow,
