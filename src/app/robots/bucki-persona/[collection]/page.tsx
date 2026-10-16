@@ -196,7 +196,7 @@ export default async function PersonaCollectionPage({
               <div className="mt-4">
                 <Notice title={CONFIDENTIAL_NOTE} tone="concept">
                   {collection.status === "concept"
-                    ? "Status: CONCEPT, no operational test is shown for this collection."
+                    ? "Status: CONCEPT, no operational test is shown for this collection. "
                     : null}
                   Human caregivers, security staff and supervising operators remain responsible;
                   the machine always discloses that it is artificial.

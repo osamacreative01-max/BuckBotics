@@ -45,8 +45,11 @@ export function Accordion({ items }: { items: Array<{ q: string; a: string }> })
    Engagement process, homepage section 07 / solutions.
 --------------------------------------------------------------- */
 export function ProcessSteps({ steps }: { steps: Array<{ title: string; text: string }> }) {
+  /* 5 steps read as one row; 6 steps fall into two balanced rows of three
+     (a 5-column grid would strand the sixth card alone). */
+  const wideCols = steps.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-3";
   return (
-    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <ol className={`grid gap-6 sm:grid-cols-2 ${wideCols}`}>
       {steps.map((step, i) => (
         <li key={step.title} className="relative rounded-2xl border border-line bg-white p-5">
           <span className="font-mono text-xs tracking-[0.16em] text-blue">

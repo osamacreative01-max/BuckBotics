@@ -97,7 +97,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href={PRIMARY_CTA.href}
-              className="btn-fx btn-lift btn-grad btn-glow-blue hidden items-center justify-center gap-2 rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white sm:inline-flex"
+              className="btn-fx btn-lift btn-grad btn-glow-blue hidden items-center justify-center gap-2 whitespace-nowrap rounded-full bg-blue px-5 py-2.5 text-sm font-semibold text-white sm:inline-flex"
             >
               {PRIMARY_CTA.label}
             </Link>

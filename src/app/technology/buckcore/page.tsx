@@ -76,9 +76,11 @@ export default function BuckcorePage() {
                 <span aria-hidden="true" className="text-line">
                   │
                 </span>
-                <span className="text-sm text-graphite">Human supervision</span>
-                <span className="text-sm text-muted">
-                  , sitting beside the pipeline, never inside a fictitious finished feature.
+                <span className="text-sm text-graphite">
+                  Human supervision
+                  <span className="text-muted">
+                    , sitting beside the pipeline, never inside a fictitious finished feature.
+                  </span>
                 </span>
               </div>
             </div>

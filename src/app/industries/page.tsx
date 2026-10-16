@@ -69,7 +69,7 @@ export default function IndustriesPage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <Notice title="How to read this list" tone="info">
               This is a strategic market-opportunity catalogue, not a verified ranking of Canadian
-              labour shortages. Gaps are framed as task, operating and productivity challenges.
+              labour shortages. Gaps are framed as task, operating and productivity challenges.{" "}
               {detailSlugs.size} sectors have detailed pages; the remaining tiles link to the
               enquiry flow rather than to thin SEO stubs.
             </Notice>

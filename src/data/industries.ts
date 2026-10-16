@@ -171,9 +171,9 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     pathway: [
       "Discovery call: routes, volumes, shift patterns and constraints (see enquiry prompt).",
       "Technical assessment: site survey, network review, task mapping and hazard scoping.",
-      "Supplier and platform selection against the documented task list.",
-      "Controlled pilot on a limited route set with a human supervisor.",
-      "Measured evaluation against a baseline agreed before the pilot starts, with defined stop criteria.",
+      "Supplier and platform selection: against the documented task list.",
+      "Controlled pilot: on a limited route set with a human supervisor.",
+      "Measured evaluation: against a baseline agreed before the pilot starts, with defined stop criteria.",
     ],
     enquiryPrompt:
       "What materials must move, between which locations, and how many times per shift?",
@@ -214,9 +214,9 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     pathway: [
       "Discovery call: product format, packaging conditions and cleaning regime (see enquiry prompt).",
       "Technical assessment: zone classification, hygiene requirements, task mapping.",
-      "Supplier and tooling selection for the identified grippers and sensors.",
-      "Controlled pilot on a single line or staging area with staff supervision.",
-      "Measured evaluation against pre-agreed quality and continuity metrics, with stop criteria.",
+      "Supplier and tooling selection: for the identified grippers and sensors.",
+      "Controlled pilot: on a single line or staging area with staff supervision.",
+      "Measured evaluation: against pre-agreed quality and continuity metrics, with stop criteria.",
     ],
     enquiryPrompt:
       "What product format, packaging conditions and cleaning regime apply?",
@@ -253,9 +253,9 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     pathway: [
       "Discovery call: which nonclinical items and secure transfers need routing (see enquiry prompt).",
       "Technical assessment: routes, network, elevator integration, hygiene and access controls.",
-      "Supplier selection against the documented nonclinical task list.",
-      "Controlled pilot on selected routes with staff override at all times.",
-      "Measured evaluation against a pre-agreed transport baseline and incident criteria.",
+      "Supplier selection: against the documented nonclinical task list.",
+      "Controlled pilot: on selected routes with staff override at all times.",
+      "Measured evaluation: against a pre-agreed transport baseline and incident criteria.",
     ],
     enquiryPrompt: "Which nonclinical items and secure transfers need routing?",
     banner: {
@@ -294,9 +294,9 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     pathway: [
       "Discovery call: which crop, aisle geometry and handling action matter (see enquiry prompt).",
       "Technical assessment: route survey, sensing payload selection, hazard review.",
-      "Supplier selection for the agreed inspection or transport task.",
-      "Controlled pilot across a limited bay set with grower supervision.",
-      "Measured evaluation against baseline monitoring coverage and handling times, with stop criteria.",
+      "Supplier selection: for the agreed inspection or transport task.",
+      "Controlled pilot: across a limited bay set with grower supervision.",
+      "Measured evaluation: against baseline monitoring coverage and handling times, with stop criteria.",
     ],
     enquiryPrompt: "Which crop, aisle geometry and handling action matter?",
     banner: {
@@ -335,9 +335,9 @@ export const INDUSTRY_DETAILS: IndustryDetail[] = [
     pathway: [
       "Discovery call: inspection route, communications conditions and hazardous zones (see enquiry prompt).",
       "Technical assessment: site survey, zone review, payload and communications plan.",
-      "Supplier selection matched to the documented environmental conditions.",
-      "Controlled pilot on a single supervised route with defined stop criteria.",
-      "Measured evaluation against the existing inspection record agreed with the site.",
+      "Supplier selection: matched to the documented environmental conditions.",
+      "Controlled pilot: on a single supervised route with defined stop criteria.",
+      "Measured evaluation: against the existing inspection record agreed with the site.",
     ],
     enquiryPrompt:
       "Which inspection route, communications conditions and hazardous zones are involved?",

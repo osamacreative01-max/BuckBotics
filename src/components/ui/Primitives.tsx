@@ -162,7 +162,7 @@ export function PageHeader({
   tone = "light",
 }: {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   intro?: ReactNode;
   children?: ReactNode;
   tone?: "light" | "dark";

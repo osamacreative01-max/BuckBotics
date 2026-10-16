@@ -17,7 +17,11 @@ export default function RobotsIndexPage() {
     <>
       <PageHeader
         eyebrow="Robots"
-        title="Nine families. Twenty-seven concept models."
+        title={
+          <>
+            Nine families. <span className="whitespace-nowrap">Twenty-seven</span> concept models.
+          </>
+        }
         intro="This is the complete BUCKBOTICS portfolio as published at launch. Every family shows its models with unique product identifiers, intended purpose and lifecycle status, enquiry rather than checkout."
       >
         <ButtonLink href="/contact?type=project">Discuss an Application</ButtonLink>
