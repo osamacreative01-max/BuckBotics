@@ -5,7 +5,7 @@
  */
 
 import { FAMILIES } from "./families";
-import { INDUSTRY_DETAILS } from "./industries";
+import { INDUSTRIES, INDUSTRY_DETAILS } from "./industries";
 
 export interface NavLink {
   label: string;
@@ -27,6 +27,22 @@ const familyLinks: NavLink[] = [
 const industryLinks: NavLink[] = [
   { label: "30-industry directory", href: "/industries" },
   ...INDUSTRY_DETAILS.map((d) => ({ label: d.title, href: `/industries/${d.slug}` })),
+];
+
+/**
+ * Featured vertical, Warehousing & Logistics footer column.
+ * Derived from the logistics-retail sector tiles: the launch detail page
+ * where one exists, the enquiry flow everywhere else (Chapter 12, tiles
+ * never link to empty SEO stubs), plus the sector anchor in the directory.
+ */
+const logisticsLinks: NavLink[] = [
+  ...INDUSTRIES.filter((i) => i.sector === "logistics-retail").map((i) => ({
+    label: i.title,
+    href: i.detailSlug
+      ? `/industries/${i.detailSlug}`
+      : `/contact?type=project&industry=${encodeURIComponent(i.title)}`,
+  })),
+  { label: "Sector overview", href: "/industries#logistics-retail" },
 ];
 
 export const NAV_GROUPS: NavGroup[] = [
@@ -90,6 +106,7 @@ export const PRIMARY_CTA = { label: "Discuss a Project", href: "/contact?type=pr
 export const FOOTER_LINKS = {
   robots: familyLinks,
   industries: industryLinks,
+  warehousing: logisticsLinks,
   company: [
     { label: "About", href: "/company/about" },
     { label: "Partnerships", href: "/company/partnerships" },
