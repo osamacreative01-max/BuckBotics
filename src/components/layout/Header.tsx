@@ -55,23 +55,31 @@ export function Header() {
       className="sticky top-0 z-50"
       onMouseLeave={() => setOpenGroup(null)}
     >
-      {/* Concept notice strip */}
+      {/* Consultation notice strip */}
       <div className="bg-midnight text-[0.78rem] text-[#9fb2c7]">
         <div className="mx-auto flex max-w-[min(93vw,1800px)] items-center justify-between gap-4 px-5 py-2 sm:px-8">
-          <p className="truncate">
-            <span className="font-mono uppercase tracking-[0.14em] text-cyan">Concept-stage portfolio</span>
+          <p className="min-w-0 leading-snug">
+            <Link
+              href={PRIMARY_CTA.href}
+              className="font-mono uppercase tracking-[0.08em] text-cyan transition-colors duration-200 hover:text-white"
+            >
+              Request an Enterprise Consultation for Strategic Robotics&nbsp;Programs&nbsp;→
+            </Link>
             <span className="hidden sm:inline">
-              , robot designs are proposed concepts.{" "}
-              <Link href="/product-status" className="underline underline-offset-2 hover:text-white">
+              {" · "}
+              <Link
+                href="/product-status"
+                className="whitespace-nowrap underline underline-offset-2 hover:text-white"
+              >
                 Status definitions
               </Link>
             </span>
           </p>
-          <div className="hidden items-center gap-4 md:flex">
-            <a href={`mailto:${site.email}`} className="hover:text-white">
+          <div className="hidden shrink-0 items-center gap-4 md:flex">
+            <a href={`mailto:${site.email}`} className="whitespace-nowrap hover:text-white">
               {site.email}
             </a>
-            <a href={`tel:${site.phoneHref}`} className="hover:text-white">
+            <a href={`tel:${site.phoneHref}`} className="whitespace-nowrap hover:text-white">
               {site.phoneDisplay}
             </a>
           </div>
