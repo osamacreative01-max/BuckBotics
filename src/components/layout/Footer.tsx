@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { FOOTER_LINKS } from "@/data/navigation";
-import { homeHero, site } from "@/data/site";
+import { site } from "@/data/site";
 
 /**
  * Footer, Master Spec, Chapter 05:
@@ -11,10 +11,10 @@ import { homeHero, site } from "@/data/site";
  * Design: premium dark-navy surface with layered blue gradient depth,
  * a brand-and-contact rail on the left, five navigation columns on the
  * right, cyan icon tiles and accent rules, light blue-grey links that
- * highlight cyan on hover, circular social badges (dormant until official
- * accounts are verified) and a thin blue divider above the copyright bar.
+ * highlight cyan on hover, and a thin blue divider above the legal bar.
  * Faint circuit lines sit in the bottom-right corner as decoration.
- * Content, links and semantics are unchanged from the spec,
+ * Social badges and the subheadline were removed per owner direction;
+ * content, links and semantics are otherwise unchanged from the spec,
  * presentation only.
  */
 
@@ -55,71 +55,6 @@ function IconPin() {
     </svg>
   );
 }
-
-/* Circular social glyphs, filled brand marks sized for a 36px badge. */
-const glyphCls = "h-[1.05rem] w-[1.05rem]";
-
-function IconLinkedIn() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={glyphCls}>
-      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
-    </svg>
-  );
-}
-
-function IconX() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={glyphCls}>
-      <path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.5h2.04L6.49 3.24H4.3L17.61 20.65Z" />
-    </svg>
-  );
-}
-
-function IconYouTube() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={glyphCls}>
-      <path d="M23.5 6.5a3.02 3.02 0 0 0-2.12-2.14C19.5 3.86 12 3.86 12 3.86s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.5 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.5 3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.5ZM9.6 15.6V8.4l6.24 3.6-6.24 3.6Z" />
-    </svg>
-  );
-}
-
-function IconInstagram() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={glyphCls}>
-      <path
-        fillRule="evenodd"
-        d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.98c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.18.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.18.22.55.47.94.88 1.35.41.41.8.66 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.18-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.76-.07Zm0 3.37a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm0 7.4a2.91 2.91 0 1 0 0-5.82 2.91 2.91 0 0 0 0 5.82Zm5.72-7.59a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"
-      />
-    </svg>
-  );
-}
-
-function IconFacebook() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={glyphCls}>
-      <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z" />
-    </svg>
-  );
-}
-
-/**
- * Social badges. No official accounts are verified yet, so every entry
- * ships with `href: null` and renders as a non-interactive badge; set the
- * verified profile URL to promote it to a real link. Nothing is invented here.
- */
-interface Social {
-  label: string;
-  href: string | null;
-  glyph: React.ReactNode;
-}
-
-const SOCIALS: Social[] = [
-  { label: "LinkedIn", href: null, glyph: <IconLinkedIn /> },
-  { label: "X", href: null, glyph: <IconX /> },
-  { label: "YouTube", href: null, glyph: <IconYouTube /> },
-  { label: "Instagram", href: null, glyph: <IconInstagram /> },
-  { label: "Facebook", href: null, glyph: <IconFacebook /> },
-];
 
 /** Cyan tile behind a contact glyph; brightens while its row is hovered. */
 function IconTile({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -223,20 +158,16 @@ export function Footer() {
         </svg>
       </div>
 
-      <div className="relative mx-auto max-w-[min(93vw,1800px)] px-5 pt-9 pb-7 sm:px-8 lg:pt-12 lg:pb-8">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8 xl:gap-12">
+      <div className="relative mx-auto max-w-[min(93vw,1800px)] px-5 pt-7 pb-6 sm:px-8 lg:pt-9 lg:pb-7">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-8 xl:gap-12">
           {/* Identity + contacts */}
           <div className="lg:col-span-4 xl:col-span-3">
             <Wordmark variant="light" className="h-7 sm:h-8" />
             <p className="spec-label mt-2.5 text-cyan!">{site.ventureLine}</p>
 
-            <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-[#b7c6d8]">
-              {homeHero.subheadline}
-            </p>
+            <div aria-hidden="true" className="mt-4 h-px w-full max-w-md bg-gradient-to-r from-white/20 to-transparent" />
 
-            <div aria-hidden="true" className="mt-5 h-px w-full max-w-md bg-gradient-to-r from-white/20 to-transparent" />
-
-            <address className="mt-5 space-y-3.5 text-[#a9bccf] not-italic">
+            <address className="mt-4 space-y-3 text-[#a9bccf] not-italic">
               <a
                 href={`https://${site.domain}`}
                 className="group flex items-center gap-3 text-[0.94rem] transition-colors duration-200 hover:text-white"
@@ -277,33 +208,6 @@ export function Footer() {
                 </span>
               </p>
             </address>
-
-            {/* Circular social badges, dormant until official accounts are verified. */}
-            <ul className="mt-6 flex flex-wrap items-center gap-2.5">
-              {SOCIALS.map((s) => {
-                const badgeCls =
-                  "grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-cyan transition duration-200 hover:-translate-y-0.5 hover:border-cyan/60 hover:bg-cyan/15 hover:text-white hover:shadow-[0_8px_18px_-8px_rgba(53,182,243,0.9)]";
-                return (
-                  <li key={s.label}>
-                    {s.href ? (
-                      <a
-                        href={s.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={s.label}
-                        className={badgeCls}
-                      >
-                        {s.glyph}
-                      </a>
-                    ) : (
-                      <span aria-hidden="true" title={s.label} className={`${badgeCls} cursor-default`}>
-                        {s.glyph}
-                      </span>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
           </div>
 
           {/* Navigation columns, five across on desktop, reflowed on smaller screens */}
@@ -321,12 +225,12 @@ export function Footer() {
         {/* Concept disclaimer panel removed per owner direction (was Chapter 19) */}
 
         {/* Legal links */}
-        <div className="mt-10 lg:mt-12">
+        <div className="mt-8 lg:mt-9">
           <div
             aria-hidden="true"
             className="h-px w-full bg-gradient-to-r from-cyan/70 via-blue-bright/45 to-transparent"
           />
-          <nav aria-label="Legal" className="flex justify-center pt-5">
+          <nav aria-label="Legal" className="flex justify-center pt-4">
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[0.86rem] text-[#8fa4bb]">
               {FOOTER_LINKS.legal.map((l) => (
                 <li key={l.href}>
