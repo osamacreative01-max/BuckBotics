@@ -65,15 +65,6 @@ export function Header() {
             >
               Request an Enterprise Consultation for Strategic Robotics&nbsp;Programs&nbsp;→
             </Link>
-            <span className="hidden sm:inline">
-              {" · "}
-              <Link
-                href="/product-status"
-                className="whitespace-nowrap underline underline-offset-2 hover:text-white"
-              >
-                Status definitions
-              </Link>
-            </span>
           </p>
           <div className="hidden shrink-0 items-center gap-4 md:flex">
             <a href={`mailto:${site.email}`} className="whitespace-nowrap hover:text-white">
