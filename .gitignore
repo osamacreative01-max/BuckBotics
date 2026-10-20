@@ -32,3 +32,9 @@ yarn-error.log*
 # source artwork drop â€” files are copied into /public/images/banners with
 # URL-safe names; this folder keeps spaces in paths, so it stays local only.
 /public/images/Bukcbotics Website Banners/
+
+# deployment archive — kept local only (658 MB, contains .leads/ lead data)
+*.zip
+# review working doc — kept local only
+DESIGN_REVIEW.md
+
