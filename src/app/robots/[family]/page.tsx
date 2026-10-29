@@ -100,7 +100,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
         <section className="section border-b border-line bg-arctic/60" id="care-sentinel">
           <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-12">
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-6">
                 <div className="flex flex-wrap items-center gap-3">
                   <p className="eyebrow">{CARE_SENTINEL.card.title}</p>
                   <ResearchConceptBadge size="sm" />
@@ -122,14 +122,14 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                 </div>
               </div>
 
-              <figure className="relative lg:col-span-5">
+              <figure className="relative lg:col-span-6">
                 <SmartImage
                   src={CARE_SENTINEL_IMAGES.branded.src}
                   alt={CARE_SENTINEL_IMAGES.branded.alt}
                   fit="cover"
-                  className="aspect-[16/9] rounded-2xl border border-line bg-white!"
+                  className="aspect-[4/3] rounded-2xl border border-line bg-white!"
                   imgClassName="object-center"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  sizes="(max-width: 1024px) 100vw, 48vw"
                 />
                 <div className="absolute left-3 top-3">
                   <ResearchConceptBadge size="sm" surface="overlay" />
