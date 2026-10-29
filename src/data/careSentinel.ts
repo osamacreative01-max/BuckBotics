@@ -45,10 +45,6 @@ export const CARE_SENTINEL_IMAGES = {
   },
 } as const;
 
-/** Mandatory label on every CARE SENTINEL image, Part B10. */
-export const CARE_IMAGE_LABEL =
-  "Concept visualization. Proposed design, not a manufactured product.";
-
 /* ------------------------------------------------------------------
    Homepage slides 2 and 3, Part A2 and A3.
 ------------------------------------------------------------------ */

@@ -11,7 +11,6 @@ import { FAMILIES, getFamily } from "@/data/families";
 import { SPEC_ROWS } from "@/data/status";
 import { conceptDisclaimer } from "@/data/site";
 import {
-  CARE_IMAGE_LABEL,
   CARE_SENTINEL,
   CARE_SENTINEL_IMAGES,
   CARE_SENTINEL_PATH,
@@ -135,11 +134,6 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
                 <div className="absolute left-3 top-3">
                   <ResearchConceptBadge size="sm" surface="overlay" />
                 </div>
-                <figcaption className="absolute inset-x-3 bottom-3">
-                  <span className="inline-block rounded-lg border border-line bg-white/95 px-3 py-1.5 text-[0.72rem] leading-snug text-graphite shadow-sm backdrop-blur">
-                    {CARE_IMAGE_LABEL}
-                  </span>
-                </figcaption>
               </figure>
             </div>
           </div>
@@ -226,15 +220,7 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {family.models.map((model, i) => (
-              <ModelCard
-                key={model.id}
-                family={family}
-                model={model}
-                index={i}
-                imageCaption={
-                  model.detailHref === CARE_SENTINEL_PATH ? CARE_IMAGE_LABEL : undefined
-                }
-              />
+              <ModelCard key={model.id} family={family} model={model} index={i} />
             ))}
           </div>
         </div>

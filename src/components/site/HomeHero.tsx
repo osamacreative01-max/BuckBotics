@@ -15,7 +15,6 @@ import DecryptedText from "@/components/bits/DecryptedText";
 import Particles from "@/components/bits/Particles";
 import { homeHero, homeHeroSlides } from "@/data/site";
 import {
-  CARE_IMAGE_LABEL,
   CARE_SENTINEL_PATH,
   careHomeSlides,
 } from "@/data/careSentinel";
@@ -252,11 +251,6 @@ export function HomeHero() {
                     />
                     <div className="absolute left-3 top-3 z-10">
                       <ResearchConceptBadge size="sm" surface="overlay" />
-                    </div>
-                    <div className="absolute inset-x-3 bottom-3 z-10 flex">
-                      <p className="max-w-md rounded-lg border border-line bg-white/95 px-3 py-1.5 text-[0.72rem] leading-snug text-graphite shadow-sm backdrop-blur">
-                        {CARE_IMAGE_LABEL}
-                      </p>
                     </div>
                   </div>
                 );

@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/Primitives";
 import { AccordionItem, Notice } from "@/components/ui/Content";
 import {
-  CARE_IMAGE_LABEL,
   CARE_SENTINEL,
   CARE_SENTINEL_IMAGES,
   CARE_SENTINEL_PATH,
@@ -188,11 +187,6 @@ function ConceptFigure({
       <div className="absolute left-3 top-3 z-10">
         <ResearchConceptBadge size="sm" surface="overlay" />
       </div>
-      <figcaption className="absolute inset-x-3 bottom-3 z-10">
-        <span className="inline-block rounded-lg border border-line bg-white/95 px-3 py-1.5 text-[0.72rem] leading-snug text-graphite shadow-sm backdrop-blur">
-          {CARE_IMAGE_LABEL}
-        </span>
-      </figcaption>
     </figure>
   );
 }
