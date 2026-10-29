@@ -33,8 +33,20 @@ yarn-error.log*
 # URL-safe names; this folder keeps spaces in paths, so it stays local only.
 /public/images/Bukcbotics Website Banners/
 
-# deployment archive — kept local only (658 MB, contains .leads/ lead data)
+# deployment archive ï¿½ kept local only (658 MB, contains .leads/ lead data)
 *.zip
-# review working doc — kept local only
+# review working doc ï¿½ kept local only
 DESIGN_REVIEW.md
+
+# CARE SENTINEL review captures (screenshots, dev logs) - kept local only
+/.preview/
+
+# local review/screenshot helper scripts - kept local only
+/scripts/_*.mjs
+
+# source render drop with spaces in the path - copied into /public/images/care-sentinel
+/public/images/New folder/
+
+# client master document - local reference only, never served publicly
+/BUCKBOTICS_CARE_SENTINEL_WEBSITE_MASTER_V1_0.pdf
 

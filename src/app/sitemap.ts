@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { FAMILIES } from "@/data/families";
 import { INDUSTRY_DETAILS } from "@/data/industries";
 import { PERSONA_COLLECTIONS } from "@/data/persona";
+import { CARE_SENTINEL_PATH } from "@/data/careSentinel";
 import { site } from "@/data/site";
 
 /** All 36 mandatory launch routes, Master Spec, Chapter 05. */
@@ -59,5 +60,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...familyEntries, ...collectionEntries, ...industryEntries];
+  // CARE SENTINEL is a research concept. It enters the sitemap only after
+  // the owner and Canadian medical-device reviewer approve the public page.
+  const careSentinelEntries =
+    process.env.CARE_SENTINEL_APPROVED === "true"
+      ? [
+          {
+            url: `${site.url}${CARE_SENTINEL_PATH}`,
+            lastModified: now,
+            changeFrequency: "monthly" as const,
+            priority: 0.6,
+          },
+        ]
+      : [];
+
+  return [
+    ...staticEntries,
+    ...familyEntries,
+    ...collectionEntries,
+    ...industryEntries,
+    ...careSentinelEntries,
+  ];
 }

@@ -46,6 +46,10 @@ export interface RobotModel {
   views?: string[];
   /** Only set for PERSONA collections with a dedicated launch page. */
   collectionSlug?: string;
+  /** Set when a model has its own detail page instead of the enquiry route. */
+  detailHref?: string;
+  /** Optional label for the model card's detail link. */
+  ctaLabel?: string;
 }
 
 export interface RobotFamily {
@@ -355,7 +359,7 @@ export const FAMILIES: RobotFamily[] = [
     models: [
       { id: "CAR-C100", name: "CARE C100", short: "C100", purpose: "Secure internal logistics", status: CONCEPT, imageDir: "car-c100", views: ["front", "rear", "left-profile", "three-quarter-front", "closeup-chassis"] },
       { id: "CAR-C200", name: "CARE C200", short: "C200", purpose: "Nonclinical assistance", status: CONCEPT, image: "/images/families/care/slide-2.webp" },
-      { id: "CAR-C300", name: "CARE C300", short: "C300", purpose: "Clinician-assistive research", status: CONCEPT, image: "/images/families/care/slide-3.webp" },
+      { id: "CAR-C300", name: "CARE C300", short: "C300", purpose: "Clinician-assistive research", status: CONCEPT, image: "/images/care-sentinel/station-front.webp", detailHref: "/robots/care/care-sentinel", ctaLabel: "Explore CARE SENTINEL" },
     ],
   },
   {

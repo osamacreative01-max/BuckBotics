@@ -12,6 +12,7 @@ const VALID_TYPES = [
   "persona-care",
   "persona-memoria",
   "persona-signature",
+  "care-sentinel-research",
   "support",
 ] as const;
 
@@ -44,13 +45,15 @@ export async function ContactView({
     : "feasibility";
 
   const heading =
-    defaultType.startsWith("persona") || defaultType === "private-consultation"
-      ? "Request a private PERSONA consultation"
-      : defaultType === "partnership"
-        ? "Partnership enquiry"
-        : defaultType === "pilot"
-          ? "Apply for a pilot discussion"
-          : "Discuss a Robotics Project";
+    defaultType === "care-sentinel-research"
+      ? "Research and Engineering Enquiries"
+      : defaultType.startsWith("persona") || defaultType === "private-consultation"
+        ? "Request a private PERSONA consultation"
+        : defaultType === "partnership"
+          ? "Partnership enquiry"
+          : defaultType === "pilot"
+            ? "Apply for a pilot discussion"
+            : "Discuss a Robotics Project";
 
   return (
     <>

@@ -75,6 +75,10 @@ function computeTags(input: {
   if (input.industry) tags.add(`industry:${input.industry}`);
   if (input.enquiryType.startsWith("persona")) tags.add("PERSONA-general");
   if (input.enquiryType === "partnership") tags.add("partnership");
+  if (input.enquiryType === "care-sentinel-research") {
+    tags.add("CARE");
+    tags.add("CARE-SENTINEL-RESEARCH");
+  }
 
   if (tags.size === 0) tags.add("general");
   return [...tags];

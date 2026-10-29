@@ -7,6 +7,7 @@ import { BUDGET_BANDS, ENQUIRY_TYPES, initialFormState } from "@/lib/enquiry";
 import { INDUSTRIES } from "@/data/industries";
 import { FAMILIES } from "@/data/families";
 import { site } from "@/data/site";
+import { CARE_SENTINEL } from "@/data/careSentinel";
 
 const inputBase =
   "w-full rounded-lg border bg-white px-4 py-3 text-[0.95rem] text-midnight placeholder:text-muted/70 transition-colors focus:border-blue focus:outline-none";
@@ -351,6 +352,14 @@ export function EnquiryForm({
           </label>
         </div>
       </div>
+
+      {/* Part A14 privacy note, displayed immediately above the submit
+          control for CARE SENTINEL research enquiries (Master file B14). */}
+      {defaultType === "care-sentinel-research" ? (
+        <aside className="rounded-xl border border-copper/40 bg-copper/10 px-5 py-4 text-sm leading-relaxed text-[#6d4a26]">
+          {CARE_SENTINEL.contact.privacy}
+        </aside>
+      ) : null}
 
       <div className="flex flex-wrap items-center gap-4">
         <button

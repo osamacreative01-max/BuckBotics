@@ -87,28 +87,44 @@ export function ModelCard({
   family,
   model,
   index = 0,
+  imageCaption,
 }: {
   family: RobotFamily;
   model: RobotModel;
   index?: number;
+  /**
+   * Visible overlay label on the artwork. Required for CARE SENTINEL, whose
+   * renders must always carry the programme's exact research-concept label
+   * (Master file Part B10), not the site-wide concept caption.
+   */
+  imageCaption?: string;
 }) {
   // Approved render for the model, falling back to the registry's default
   // per-model path (`/images/robots/{id}/front.webp`).
   const imageSrc = model.image ?? `/images/robots/${model.id.toLowerCase()}/front.webp`;
-  const href = model.collectionSlug
-    ? `/robots/bucki-persona/${model.collectionSlug}`
-    : `/contact?type=project&model=${encodeURIComponent(model.id)}`;
+  const href = model.detailHref
+    ? model.detailHref
+    : model.collectionSlug
+      ? `/robots/bucki-persona/${model.collectionSlug}`
+      : `/contact?type=project&model=${encodeURIComponent(model.id)}`;
 
   return (
     <article className="card flex flex-col overflow-hidden">
-      <SmartImage
-        src={imageSrc}
-        alt={`${model.name}, front view concept visualization`}
-        className="aspect-[4/3] border-b border-line"
-        sizes="(max-width: 768px) 100vw, 33vw"
-        priority={index < 3}
-        caption={conceptCaption}
-      />
+      <div className="relative">
+        <SmartImage
+          src={imageSrc}
+          alt={`${model.name}, front view concept visualization`}
+          className="aspect-[4/3] border-b border-line"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          priority={index < 3}
+          caption={conceptCaption}
+        />
+        {imageCaption ? (
+          <p className="absolute inset-x-3 bottom-3 z-10 rounded-lg border border-line bg-white/95 px-3 py-1.5 text-[0.72rem] leading-snug text-graphite shadow-sm backdrop-blur">
+            {imageCaption}
+          </p>
+        ) : null}
+      </div>
       <div className="flex flex-1 flex-col gap-4 p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -143,7 +159,7 @@ export function ModelCard({
             href={href}
             className="rounded-sm text-sm font-semibold text-blue hover:text-blue-deep hover:underline underline-offset-4"
           >
-            {model.collectionSlug ? "View collection" : "Enquire"}
+            {model.ctaLabel ?? (model.collectionSlug ? "View collection" : "Enquire")}
             <span className="sr-only"> about {model.name}</span>
           </Link>
         </div>

@@ -32,6 +32,41 @@ export function StatusPill({
 }
 
 /* ---------------------------------------------------------------
+   Research concept label, used on every CARE SENTINEL slide,
+   image, card and section. Distinct from the standard lifecycle
+   pill because this programme is a research concept, not a
+   product that can be ordered or deployed.
+--------------------------------------------------------------- */
+export function ResearchConceptBadge({
+  size = "md",
+  surface = "light",
+  className = "",
+}: {
+  size?: "sm" | "md";
+  /** `overlay` is a solid pill for placing directly on top of artwork. */
+  surface?: "light" | "dark" | "overlay";
+  className?: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border font-mono font-medium uppercase tracking-[0.12em] ${
+        size === "sm" ? "px-2.5 py-0.5 text-[0.62rem]" : "px-3 py-1 text-[0.68rem]"
+      } ${
+        surface === "dark"
+          ? "border-cyan/50 bg-cyan/15 text-cyan"
+          : surface === "overlay"
+            ? "border-cyan/45 bg-white/95 text-[#0b5c8f] shadow-sm backdrop-blur"
+            : "border-cyan/45 bg-cyan/12 text-[#0b5c8f]"
+      } ${className}`}
+      title="Proposed research concept. Not a manufactured or clinically validated product."
+    >
+      <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-current" />
+      Research concept
+    </span>
+  );
+}
+
+/* ---------------------------------------------------------------
    Buttons / CTA links
 
    Tone × surface matrix (used consistently across the site):

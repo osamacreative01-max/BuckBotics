@@ -23,6 +23,7 @@ export const ENQUIRY_TYPES = [
   { value: "persona-care", label: "PERSONA CARE pilot interest" },
   { value: "persona-memoria", label: "MEMORIA private enquiry" },
   { value: "persona-signature", label: "SIGNATURE bespoke commission" },
+  { value: "care-sentinel-research", label: "CARE SENTINEL | Research enquiry" },
   { value: "support", label: "General or support enquiry" },
 ] as const;
 

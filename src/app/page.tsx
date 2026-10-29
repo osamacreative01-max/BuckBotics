@@ -1,19 +1,16 @@
 import Link from "next/link";
-import { ImageSlider } from "@/components/ui/ImageSlider";
 import { SmartImage } from "@/components/ui/SmartImage";
-import { StatusPill, ButtonLink, SectionHeading } from "@/components/ui/Primitives";
+import { ButtonLink, SectionHeading } from "@/components/ui/Primitives";
 import { FamilyCard } from "@/components/ui/Cards";
 import { ProcessSteps } from "@/components/ui/Content";
 import { StatsStrip } from "@/components/ui/StatsStrip";
-import SplitText from "@/components/bits/SplitText";
-import DecryptedText from "@/components/bits/DecryptedText";
+import { HomeHero } from "@/components/site/HomeHero";
 import Particles from "@/components/bits/Particles";
 import AnimatedContent from "@/components/bits/AnimatedContent";
 import SpotlightCard from "@/components/bits/SpotlightCard";
 import { FAMILIES_HOME_ORDER } from "@/data/families";
 import { industriesBySector } from "@/data/industries";
 import { BUCKCORE_MODULES } from "@/data/buckcore";
-import { homeHero, homeHeroSlides } from "@/data/site";
 
 export default function HomePage() {
   const sectors = industriesBySector();
@@ -21,74 +18,7 @@ export default function HomePage() {
   return (
     <>
       {/* 01, HERO ------------------------------------------------- */}
-      <section className="relative overflow-hidden border-b border-line bg-white">
-        {/* Particle constellation backdrop (React Bits Particles), same system
-            as the BUCKCORE band below, toned down so it stays behind the copy. */}
-        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <Particles
-            particleCount={90}
-            particleColors={["#091321", "#0a5590", "#0e6eb8"]}
-            particleBaseSize={135}
-            speed={0.12}
-            glow={0.85}
-            twinkle={0.3}
-            connections
-            connectionDistance={150}
-            lightMode
-            className="opacity-80"
-          />
-        </div>
-
-        <div className="relative z-10 mx-auto grid max-w-[min(93vw,1800px)] items-center gap-10 px-5 pt-14 pb-16 sm:px-8 lg:grid-cols-12 lg:pt-20 lg:pb-24">
-          <div className="lg:col-span-5">
-            <p className="eyebrow">
-              <DecryptedText text={homeHero.eyebrow} animateOn="view" sequential speed={32} />
-            </p>
-            <SplitText
-              tag="h1"
-              text={homeHero.headline}
-              className="display-xl mt-4 pb-2"
-              splitType="words"
-              delay={80}
-              duration={0.9}
-              textAlign="left"
-            />
-            <p className="lede mt-5 max-w-xl">{homeHero.subheadline}</p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/contact?type=project" size="lg">
-                {homeHero.primaryCta}
-              </ButtonLink>
-              <ButtonLink href="/robots" tone="secondary" size="lg">
-                {homeHero.secondaryCta}
-              </ButtonLink>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <StatusPill status="concept" />
-              <p className="text-sm text-muted">
-                All nine families are concept-stage,{" "}
-                <Link href="/product-status" className="link-quiet">
-                  see what that means
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7">
-            <figure className="relative">
-              <ImageSlider
-                images={homeHeroSlides}
-                label="Hero"
-                className="aspect-[16/10] overflow-hidden rounded-2xl border border-line"
-                sizes="(max-width: 1024px) 100vw, 58vw"
-                priority
-              />
-            </figure>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* 02, COMPANY MISSION -------------------------------------- */}
       <section className="section surface-arctic border-b border-line">

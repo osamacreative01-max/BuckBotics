@@ -28,6 +28,7 @@ Neeche "ABHI BAKI" wali files ka intezaar hai.
 | PERSONA male (suit) | 3 + 2 closeups | EXECUTIVE E200 collection + gallery `per-e200` |
 | PERSONA female (navy suit) | 2 + 3 closeups | SIGNATURE S300 collection + gallery `per-s300` |
 | Homepage hero group shots | 3 delivered (6:5, `public/images/hero/`) | hero card slider — 16:10 crop `hero/hero-slide-{1,2,3}-*.webp` |
+| CARE SENTINEL (CARE C300) | 7 station views (desktop + mobile crops) + 1200x630 OG card | `/images/care-sentinel/` — homepage CARE slides, CARE family feature and C300 card, `/robots/care/care-sentinel` |
 | OG cover | composited | social share image |
 
 **Naye artwork ke saath re-import:** `node scripts/import-artwork.mjs`

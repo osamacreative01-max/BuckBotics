@@ -6,6 +6,7 @@
 
 import { FAMILIES } from "./families";
 import { INDUSTRIES, INDUSTRY_DETAILS } from "./industries";
+import { CARE_SENTINEL_PATH } from "./careSentinel";
 
 export interface NavLink {
   label: string;
@@ -104,7 +105,10 @@ export const CONTACT_LINK: NavLink = { label: "Contact", href: "/contact" };
 export const PRIMARY_CTA = { label: "Discuss a Project", href: "/contact?type=project" };
 
 export const FOOTER_LINKS = {
-  robots: familyLinks,
+  robots: [
+    ...familyLinks,
+    { label: "CARE SENTINEL (research concept)", href: CARE_SENTINEL_PATH },
+  ],
   industries: industryLinks,
   warehousing: logisticsLinks,
   company: [

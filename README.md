@@ -68,8 +68,15 @@ Environment variables (copy `.env.example` to `.env.local`):
 | --- | --- |
 | `LEADS_FILE` | Override lead file path (default `.leads/enquiries.jsonl`) |
 | `CRM_WEBHOOK_URL` | If set, every lead is POSTed here as JSON (CRM/Zapier/Make webhook) |
+| `CARE_SENTINEL_APPROVED` | Set to `true` only after owner and Canadian medical-device reviewer approval. Publishes `/robots/care/care-sentinel` to the sitemap and removes its `noindex`. |
 
 Without any env vars the site works out of the box — leads simply accumulate in `.leads/enquiries.jsonl`.
+
+## CARE SENTINEL research concept
+
+`/robots/care/care-sentinel` presents CARE SENTINEL, the research programme for the existing CARE C300 (CAR-C300) model. It is **noindex and excluded from the sitemap by default**. Publish only with written owner and Canadian medical-device regulatory/legal approval, then set `CARE_SENTINEL_APPROVED=true`.
+
+Public copy comes from Part A of `BUCKBOTICS_CARE_SENTINEL_WEBSITE_MASTER_V1_0.pdf`; Part B is internal developer guidance and must never appear on the site. Do not add clinical claims, performance figures, prices, demos, or patient intake to this page or its enquiry route (`?type=care-sentinel-research`).
 
 ## Images
 

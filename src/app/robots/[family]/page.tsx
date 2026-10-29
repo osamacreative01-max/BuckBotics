@@ -3,13 +3,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { PageBanner } from "@/components/ui/PageBanner";
-import { StatusPill, ButtonLink } from "@/components/ui/Primitives";
+import { StatusPill, ButtonLink, ResearchConceptBadge } from "@/components/ui/Primitives";
 import { ModelCard } from "@/components/ui/Cards";
 import { ModelGallery } from "@/components/ui/ModelGallery";
 import { Notice, AccordionItem } from "@/components/ui/Content";
 import { FAMILIES, getFamily } from "@/data/families";
 import { SPEC_ROWS } from "@/data/status";
 import { conceptDisclaimer } from "@/data/site";
+import {
+  CARE_IMAGE_LABEL,
+  CARE_SENTINEL,
+  CARE_SENTINEL_IMAGES,
+  CARE_SENTINEL_PATH,
+} from "@/data/careSentinel";
 import { PERSONA_COLLECTIONS, PERSONA_ATELIER, PERSONA_FAQS, PERSONA } from "@/data/persona";
 import { pageMeta } from "@/lib/metadata";
 
@@ -88,6 +94,57 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
           </div>
         </div>
       </header>
+
+      {/* CARE SENTINEL, research-concept feature for CARE C300. Only the
+          exact Part A15/A16 public copy is used here. */}
+      {family.slug === "care" ? (
+        <section className="section border-b border-line bg-arctic/60" id="care-sentinel">
+          <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
+            <div className="grid items-center gap-10 lg:grid-cols-12">
+              <div className="lg:col-span-7">
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="eyebrow">{CARE_SENTINEL.card.title}</p>
+                  <ResearchConceptBadge size="sm" />
+                </div>
+                <h2 className="display-lg mt-3">{CARE_SENTINEL.careFamilyFeature.heading}</h2>
+                <p className="lede mt-4 max-w-2xl">
+                  {CARE_SENTINEL.careFamilyFeature.paragraph}
+                </p>
+
+                <div className="mt-7 rounded-2xl border border-line bg-white p-6 shadow-[0_18px_50px_-38px_rgba(9,19,33,0.45)]">
+                  <p className="text-[0.98rem] leading-relaxed text-graphite">
+                    {CARE_SENTINEL.card.body}
+                  </p>
+                  <div className="mt-5">
+                    <ButtonLink href={CARE_SENTINEL_PATH}>
+                      {CARE_SENTINEL.card.button}
+                    </ButtonLink>
+                  </div>
+                </div>
+              </div>
+
+              <figure className="relative lg:col-span-5">
+                <SmartImage
+                  src={CARE_SENTINEL_IMAGES.branded.src}
+                  alt={CARE_SENTINEL_IMAGES.branded.alt}
+                  fit="cover"
+                  className="aspect-[16/9] rounded-2xl border border-line bg-white!"
+                  imgClassName="object-center"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute left-3 top-3">
+                  <ResearchConceptBadge size="sm" surface="overlay" />
+                </div>
+                <figcaption className="absolute inset-x-3 bottom-3">
+                  <span className="inline-block rounded-lg border border-line bg-white/95 px-3 py-1.5 text-[0.72rem] leading-snug text-graphite shadow-sm backdrop-blur">
+                    {CARE_IMAGE_LABEL}
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* PERSONA special block: five collections + ATELIER service */}
       {isPersona ? (
@@ -169,7 +226,15 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {family.models.map((model, i) => (
-              <ModelCard key={model.id} family={family} model={model} index={i} />
+              <ModelCard
+                key={model.id}
+                family={family}
+                model={model}
+                index={i}
+                imageCaption={
+                  model.detailHref === CARE_SENTINEL_PATH ? CARE_IMAGE_LABEL : undefined
+                }
+              />
             ))}
           </div>
         </div>
