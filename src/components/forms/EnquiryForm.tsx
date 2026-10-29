@@ -272,7 +272,7 @@ export function EnquiryForm({
             id="environment"
             name="environment"
             type="text"
-            placeholder="e.g. warehouse aisles, wet plant"
+            placeholder="e.g. warehouse aisles"
             className={fieldClass(false)}
           />
         </div>
@@ -284,7 +284,7 @@ export function EnquiryForm({
             id="frequency"
             name="frequency"
             type="text"
-            placeholder="e.g. 3 shifts, ~200 moves/shift"
+            placeholder="e.g. 3 shifts, 200 moves"
             className={fieldClass(false)}
           />
         </div>

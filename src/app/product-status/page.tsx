@@ -150,7 +150,26 @@ export default function ProductStatusPage() {
           <p className="eyebrow">Registry snapshot</p>
           <h2 className="display-md mt-3">Status across the launch portfolio</h2>
 
-          <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
+          {/* Mobile: compact rows keep model, family, ID and status visible
+              without a horizontal scroll. */}
+          <ul className="mt-6 grid gap-3 sm:hidden">
+            {ALL_MODELS.map(({ family, model }) => (
+              <li
+                key={model.id}
+                className="flex items-center justify-between gap-4 rounded-xl border border-line bg-white px-4 py-3"
+              >
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold text-midnight">{model.name}</p>
+                  <p className="mt-0.5 font-mono text-[0.62rem] tracking-wide text-muted">
+                    {family.name} · {model.id}
+                  </p>
+                </div>
+                <StatusPill status={model.status} size="sm" />
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 hidden overflow-x-auto rounded-2xl border border-line sm:block">
             <table className="w-full min-w-[640px] border-collapse text-left">
               <caption className="sr-only">Model status across the 27-model registry</caption>
               <thead>

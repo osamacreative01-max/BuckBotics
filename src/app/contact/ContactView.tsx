@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHeader } from "@/components/ui/Primitives";
 import { Notice } from "@/components/ui/Content";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
@@ -21,18 +22,24 @@ const ROUTES = [
     key: "project",
     title: "Discuss a Robotics Project",
     text: "Industrial feasibility, task assessment and pilot interest, the main route for customers.",
+    href: "/contact?type=feasibility",
+    activeFor: ["feasibility", "pilot", "partnership", "care-sentinel-research"],
   },
   {
     key: "private-consultation",
     title: "Private PERSONA consultation",
     text: "Non-public discussion of PERSONA collections, ATELIER design or MEMORIA screening.",
+    href: "/contact?type=private-consultation",
+    activeFor: ["private-consultation"],
   },
   {
     key: "support",
     title: "General enquiries",
     text: "Everything else: questions, documents, accessibility feedback or support routing.",
+    href: "/contact?type=support",
+    activeFor: ["support"],
   },
-];
+] as const;
 
 export async function ContactView({
   searchParams,
@@ -51,9 +58,11 @@ export async function ContactView({
         ? "Request a private PERSONA consultation"
         : defaultType === "partnership"
           ? "Partnership enquiry"
-          : defaultType === "pilot"
-            ? "Apply for a pilot discussion"
-            : "Discuss a Robotics Project";
+          : defaultType === "support"
+            ? "General enquiries"
+            : defaultType === "pilot"
+              ? "Apply for a pilot discussion"
+              : "Discuss a Robotics Project";
 
   return (
     <>
@@ -68,20 +77,38 @@ export async function ContactView({
           {/* ROUTE CARDS + FORM */}
           <div className="lg:col-span-7 xl:col-span-8">
             <div className="grid gap-4 sm:grid-cols-3">
-              {ROUTES.map((r) => (
-                <div
-                  key={r.key}
-                  className={`rounded-xl border p-4 ${
-                    defaultType === r.key ||
-                    (r.key === "private-consultation" && defaultType.startsWith("persona"))
-                      ? "border-blue bg-blue/5"
-                      : "border-line bg-white"
-                  }`}
-                >
-                  <h2 className="font-display text-sm font-semibold leading-snug">{r.title}</h2>
-                  <p className="mt-1.5 text-xs leading-relaxed text-muted">{r.text}</p>
-                </div>
-              ))}
+              {ROUTES.map((r) => {
+                const active =
+                  (r.activeFor as readonly string[]).includes(defaultType) ||
+                  (r.key === "private-consultation" && defaultType.startsWith("persona"));
+                return (
+                  <Link
+                    key={r.key}
+                    href={r.href}
+                    aria-current={active ? "true" : undefined}
+                    className={`group flex flex-col rounded-xl border p-4 transition-colors ${
+                      active
+                        ? "border-blue bg-blue/5"
+                        : "border-line bg-white hover:border-blue/50 hover:bg-arctic/40"
+                    }`}
+                  >
+                    <span className="flex items-start justify-between gap-3">
+                      <span className="font-display text-sm font-semibold leading-snug text-midnight">
+                        {r.title}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className={`mt-0.5 shrink-0 text-xs transition-colors ${
+                          active ? "text-blue" : "text-muted group-hover:text-blue"
+                        }`}
+                      >
+                        {active ? "✓" : "→"}
+                      </span>
+                    </span>
+                    <span className="mt-1.5 text-xs leading-relaxed text-muted">{r.text}</span>
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="mt-8 rounded-2xl border border-line bg-white p-6 sm:p-8">

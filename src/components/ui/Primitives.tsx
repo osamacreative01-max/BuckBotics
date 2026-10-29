@@ -253,7 +253,7 @@ export function SectionHeading({
               aria-hidden="true"
               className="mb-4 block h-1 w-24 rounded-full bg-[linear-gradient(90deg,#46BFEE_0%,#3887C8_100%)]"
             />
-            <p className="eyebrow bg-gradient-to-r from-[#46BFEE] to-[#3887C8] bg-clip-text text-transparent">
+            <p className="eyebrow bg-gradient-to-r from-[#0e6eb8] to-[#0a5590] bg-clip-text text-transparent">
               {eyebrow}
             </p>
           </>

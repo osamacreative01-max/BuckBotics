@@ -32,8 +32,16 @@ export default function BuckcorePage() {
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <p className="eyebrow">Architecture</p>
           <h2 className="display-md mt-3">How the stack is proposed to flow</h2>
+          <p className="mt-3 text-sm text-muted sm:hidden">
+            Swipe sideways to see the full stack.
+          </p>
 
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-line bg-arctic/60 p-6 sm:p-8">
+          <div
+            className="mt-4 overflow-x-auto rounded-2xl border border-line bg-arctic/60 p-6 sm:mt-8 sm:p-8"
+            role="region"
+            aria-label="BUCKCORE architecture diagram, scroll horizontally"
+            tabIndex={0}
+          >
             <ol className="flex min-w-[860px] items-stretch gap-3">
               {ARCHITECTURE_FLOW.map((step, i) => {
                 const isCore = step.startsWith("BUCKCORE");
@@ -109,7 +117,22 @@ export default function BuckcorePage() {
           <h2 className="display-md mt-3">Ten modules, one claim status: Concept</h2>
           <p className="lede mt-4 max-w-3xl">{BUCKCORE.statusNote}</p>
 
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-line bg-white">
+          {/* Mobile: one record per module so purpose and status stay visible. */}
+          <ul className="mt-6 grid gap-3 sm:hidden">
+            {BUCKCORE_MODULES.map((m) => (
+              <li key={m.name} className="rounded-xl border border-line bg-white p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <p className="font-mono text-sm font-medium text-midnight">{m.name}</p>
+                  <span className="rounded-full border border-cyan/40 bg-cyan/10 px-2.5 py-0.5 font-mono text-[0.62rem] uppercase tracking-wider text-[#0b5c8f]">
+                    {m.status}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{m.purpose}</p>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 hidden overflow-x-auto rounded-2xl border border-line bg-white sm:block">
             <table className="w-full min-w-[640px] border-collapse text-left">
               <caption className="sr-only">BUCKCORE software modules and claim status</caption>
               <thead>

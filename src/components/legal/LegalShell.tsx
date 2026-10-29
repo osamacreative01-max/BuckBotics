@@ -72,7 +72,7 @@ export function LegalShell({
 /** Standard section heading inside legal copy. */
 export function LegalSection({ id, h, children }: { id: string; h: string; children: ReactNode }) {
   return (
-    <section id={id} className="mt-10 scroll-mt-32 first:mt-0">
+    <section id={id} className="mt-10 first:mt-0">
       <h2 className="font-display text-xl font-semibold text-midnight">{h}</h2>
       <div className="mt-3 grid gap-4 text-[0.98rem] leading-relaxed text-graphite">{children}</div>
     </section>

@@ -123,7 +123,7 @@ export function HomeHero() {
                 aria-hidden={active !== 0}
                 inert={active !== 0}
               >
-                <p className="eyebrow">
+                <p className="eyebrow max-sm:text-[0.68rem] max-sm:tracking-[0.1em]">
                   <DecryptedText
                     text={homeHero.eyebrow}
                     animateOn="view"

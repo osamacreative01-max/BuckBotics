@@ -217,7 +217,32 @@ export default function SolutionsPage() {
             title="Enquiry routes and where they lead"
             intro="Every journey ends with a human reading your enquiry, never an automated promise of booking, stock or delivery."
           />
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-white/10">
+          {/* Mobile: stacked routes keep every field readable without
+              horizontal scrolling. */}
+          <ul className="mt-6 grid gap-3 sm:hidden">
+            {ROUTES.map((r) => (
+              <li key={r.who} className="rounded-xl border border-white/10 bg-white/[0.04] p-4">
+                <p className="text-sm font-semibold text-white">{r.who}</p>
+                <dl className="mt-3 grid gap-2 text-xs leading-relaxed">
+                  <div>
+                    <dt className="font-mono uppercase tracking-[0.12em] text-[#8fa4bb]">Route</dt>
+                    <dd className="mt-0.5 text-[#b7c6d8]">{r.action}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono uppercase tracking-[0.12em] text-[#8fa4bb]">Result</dt>
+                    <dd className="mt-0.5 text-[#b7c6d8]">{r.result}</dd>
+                  </div>
+                </dl>
+              </li>
+            ))}
+          </ul>
+
+          <div
+            className="mt-8 hidden overflow-x-auto rounded-2xl border border-white/10 sm:block"
+            role="region"
+            aria-label="Enquiry routes and outcomes table, scroll horizontally"
+            tabIndex={0}
+          >
             <table className="w-full min-w-[640px] border-collapse text-left">
               <caption className="sr-only">Enquiry routes and outcomes</caption>
               <thead>

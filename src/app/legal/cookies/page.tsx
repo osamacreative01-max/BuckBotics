@@ -49,7 +49,32 @@ export default function CookiesPage() {
       </LegalSection>
 
       <LegalSection id="inventory" h="2. What this site uses">
-        <div className="overflow-x-auto rounded-xl border border-line">
+        {/* Mobile: stacked records so every field is readable without
+            horizontal scrolling. */}
+        <ul className="grid gap-3 sm:hidden">
+          {COOKIES.map((c) => (
+            <li key={c.name} className="rounded-xl border border-line bg-white p-4">
+              <p className="font-mono text-xs font-medium text-midnight">{c.name}</p>
+              <p className="mt-2 text-sm leading-relaxed text-graphite">{c.purpose}</p>
+              <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-line pt-3">
+                <div>
+                  <dt className="spec-label">Category</dt>
+                  <dd className="mt-0.5 text-xs text-graphite">{c.category}</dd>
+                </div>
+                <div>
+                  <dt className="spec-label">Duration</dt>
+                  <dd className="mt-0.5 text-xs text-graphite">{c.duration}</dd>
+                </div>
+                <div className="col-span-2">
+                  <dt className="spec-label">Consent</dt>
+                  <dd className="mt-0.5 text-xs text-graphite">{c.consent}</dd>
+                </div>
+              </dl>
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden overflow-x-auto rounded-xl border border-line sm:block">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-line bg-arctic/70">

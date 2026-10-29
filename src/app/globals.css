@@ -46,6 +46,17 @@
     }
   }
 
+  /* In-page anchors (#architecture, #modules, …) must clear the sticky
+     header: 105px on desktop, 119px below the lg breakpoint. */
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+  @media (max-width: 1023px) {
+    html {
+      scroll-padding-top: 8.5rem;
+    }
+  }
+
   body {
     background-color: #ffffff;
     color: var(--color-ink);

@@ -49,7 +49,7 @@ export default function IndustriesPage() {
         <div className="mx-auto max-w-[min(93vw,1800px)] px-5 sm:px-8">
           <div className="space-y-14">
             {groups.map(({ sector, items }) => (
-              <div key={sector.slug} id={sector.slug} className="scroll-mt-32">
+              <div key={sector.slug} id={sector.slug}>
                 <div className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
                   <div>
                     <p className="eyebrow">{items.length} markets</p>

@@ -63,7 +63,10 @@ export function Header() {
               href={PRIMARY_CTA.href}
               className="font-mono uppercase tracking-[0.08em] text-cyan transition-colors duration-200 hover:text-white"
             >
-              Request an Enterprise Consultation for Strategic Robotics&nbsp;Programs&nbsp;→
+              <span className="sm:hidden">Request a consultation&nbsp;→</span>
+              <span className="hidden sm:inline">
+                Request an Enterprise Consultation for Strategic Robotics&nbsp;Programs&nbsp;→
+              </span>
             </Link>
           </p>
           <div className="hidden shrink-0 items-center gap-4 md:flex">
@@ -139,14 +142,17 @@ export function Header() {
       <div
         id="mobile-drawer"
         hidden={!mobileOpen}
-        className="max-h-[calc(100dvh-100px)] overflow-y-auto border-b border-line bg-white lg:hidden"
+        className="max-h-[calc(100dvh-120px)] overflow-y-auto overscroll-contain border-b border-line bg-white lg:hidden"
       >
         <nav aria-label="Mobile" className="mx-auto max-w-[min(93vw,1800px)] px-5 py-4 sm:px-8">
           {NAV_GROUPS.map((group) => (
-            <details key={group.label} className="border-b border-line">
+            <details key={group.label} className="group border-b border-line">
               <summary className="flex items-center justify-between py-4">
                 <span className="font-display text-lg font-semibold">{group.label}</span>
-                <span aria-hidden="true" className="text-blue">
+                <span
+                  aria-hidden="true"
+                  className="text-blue transition-transform duration-200 group-open:rotate-180"
+                >
                   ▾
                 </span>
               </summary>

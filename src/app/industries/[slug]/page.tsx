@@ -140,29 +140,32 @@ export default async function IndustryDetailPage({
           <p className="eyebrow">02, Task map &amp; model candidates</p>
           <h2 className="display-md mt-3">Proposed fit, not test-proven compatibility</h2>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid max-w-5xl gap-6">
             {families.map((family) => (
-              <article key={family.slug} className="card overflow-hidden">
+              <article key={family.slug} className="card overflow-hidden md:flex">
                 <SmartImage
                   src={family.image}
                   alt={`${family.name} concept on white studio background`}
-                  className="aspect-[4/3] border-b border-line"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="aspect-[16/9] border-b border-line md:aspect-[4/3] md:w-[42%] md:shrink-0 md:border-b-0 md:border-r"
+                  sizes="(max-width: 768px) 100vw, 42vw"
                   caption={conceptCaption}
                 />
-                <div className="p-5">
+                <div className="p-6 sm:p-8 md:flex md:w-[58%] md:flex-col md:justify-center">
                   <div className="flex items-center justify-between gap-3">
                     <h3 className="font-display text-lg font-semibold">{family.name}</h3>
                     <StatusPill status={family.status} size="sm" />
                   </div>
                   <p className="mt-2 text-sm text-muted">{family.positioning}</p>
-                  <ul className="mt-3 flex flex-wrap gap-1.5">
+                  <ul className="mt-4 grid gap-2">
                     {family.models.map((m) => (
                       <li
                         key={m.id}
-                        className="rounded-full border border-line bg-arctic px-2 py-0.5 font-mono text-[0.62rem] text-graphite"
+                        className="flex items-baseline justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0"
                       >
-                        {m.short}
+                        <span className="font-mono text-[0.68rem] font-medium tracking-wide text-blue">
+                          {m.short}
+                        </span>
+                        <span className="text-right text-xs leading-relaxed text-muted">{m.purpose}</span>
                       </li>
                     ))}
                   </ul>

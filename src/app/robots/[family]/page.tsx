@@ -290,7 +290,18 @@ export default async function FamilyPage({ params }: { params: Promise<{ family:
             never guessed. Each row stays at its default until a dated test log or approved source
             exists, applies to every model in this family.
           </p>
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-line">
+          {/* Mobile: one record per specification so long values keep the
+              full column width. */}
+          <dl className="mt-6 grid gap-3 sm:hidden">
+            {SPEC_ROWS.map((row) => (
+              <div key={row.label} className="rounded-xl border border-line bg-white px-4 py-3">
+                <dt className="spec-label">{row.label}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-graphite">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="mt-8 hidden overflow-x-auto rounded-2xl border border-line sm:block">
             <table className="w-full min-w-[560px] border-collapse bg-white text-left">
               <caption className="sr-only">{family.name} technical specifications</caption>
               <thead>
